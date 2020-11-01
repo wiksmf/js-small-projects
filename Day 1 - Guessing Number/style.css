@@ -1,0 +1,80 @@
+body {
+  background-color: #1b262c;
+  color: #bbe1fa;
+  text-align: center;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-family: 'Henny Penny', cursive;
+  font-size: 4rem;
+  color: #3282b8;
+}
+
+p,
+label,
+input {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.4rem;
+}
+
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #bbe1fa;
+  outline: none;
+  color: #fff;
+  margin: 0 10px;
+}
+
+button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: .1rem;
+}
+
+button:focus,
+button:hover {
+  outline: 2px dotted #bbe1fa;
+}
+
+.submitBtn {
+  color: #fff;
+  background-color: #3282b8;
+}
+
+.resetBtn {
+  color: #1b262c;
+  background-color: #40fd39;
+}
+
+.hidden {
+  display: none;
+}
+
+.guesses {
+  text-transform: capitalize;
+}
+
+.lastResult {
+  padding: 3px;
+}
+
+.correct {
+  background-color: #5be2ae;
+  color: #1b262c;
+}
+
+.wrong {
+  background-color: #f66363;
+}
