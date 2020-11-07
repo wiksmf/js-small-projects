@@ -1,0 +1,65 @@
+body {
+  background: radial-gradient(circle, #13abc4 0%, #3161a3 100%);
+  font-family: 'Goldman', cursive;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  font-family: 'Goldman', cursive;
+  font-size: 1.5rem;
+  background-color: #000;
+  border: 5px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus,
+button:active {
+  background-color: #ff0000;
+}
+
+.gameInfo p {
+  display: inline-block;
+  border: 5px solid;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+.gameInfo .player1 {
+  border-color: #ffff00;
+  color: #ffff00;
+}
+
+.gameInfo .player2 {
+  border-color: #00ff00;
+  color: #00ff00;
+}
+
+.spinner p {
+  margin: 0;
+  font-size: 7rem;
+}
+
+.result {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.visible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
