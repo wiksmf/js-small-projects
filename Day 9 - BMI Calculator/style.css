@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1.2rem;
+  background-color: #6a8caf;
+  background-image: url(images/dimension.png);
+  text-align: center;
+}
+
+main {
+  width: 500px;
+  background-color: #feffe6;
+  border-radius: 10px;
+  padding: 40px 35px;
+}
+
+h1 {
+  text-decoration: underline;
+}
+
+form {
+  padding: 40px 35px;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  display: none;
+}
+
+[type="radio"]:checked+label,
+[type="radio"]:not(:checked)+label {
+  display: inline;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+[type="radio"]:checked+label:before,
+[type="radio"]:not(:checked)+label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #b9b6d3;
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"]:not(:checked)+label:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  background: #0e918c;
+  border-radius: 100%;
+  transition: .3s ease-in-out;
+}
+
+[type="radio"]:not(:checked)+label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.units {
+  margin: 20px 10px 10px 0;
+  display: inline;
+}
+
+input[type='text'] {
+  display: block;
+  border: none;
+  border-bottom: 1px solid #b9b6d3;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  padding: 15px 65px 15px 10px;
+  margin: 30px auto;
+  cursor: pointer;
+}
+
+input[type='text']:focus,
+input[type='text']:hover,
+input[type='text']:active {
+  outline: 2px dotted #b9b6d3;
+}
+
+.warningHeight,
+.warningWeight {
+  font-size: .9rem;
+  color: #ff0000;
+}
+
+button {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  border: none;
+  background-color: #0e918c;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 20px 50px;
+  margin: 40px auto 0px;
+}
+
+button:focus,
+button:hover,
+button:active {
+  background-color: #28abb9;
+  outline: 2px dotted #b9b6d3;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  outline: none;
+  cursor: default;
+}
+
+.result,
+.infoBMI {
+  font-weight: 700;
+  text-transform: lowercase;
+  text-decoration: underline;
+  letter-spacing: 2.5px;
+  padding: 5px;
+}
+
+.hidden {
+  display: none;
+}

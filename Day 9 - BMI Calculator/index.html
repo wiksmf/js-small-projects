@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>BMI CALCULATOR</h1>
+
+    <form>
+      <p class="units">Please select a unit:</p>
+      <input type="radio" name="unit" id="metric" value="metric">
+      <label for="metric">metric</label>
+
+      <input type="radio" name="unit" id="imperial" value="imperial">
+      <label for="imperial">imperial</label>
+
+      <input class="height" type="text" id="height" placeholder="Height" disabled>
+      <p class="warningHeight hidden">Please provide a valid height</p>
+
+      <input class="weight" type="text" id="weight" placeholder="Weight" disabled>
+      <p class="warningWeight hidden">Please provide a valid weight</p>
+
+      <button disabled>Calculate</button>
+    </form>
+
+    <p class="result"></p>
+    <p class="infoBMI"></p>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
