@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>countdown timer</h1>
+
+    <form>
+      <input type="date" max="2999-12-31">
+      <button disabled><i class="fas fa-angle-double-right"></i></button>
+    </form>
+
+    <p class="counter">days<span class="days"></span></p>
+    <p class="counter">hours<span class="hours"> </span></p>
+    <p class="counter">minutes<span class="minutes"></span></p>
+    <p class="counter">seconds<span class="seconds"></span></p>
+
+    <p class="endTimer"></p>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

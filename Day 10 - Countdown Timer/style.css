@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2rem;
+  background: url(images/old-wall.png), linear-gradient(#14274e, #394867, #2d6187, #394867, #14274e);
+  color: #fff;
+  text-align: center;
+}
+
+main {
+  width: 768px;
+  border-radius: 2px;
+  border: 2px solid #fff;
+  padding: 40px;
+  margin: 0 50px;
+}
+
+h1 {
+  letter-spacing: .5rem;
+}
+
+form {
+  padding: 40px 35px;
+}
+
+input[type='date'] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: .6rem;
+  padding: 10px 0;
+  margin-right: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+}
+
+::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type='date']:focus,
+input[type='date']:hover,
+input[type='date']:active {
+  outline: 2px dotted #fff;
+}
+
+button {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border-radius: 100%;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+button:focus,
+button:hover,
+button:active {
+  outline: 2px dotted #fff;
+}
+
+
+button:disabled {
+  background-color: transparent;
+  border: 1px solid #929191;
+  color: #929191;
+  outline: none;
+  cursor: default;
+}
+
+.counter {
+  display: inline-block;
+  border: 1px solid #fff;
+  min-width: 100px;
+  height: 100px;
+  padding: 20px;
+  margin: 10px;
+}
+
+span {
+  display: block;
+  padding: 25px 10px;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.endTimer {
+  padding: 25px;
+  font-size: 1.7rem;
+  font-style: italic;
+}
