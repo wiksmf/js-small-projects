@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poiret One', cursive;
+  background: url(images/skulls.png), rgb(97, 81, 96);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+main {
+  width: 600px;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: .5rem;
+}
+
+p {
+  font-size: 1.7rem;
+}
+
+button {
+  font-family: 'Poiret One', cursive;
+  font-size: 1.8rem;
+  color: rgb(255, 255, 255);
+  background-color: rgba(58, 34, 56, 0.75);
+  border-radius: 5px;
+  border: 3.5px solid rgb(255, 255, 255);
+  padding: 15px 20px;
+}
+
+.pressed {
+  box-shadow: 2px 2px 4px 0 rgb(255, 255, 255);
+  opacity: 0.3;
+}
+
+.a {
+  position: relative;
+  top: 200px;
+  left: -20px;
+}
+
+.s {
+  position: relative;
+  top: 350px;
+  left: -115px;
+}
+
+.d {
+  position: relative;
+  top: 460px;
+  left: 30px;
+}
+
+.j {
+  position: relative;
+  top: 100px;
+  right: -215px;
+}
+
+.k {
+  position: relative;
+  top: 200px;
+  right: -80px;
+}
+
+.l {
+  position: relative;
+  top: 305px;
+  right: -90px;
+}
+
+footer {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+}
+
+.attribution {
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(252, 50, 235);
+}
+
+a:focus,
+a:hover,
+a:active {
+  outline: 1px dotted rgb(252, 50, 235);
+}
