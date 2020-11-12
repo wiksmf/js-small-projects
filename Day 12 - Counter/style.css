@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222831;
+  font-family: 'Fredericka the Great', cursive;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: .5rem;
+}
+
+p {
+  display: inline-block;
+  width: 400px;
+  font-size: 13rem;
+  margin: 50px 100px;
+}
+
+.negative-value {
+  color: rgb(213, 63, 98);
+}
+
+.positive-value {
+  color: rgb(40, 223, 153);
+}
+
+button {
+  background-color: transparent;
+  border: 3.5px dotted rgb(255, 255, 255);
+  border-radius: 100%;
+  font-family: 'Freckle Face', cursive;
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  padding: 20px 35px;
+  cursor: pointer;
+  outline: none;
+}
+
+.add:focus,
+.add:hover {
+  background-color: rgba(40, 223, 153, 0.1);
+  border-color: rgb(40, 223, 153);
+  color: rgb(40, 223, 153);
+}
+
+.subtract:focus,
+.subtract:hover {
+  background-color: rgba(228, 95, 126, 0.1);
+  border-color: rgb(213, 63, 98);
+  color: rgb(213, 63, 98);
+}
