@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway Dots', cursive;
+}
+
+.light-off {
+  background-image: url(images/light-off.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.light-on {
+  background-image: url(images/light-on.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  font-family: 'Raleway Dots', cursive;
+  color: rgb(0, 255, 106);
+  border: 1px dotted rgb(255, 252, 89);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 2rem;
+  outline: none;
+}
+
+div {
+  width: 100vw;
+  height: 100vh;
+}
+
+p {
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  color: #fff;
+  letter-spacing: .2rem;
+}
+
+a {
+  color: rgb(0, 255, 106);
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
