@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  background: linear-gradient(#fcdab7, #ee5555);
+}
+
+main {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 768px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+form {
+  padding-right: 50px;
+}
+
+.results {
+  text-align: left;
+  align-self: center;
+  padding-left: 50px;
+  border-left: 1px solid #000;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  letter-spacing: .5rem;
+}
+
+label {
+  display: block;
+  margin: 20px auto;
+}
+
+input {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+
+input:focus,
+input:hover {
+  outline: 1px dotted #000;
+}
+
+select {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 200;
+  font-size: 1rem;
+  padding: 5px 10px;
+  outline: none;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 400;
+  letter-spacing: .2rem;
+  background-color: #e94560;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+button:focus,
+button:hover {
+  outline: 1px dotted #000;
+  background-color: #e41b3c;
+}
+
+p {
+  padding: 10px 0;
+}
