@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Conversion</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <section class="form">
+      <h1>temperature conversion 🌡</h1>
+      <form>
+        <label for="value">temperature value: </label>
+        <input type="text" id="value">
+        <br>
+        <label for="unit">temperature unit: </label>
+        <select id="unit">
+          <option value="celsius">celsius</option>
+          <option value="fahrenheit">fahrenheit</option>
+          <option value="kelvin">kelvin</option>
+        </select>
+        <br>
+        <button>convert</button>
+      </form>
+    </section>
+
+    <section class="show-results">
+      <p>celsius: <span class="result-celsius">...</span> °C</p>
+      <p>fahrenheit: <span class="result-fahrenheit">...</span> °F</p>
+      <p>kelvin: <span class="result-kelvin">...</span> K</p>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
