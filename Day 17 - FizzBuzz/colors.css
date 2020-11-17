@@ -1,0 +1,39 @@
+.startBtn {
+  background-color: #28df99;
+}
+
+.fizzBtn {
+  background-color: #9d65c9;
+}
+
+.buzzBtn {
+  background-color: #ff5200;
+}
+
+.fizz-buzzBtn {
+  background-color: #ec0101;
+}
+
+.nextBtn {
+  background-color: #0278ae;
+}
+
+.fizz {
+  color: #9d65c9;
+}
+
+.buzz {
+  color: #ff5200;
+}
+
+.fizz-buzz {
+  color: #ec0101;
+}
+
+.next {
+  color: #0278ae
+}
+
+.start {
+  color: #28df99;
+}

@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #e97171;
+  background-image: url(images/swirl.png);
+}
+
+main {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 45px #931a25;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 80px;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 4rem;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 15px 0;
+}
+
+.instructions {
+  padding-right: 50px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.game {
+  padding-left: 50px;
+  border-left: 1px solid #000;
+  text-align: center;
+}
+
+.random-number {
+  margin: 50px auto;
+  font-size: 5rem;
+  font-weight: bolder;
+}
+
+button {
+  padding: 15px 20px;
+  font-family: inherit;
+  font-weight: bolder;
+  letter-spacing: .2rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+button:disabled {
+  background-color: #bbbfca;
+  cursor: default;
+}
+
+.startBtn {
+  display: block;
+  margin: 5px auto;
+}
+
+.hidden {
+  visibility: hidden;
+}

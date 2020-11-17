@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FizzBuzz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="colors.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <h1>let's play... FizzBuzz</h1>
+    <div class="main">
+      <section class="instructions">
+        <h2>Instructions:</h2>
+        <p>If the number is divisible by 3, click <span class="fizz">FIZZ</span></p>
+        <p>If the number is divisible by 5, click <span class="buzz">BUZZ</span></p>
+        <p>If the number is divisible by both 3 and 5, click <span class="fizz-buzz">FizzBuzz</span></p>
+        <p>Otherwise, click <span class="next">NEXT</span></p>
+        <p>When you're ready, press <span class="start">START</span> to play</p>
+        <p>For each correct answer, you receive 1 point 😊</p>
+      </section>
+      <section class="game">
+        <h2>Points: <span class="points">0</span></h2>
+        <p class="random-number">...</p>
+        <div class="buttons">
+          <button disabled class="gameBtn fizzBtn" value="fizz">FIZZ</button>
+          <button disabled class="gameBtn buzzBtn" value="buzz">BUZZ</button>
+          <button disabled class="gameBtn fizz-buzzBtn" value="fizzBuzz">FizzBuzz</button>
+          <button disabled class="gameBtn nextBtn" value="next">NEXT</button>
+          <button class="startBtn">START</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
