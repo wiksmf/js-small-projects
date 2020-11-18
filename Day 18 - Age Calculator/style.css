@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  color: #794c74;
+  background-color: #fafcc2;
+  background-image: url(images/mirrored-squares.png);
+  animation: move 100s linear infinite;
+  text-align: center;
+}
+
+input[type='date'] {
+  border: none;
+  border-bottom: 1px solid #794c74;
+  font-family: inherit;
+  font-size: 1.5rem;
+  letter-spacing: .6rem;
+  padding: 10px 0;
+  margin-right: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #794c74;
+  text-align: center;
+}
+
+input[type='date']:focus,
+input[type='date']:hover {
+  outline: 2px dotted #794c74;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1.5rem;
+  letter-spacing: .3rem;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid #794c74;
+  background-color: #794c74;
+  color: #fafcc2;
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+button:focus,
+button:hover {
+  outline: 2px dotted #794c74;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+}
