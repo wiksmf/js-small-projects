@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weight conversion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <section class="form">
+      <h1>weight conversion</h1>
+      <form>
+        <label for="value">weight value: </label>
+        <input type="text" id="value">
+        <br>
+        <label for="unit">weight unit: </label>
+        <select id="unit">
+          <option value="kg">kg</option>
+          <option value="lb">lb</option>
+          <option value="oz">oz</option>
+          <option value="st">st</option>
+        </select>
+        <br>
+        <button>convert</button>
+      </form>
+    </section>
+
+    <section class="show-results">
+      <p>kilograms: <span class="result-kg">...</span> kg</p>
+      <p>pounds: <span class="result-lb">...</span> lb</p>
+      <p>ounces: <span class="result-oz">...</span> oz</p>
+      <p>stones: <span class="result-st">...</span> st</p>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
