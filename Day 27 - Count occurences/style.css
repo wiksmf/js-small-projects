@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Hind', sans-serif;
+  font-size: 1.5rem;
+  color: #f3d1f4;
+  background-color: #940a37;
+  text-align: left;
+}
+
+main {
+  width: 800px;
+}
+
+form {
+  text-align: center;
+}
+
+h1,
+h1+p {
+  margin: 50px 0;
+}
+
+input[type='text'] {
+  border: none;
+  border-bottom: 1px solid #f3d1f4;
+  font-family: inherit;
+  font-size: 2rem;
+  letter-spacing: .2rem;
+  padding: 10px 0;
+  margin-right: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #cffffe;
+  outline: none;
+  width: 550px;
+  text-align: center;
+}
+
+input[type='text']:focus,
+input[type='text']:hover {
+  outline: 2px dotted #cffffe;
+}
+
+input[type='text']::placeholder {
+  color: #cffffe6c;
+}
+
+button {
+  font-family: inherit;
+  font-size: 2rem;
+  letter-spacing: .3rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #f3d1f4;
+  color: #940a37;
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+button:focus,
+button:hover {
+  outline: 2px dotted #cffffe;
+}
+
+.result {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 3.5rem;
+}
