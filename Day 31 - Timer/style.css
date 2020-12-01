@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #03506f;
+  background-image: url(images/diagmonds.png);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+}
+
+h1 {
+  height: 400px;
+  width: 400px;
+  line-height: 400px;
+  margin-right: 70px;
+  background: linear-gradient(#1d1b38, #04427c, #1d1b38);
+  border-radius: 100%;
+  border: 4px solid #1d1b38;
+  color: #fff;
+  font-size: 4.5rem;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #2aacf1;
+  color: #fff;
+  font-family: inherit;
+  font-size: 4rem;
+  width: 200px;
+  text-align: center;
+  padding: 6px;
+  margin-right: 40px;
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 1.5rem;
+  color: #2aabf171;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  border-bottom: 3px solid #2aacf1;
+  padding: 10px 15px 10px 25px;
+  cursor: pointer;
+  font-size: 3rem;
+  color: #fff;
+  outline: none;
+}
