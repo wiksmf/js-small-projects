@@ -165,10 +165,10 @@ Apple.prototype.move = function () {
 };
 
 let directions = {
-  37: 'left',
-  38: 'up',
-  39: 'right',
-  40: 'down'
+  ArrowLeft: 'left',
+  ArrowUp: 'up',
+  ArrowRight: 'right',
+  ArrowDown: 'down'
 };
 
 let snake = new Snake();
@@ -183,9 +183,9 @@ let intervalId = setInterval(function () {
   drawBorder();
 }, 100);
 
-$("body").keydown(function (event) {
-  let newDirection = directions[event.keyCode];
+document.addEventListener('keydown', function (e) {
+  let newDirection = directions[e.key];
   if (newDirection !== undefined) {
     snake.setDirection(newDirection);
   }
-});
+})
