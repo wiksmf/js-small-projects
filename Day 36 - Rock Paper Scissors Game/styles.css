@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Syne Mono', monospace;
+  background-color: #14274e;
+  color: #fff;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.panels {
+  margin: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.panel-left,
+.panel-right {
+  overflow: hidden;
+  margin: 40px 50px 0;
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.3rem;
+  margin: 10px;
+}
+
+.select {
+  overflow: hidden;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 1000px;
+}
+
+.select img {
+  width: 200px;
+  margin: 20px;
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 1px dotted #fff;
+  padding: 30px;
+}
+
+button {
+  display: block;
+  padding: 5px 20px;
+  border: 2px solid black;
+  text-transform: uppercase;
+  background-color: #fff;
+  font-weight: bold;
+  margin: 10px auto;
+  transition: .3s;
+  font-family: inherit;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+span {
+  font-weight: bold;
+}
+
+footer {
+  color: #ffffdd;
+  position: fixed;
+  bottom: 25px;
+  right: 5px;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+}
+
+footer p {
+  font-size: .55rem;
+  margin: 0;
+  display: inline;
+}
+
+a {
+  text-decoration-style: dotted;
+  color: #ffffdd;
+}
+
+a:focus,
+a:hover {
+  outline: 2px dotted #ffffdd;
+}
