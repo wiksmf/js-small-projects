@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Syne+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cinzel', serif;
+  letter-spacing: .3rem;
+  background-color: #ffe3d8;
+  background-image: url(images/white-diamond-dark.png);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+  margin: 70px auto;
+}
+
+h1 {
+  background-color: #ffffffa6;
+  padding: 10px 50px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+input {
+  font-family: inherit;
+  padding: 10px 100px 10px 15px;
+  letter-spacing: .1rem;
+  background-color: #ffffffa6;
+  border-radius: 5px;
+  border: 1px solid #777777;
+  font-size: 1.3rem;
+  outline: none;
+}
+
+button {
+  font-family: inherit;
+  padding: 10px 15px;
+  letter-spacing: .1rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #777777;
+  font-size: 1.3rem;
+  outline: none;
+  cursor: pointer;
+}
+
+p {
+  font-size: 2.1rem;
+  background-color: #ffffffa6;
+}
+
+span {
+  margin: 10px 20px;
+}
