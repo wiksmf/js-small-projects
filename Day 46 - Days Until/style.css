@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2rem;
+  background-image: url(images/santa-claus.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+main {
+  width: 768px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  background-color: #8080809d;
+  padding: 40px;
+  margin: 50px;
+}
+
+h1 {
+  letter-spacing: .5rem;
+}
+
+span {
+  padding: 25px 10px;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.endTimer {
+  font-size: 1.7rem;
+}
+
+footer {
+  font-size: 1rem;
+  background-color: #8080809d;
+  letter-spacing: 0.2rem;
+  position: fixed;
+  bottom: 25px;
+  right: 5px;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+}
+
+a {
+  text-decoration-style: dotted;
+  color: #ffffdd;
+}
+
+a:focus,
+a:hover {
+  outline: 2px dotted #ffffdd;
+}
