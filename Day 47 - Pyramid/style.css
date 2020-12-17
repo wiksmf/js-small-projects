@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Megrim&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: 'Megrim', cursive;
+  font-size: 1.2rem;
+  background-color: #fca652;
+  background-image: url('images/shattered-dark.png');
+  color: #fff;
+  text-align: center;
+}
+
+main {}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: .5rem;
+}
+
+p {
+  font-family: 'Bungee Inline', cursive;
+}
+
+form {
+  margin: 50px auto;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  padding: 0px 20px;
+  letter-spacing: .02rem;
+  text-align: center;
+  background-color: transparent;
+  color: #fff;
+  font-size: 2rem;
+  max-width: 50px;
+}
+
+input::placeholder {
+  color: #fff;
+
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: #fff;
+
+}
