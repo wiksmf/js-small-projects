@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  color: #fbf6f0;
+  background-color: #30475e;
+  text-align: left;
+}
+
+main {
+  width: 800px;
+}
+
+h1,
+h1+p {
+  text-align: left;
+  margin: 50px 0;
+}
+
+input[type='text'] {
+  border: none;
+  border-bottom: 1px solid #fbf6f0;
+  font-family: inherit;
+  font-size: 2rem;
+  letter-spacing: .2rem;
+  padding: 10px 0;
+  margin-right: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #cffffe;
+  outline: none;
+  width: 500px;
+}
+
+input[type='text']:focus,
+input[type='text']:hover {
+  outline: 2px dotted #cffffe;
+}
+
+input[type='text']::placeholder {
+  color: #cffffe6c;
+}
+
+button {
+  font-family: inherit;
+  font-size: 2rem;
+  letter-spacing: .3rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #fbf6f0;
+  color: #30475e;
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+button:focus,
+button:hover {
+  outline: 2px dotted #cffffe;
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 3.5rem;
+}
