@@ -1,12 +1,10 @@
-# 360-Small-Projects
+# JS-Small-Projects
 
 Hi ☺! 
 
 Thanks for checking out this repository ☺.
 
-I am building one small website per day, using  HTML, CSS and Vanilla JS.
-
-The goal is to build 360 small projects in 360 days 💪.
+Here, you can find simple projects built using HTML, CSS and Vanilla JS.
 
 
 ## Resources used to build the websites
