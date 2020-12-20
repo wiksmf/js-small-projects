@@ -1,0 +1,33 @@
+body {
+  background-color: #13abc4;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input,
+button {
+  font-size: 1.5rem;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  color: #000;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none
+}
+
+.result {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.visible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
