@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <main>
+    <form class="form" novalidate>
+      <input class="form__input first-name" type="text" id="first-name" name="first-name" placeholder="First Name" required>
+      <span class="error hidden">First Name cannot be empty</span>
+      <input class="form__input last-name" type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+      <span class="error hidden"> Last Name cannot be empty</span>
+      <input class="form__input email" type="email" id="email" name="email" placeholder="Email Address" required>
+      <span class="error hidden">Looks like this is not an email</span>
+      <input class="form__input pwd" type="password" id="pwd" name="pwd" placeholder="Password" required>
+      <span class="error hidden">Password must be alphanumeric and contain 8 - 14 characters</span>
+      <button class="form__button" type="submit">SUBMIT</button>
+    </form>
+  </main>
+ 
+</body>
+</html>
