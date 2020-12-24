@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: .2rem;
+  color: #ffffff;
+  background-color: #000000;
+  text-align: left;
+}
+
+main {
+  width: 996px;
+}
+
+h1 {
+  margin: 50px 0;
+}
+
+input[type='text'] {
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  font-family: inherit;
+  font-size: 1.5rem;
+  letter-spacing: .2rem;
+  padding: 10px 0;
+  margin: 50px 30px 50px 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: #cffffe;
+  outline: none;
+  width: 350px;
+  text-align: center;
+}
+
+input[type='text']:focus,
+input[type='text']:hover {
+  outline: 2px dotted #cffffe;
+}
+
+input[type='text']::placeholder {
+  color: #cffffe6c;
+}
+
+button {
+  font-family: inherit;
+  font-size: 2rem;
+  letter-spacing: .3rem;
+  border-radius: 10px;
+  border: 1px dotted #fff;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  margin: 0 50px;
+  padding: 10px 14px;
+}
+
+button:focus,
+button:hover {
+  outline: 2px dotted #cffffe;
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 3.5rem;
+  display: inline;
+}
