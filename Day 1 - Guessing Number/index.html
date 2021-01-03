@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="utf-8">
-  <title>Guessing Number</title>
-  <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Baloo+2&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+    <title>Guessing Number</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+  </head>
 
-<body>
-  <main>
-    <h1>Number guessing game</h1>
+  <body>
+    <header class="heading">
+      <h1 class="heading-primary">guess the number 🔮</h1>
+    </header>
 
-    <p>We have selected a random number between 1 and 100.<br> See if you can guess it in 10 turns or fewer.<br> We'll
-      tell you if your guess was too high or too low.</p>
+    <main class="main">
+      <section class="left">
+        <p class="number">?</p>
+        <p class="info">(number between 1 and 100)</p>
+      </section>
 
-    <div class="form">
-      <label for="guessField">Enter a guess: </label>
-      <input type="text" id="guessField" class="guessField">
-      <button type="submit" class="submitBtn">SUBMIT GUESS</button>
-    </div>
+      <section class="right">
+        <div class="guess">
+          <p class="chances-left">
+            ⚠️ chances left: <span class="chances">10</span>
+          </p>
+          <input
+            class="guess-field"
+            type="number"
+            placeholder="enter a guess"
+          />
+          <button class="btn btn-guess" type="submit">submit guess</button>
+          <p class="previous-guesses hidden">
+            💥 previous guesses:
+            <span class="guesses"></span>
+          </p>
+          <p class="message">💬 start guessing . . .</p>
+        </div>
 
-    <div class="resultsParagraph">
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
-    </div>
+        <div class="results">
+          <p class="label-rounds">
+            🔄 number of rounds: <span class="rounds">0</span>
+          </p>
+          <p class="label-wins">
+            🥇 number of wins: <span class="wins">0</span>
+          </p>
+          <p class="label-losses">
+            ❌ number of losses: <span class="losses">0</span>
+          </p>
+        </div>
+      </section>
+    </main>
 
-    <button class="resetBtn hidden">START NEW GAME</button>
-  </main>
-
-  <script src="main.js"></script>
-</body>
-
+    <footer>
+      <button class="btn btn-again hidden">play again</button>
+    </footer>
+  </body>
 </html>

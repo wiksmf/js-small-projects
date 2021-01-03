@@ -1,80 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;800&family=Righteous&display=swap');
+
+:root {
+  --bg-primary-color: #222831;
+  --bg-secondary-color: #170944;
+  --bg-tertiary-color: #8b5e57c9;
+
+  --text-primary-color: #fcf8ec;
+  --text-secondary-color: #000;
+  --text-alert-color: #ff0000;
+
+  --gradient-secondary-color: #5e44b1;
+  --gradient-tertiary-color: #e2978cc9;
+
+  --shadow-primary: 0 0 1.7rem #000;
+  --shadow-secondary: 0 0 3rem #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: #1b262c;
-  color: #bbe1fa;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Baloo Da 2', cursive;
+  font-size: 2.2rem;
+  letter-spacing: 0.1rem;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
   text-align: center;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
 }
 
-main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+span {
+  margin-right: 0.5rem;
 }
 
-h1 {
-  font-family: 'Henny Penny', cursive;
-  font-size: 4rem;
-  color: #3282b8;
+.main {
+  display: grid;
+  grid-template-columns: 30rem 50rem;
+  align-items: center;
+  gap: 20rem;
 }
 
-p,
-label,
-input {
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.4rem;
+.heading-primary {
+  font-family: 'Righteous', cursive;
+  font-size: 4.5rem;
+  text-shadow: var(--shadow-primary);
 }
 
+.number {
+  margin: 0 5.5rem 2.5rem;
+  padding: 3rem 0.5rem;
+  font-weight: 800;
+  font-size: 7rem;
+  color: var(--text-secondary-color);
+  text-shadow: var(--shadow-secondary);
+  border-radius: 100%;
+  border: 0.5rem solid var(--text-secondary-color);
+  background-color: var(--bg-secondary-color);
+  background: radial-gradient(
+    circle,
+    var(--bg-tertiary-color) 0%,
+    var(--bg-secondary-color) 100%
+  );
+  box-shadow: var(--shadow-primary);
+}
 
-input {
+.guess {
+  display: flex;
+  flex-direction: column;
+}
+
+.chances-left {
+  margin-bottom: 2rem;
+}
+
+.chances {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.6rem;
+  color: var(--text-alert-color);
+}
+
+.guess-field {
   background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #bbe1fa;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border: 0.5rem solid var(--text-primary-color);
+  font-family: inherit;
+  font-size: 3rem;
+  color: var(--text-primary-color);
+  padding: 1rem 0 1rem 2rem;
+  margin: auto;
+  width: 20rem;
   outline: none;
-  color: #fff;
-  margin: 0 10px;
 }
 
-button {
-  padding: 10px 25px;
-  border: none;
-  border-radius: 5px;
+.guess-field::placeholder {
+  font-size: 2rem;
+}
+
+.btn {
+  background-color: var(--text-secondary-color);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border: 0.5rem solid var(--text-secondary-color);
+  font-family: inherit;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  color: var(--text-primary-color);
+  padding: 0.6rem 3rem;
+  margin: auto;
+  width: 20rem;
   cursor: pointer;
-  font-weight: bold;
-  letter-spacing: .1rem;
+  outline: none;
+  transition: all 0.3s;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #bbe1fa;
+.btn-again {
+  border-radius: 1rem;
 }
 
-.submitBtn {
-  color: #fff;
-  background-color: #3282b8;
+.btn:hover,
+.btn:focus {
+  background-color: var(--text-primary-color);
+  color: var(--text-secondary-color);
 }
 
-.resetBtn {
-  color: #1b262c;
-  background-color: #40fd39;
+.previous-guesses {
+  margin-top: 2rem;
+}
+
+.results {
+  text-align: left;
+  margin-top: 4rem;
 }
 
 .hidden {
-  display: none;
+  /* display: none; */
+  visibility: hidden;
 }
 
-.guesses {
-  text-transform: capitalize;
-}
-
-.lastResult {
-  padding: 3px;
-}
-
-.correct {
-  background-color: #5be2ae;
-  color: #1b262c;
-}
-
-.wrong {
-  background-color: #f66363;
+.guessed {
+  background: radial-gradient(
+    circle,
+    var(--gradient-tertiary-color) 0%,
+    var(--gradient-secondary-color) 100%
+  );
 }
