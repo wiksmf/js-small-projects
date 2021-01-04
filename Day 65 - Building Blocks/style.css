@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+
+body {
+  font-family: 'Redressed', cursive;
+  font-size: 2rem;
+}
+
+.square-1 {
+  position: fixed;
+  cursor: move;
+  width: 200px;
+  height: 200px;
+  background-color: #f06363;
+}
+
+.square-2 {
+  position: fixed;
+  cursor: move;
+  width: 100px;
+  height: 100px;
+  background-color: #fafa91;
+}
+
+.rectangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.rectangle-1 {
+  position: fixed;
+  cursor: move;
+  width: 50px;
+  height: 50px;
+  background-color: #ababf5;
+}
+
+.rectangle-2 {
+  position: fixed;
+  cursor: move;
+  width: 100px;
+  height: 70px;
+  background-color: #44ff44;
+}
+
+.circle {
+  border-radius: 100%;
+}
+
+.circle-1 {
+  position: fixed;
+  cursor: move;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(255, 145, 255);
+}
+
+.circle-2 {
+  position: fixed;
+  cursor: move;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(96, 255, 255);
+}
+
+.selected {
+  background-color: rgb(156, 153, 150);
+}
