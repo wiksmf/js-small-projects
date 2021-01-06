@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="config.js"></script>
+    <script defer src="main.js"></script>
+  </head>
+
+  <body>
+    <h1>what's the weather like in ...</h1>
+    <form action="/" method="post">
+      <label for="cityInput">city name: </label>
+      <input id="cityInput" type="text" name="cityName" />
+      <button type="submit">submit</button>
+    </form>
+
+    <div class="weather-info hidden">
+      <p>
+        temperatures:
+        <span class="temperature"></span> degrees Celsius
+      </p>
+      <p>weather: <span class="weather-description"></span></p>
+    </div>
+  </body>
+</html>
