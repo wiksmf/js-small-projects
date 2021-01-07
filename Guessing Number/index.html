@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Guessing Number</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="main.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <header class="heading">
+  <title>Guessing Number</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+
+<body class="display-flex">
+  <div class="container">
+    <header class="header">
       <h1 class="heading-primary">guess the number 🔮</h1>
     </header>
 
     <main class="main">
-      <section class="left">
-        <p class="number">?</p>
-        <p class="info">(number between 1 and 100)</p>
+      <section class="secret display-flex">
+        <p class="number display-flex">?</p>
+        <p class="paragraph">(number between 1 and 100)</p>
       </section>
 
-      <section class="right">
-        <div class="guess">
-          <p class="chances-left">
-            ⚠️ chances left: <span class="chances">10</span>
-          </p>
-          <input
-            class="guess-field"
-            type="number"
-            placeholder="enter a guess"
-          />
-          <button class="btn btn-guess" type="submit">submit guess</button>
-          <p class="previous-guesses hidden">
-            💥 previous guesses:
-            <span class="guesses"></span>
-          </p>
-          <p class="message">💬 start guessing . . .</p>
-        </div>
+      <section class="player display-flex">
+        <p class="chances paragraph">
+          ⚠️ chances left: <span class="chances-left paragraph-span">10</span>
+        </p>
+        <input class="user-guess" type="number" placeholder="enter a guess" />
+        <button class="btn btn-guess">submit guess</button>
+        <p class="message paragraph">💬 start guessing . . .</p>
+      </section>
 
-        <div class="results">
-          <p class="label-rounds">
-            🔄 number of rounds: <span class="rounds">0</span>
-          </p>
-          <p class="label-wins">
-            🥇 number of wins: <span class="wins">0</span>
-          </p>
-          <p class="label-losses">
-            ❌ number of losses: <span class="losses">0</span>
-          </p>
-        </div>
+      <section class="previous-guesses hidden">
+        <p class=" paragraph">💥 previous guesses:
+          <span class="guesses paragraph-span"></span>
+        </p>
+      </section>
+
+      <section class="statistics display-flex">
+        <p class="label-rounds">
+          🔄 number of rounds: <span class="rounds paragraph-span">0</span>
+        </p>
+        <p class="label-wins">
+          🥇 number of wins: <span class="wins paragraph-span">0</span>
+        </p>
+        <p class="label-losses">
+          ❌ number of losses: <span class="losses paragraph-span">0</span>
+        </p>
       </section>
     </main>
 
-    <footer>
-      <button class="btn btn-again hidden">play again</button>
-    </footer>
-  </body>
+    <div class="overlay hidden"></div>
+    <button class="btn btn-again hidden">play again</button>
+
+  </div>
+</body>
+
 </html>

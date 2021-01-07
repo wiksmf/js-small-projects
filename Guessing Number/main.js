@@ -2,8 +2,8 @@
 
 const secretNumber = document.querySelector('.number');
 
-const chances = document.querySelector('.chances');
-const guessField = document.querySelector('.guess-field');
+const chances = document.querySelector('.chances-left');
+const guessField = document.querySelector('.user-guess');
 const previousGuesses = document.querySelector('.previous-guesses');
 const guesses = document.querySelector('.guesses');
 
@@ -14,6 +14,7 @@ const displayNumberLosses = document.querySelector('.losses');
 
 const submitBtn = document.querySelector('.btn-guess');
 const resetBtn = document.querySelector('.btn-again');
+const overlay = document.querySelector('.overlay');
 
 let randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
 let chancesLeft = 10;
@@ -46,6 +47,7 @@ function checkGuess() {
   } else {
     if (chancesLeft === 10) {
       previousGuesses.classList.remove('hidden');
+      guesses.classList.remove('hidden');
     }
 
     message.textContent =
@@ -69,17 +71,20 @@ function setGameOver() {
   guessField.disabled = true;
   submitBtn.disabled = true;
   resetBtn.classList.remove('hidden');
+  overlay.classList.remove('hidden');
   resetBtn.addEventListener('click', resetGame);
 }
 
 // Reset the game logic and webpage
 function resetGame() {
   resetBtn.classList.add('hidden');
+  overlay.classList.add('hidden');
 
   guessField.disabled = false;
   submitBtn.disabled = false;
 
   previousGuesses.classList.add('hidden');
+  guesses.classList.add('hidden');
   secretNumber.classList.remove('guessed');
 
   randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
