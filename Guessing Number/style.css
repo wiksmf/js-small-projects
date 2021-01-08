@@ -2,16 +2,19 @@
 
 :root {
   --bg-primary-color: #222831;
+  --bg-won-color: #1f921b;
+  --bg-lose-color: #d31212;
 
   --text-primary-color: #fcf8ec;
   --text-secondary-color: #000;
-  --text-alert-color: #ff0000;
 
   --gradient-primary-light: #5e44b1;
   --gradient-secondary-light: #e2978cc9;
 
   --gradient-primary-dark: #170944;
   --gradient-secondary-dark: #8b5e57c9;
+
+  --overlay-color: #ffffff00;
 
   --shadow-primary: 0 0 1.7rem #000;
   --shadow-secondary: 0 0 3rem #fff;
@@ -47,12 +50,11 @@ body {
 
 .hidden {
   visibility: hidden;
-  /* display: none; */
 }
 
-/* .paragraph {
+.paragraph {
   margin: 1.5rem auto;
-} */
+}
 
 .paragraph-span {
   font-size: 3.4rem;
@@ -70,7 +72,7 @@ body {
 /* MAIN */
 .main {
   height: 70vh;
-  width: 70vw;
+  width: 80vw;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -79,14 +81,57 @@ body {
   align-items: center;
 }
 
-.secret {
+/* PLAYER SECTION */
+.chances {
+  display: inline-block;
+  font-weight: 800;
+  letter-spacing: 0.6rem;
+  color: var(--bg-lose-color);
+}
+
+.player {
   grid-column: 1 / 2;
   grid-row: 1;
 
   flex-direction: column;
 }
 
+.form-guess {
+  flex-direction: column;
+}
+
+.user-guess {
+  width: 20rem;
+  font-family: inherit;
+  font-size: 3rem;
+  color: var(--text-primary-color);
+  background-color: transparent;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border: 0.5rem solid var(--text-primary-color);
+  padding: 1rem 0 1rem 2rem;
+  outline: none;
+}
+
+.user-guess::placeholder {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+}
+
+/* PREVIOUS GUESSING SECTION */
+.previous-guesses {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
 /* SECRET NUMBER SECTION */
+.secret {
+  grid-column: 2 / -1;
+  grid-row: 1;
+
+  flex-direction: column;
+}
+
 .number {
   height: 15rem;
   width: 15rem;
@@ -112,68 +157,6 @@ body {
   );
 }
 
-/* PLAYER SECTION */
-.chances {
-  display: inline-block;
-  font-weight: 800;
-  letter-spacing: 0.6rem;
-  color: var(--text-alert-color);
-}
-
-.player {
-  grid-column: 2 / -1;
-  grid-row: 1;
-
-  flex-direction: column;
-}
-
-.user-guess {
-  width: 20rem;
-  font-family: inherit;
-  font-size: 3rem;
-  color: var(--text-primary-color);
-  background-color: transparent;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  border: 0.5rem solid var(--text-primary-color);
-  padding: 1rem 0 1rem 2rem;
-  outline: none;
-}
-
-.user-guess::placeholder {
-  font-size: 1.6rem;
-  letter-spacing: 0.2rem;
-}
-
-.btn {
-  width: 20rem;
-  margin-bottom: 2rem;
-  font-family: inherit;
-  font-size: 1.8rem;
-  letter-spacing: 0.1rem;
-  padding: 0.6rem 3rem;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  border: 0.5rem solid var(--text-primary-color);
-  background-color: var(--text-primary-color);
-  color: var(--text-secondary-color);
-  cursor: pointer;
-  outline: none;
-  transition: all 0.3s;
-}
-
-.btn:hover,
-.btn:focus {
-  background-color: var(--gradient-primary-light);
-  color: var(--text-primary-color);
-}
-
-/* PREVIOUS GUESSING SECTION */
-.previous-guesses {
-  grid-column: 1 / -1;
-  grid-row: 2;
-}
-
 /* STATISTICS SECTION */
 .statistics {
   grid-column: 1 / -1;
@@ -182,17 +165,23 @@ body {
   justify-content: space-between;
 }
 
-/* GAME OVER*/
+/* GAME OVER SECTION */
 .game-over {
   text-align: center;
 }
 
-.btn-again {
-  border-radius: 1rem;
+.modal {
   position: absolute;
-  top: 50%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 70%;
+  padding: 6rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-primary);
+  text-align: center;
+  font-size: 3rem;
+  z-index: 1;
 }
 
 .overlay {
@@ -201,6 +190,46 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.027);
+  background-color: var(--overlay-color);
   backdrop-filter: blur(0.2rem);
+  z-index: 0;
+}
+
+.won {
+  background-color: var(--bg-won-color);
+}
+
+.lose {
+  background-color: var(--bg-lose-color);
+}
+
+/* BUTTONS */
+.btn {
+  width: 20rem;
+  margin-bottom: 2rem;
+  font-family: inherit;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  padding: 0.6rem 3rem;
+  border: 0.5rem solid var(--text-primary-color);
+  background-color: var(--text-primary-color);
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.btn-guess {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.btn-again {
+  border-radius: 1rem;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--gradient-primary-light);
+  color: var(--text-primary-color);
 }

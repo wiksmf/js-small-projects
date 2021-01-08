@@ -17,17 +17,14 @@
     </header>
 
     <main class="main">
-      <section class="secret display-flex">
-        <p class="number display-flex">?</p>
-        <p class="paragraph">(number between 1 and 100)</p>
-      </section>
-
       <section class="player display-flex">
         <p class="chances paragraph">
           ⚠️ chances left: <span class="chances-left paragraph-span">10</span>
         </p>
-        <input class="user-guess" type="number" placeholder="enter a guess" />
-        <button class="btn btn-guess">submit guess</button>
+        <form class="form-guess display-flex" action="#">
+          <input class="user-guess" type="number" placeholder="enter a guess" />
+          <button class="btn btn-guess">submit guess</button>
+        </form>
         <p class="message paragraph">💬 start guessing . . .</p>
       </section>
 
@@ -35,6 +32,11 @@
         <p class=" paragraph">💥 previous guesses:
           <span class="guesses paragraph-span"></span>
         </p>
+      </section>
+
+      <section class="secret display-flex">
+        <p class="number display-flex">?</p>
+        <p class="paragraph">(number between 1 and 100)</p>
       </section>
 
       <section class="statistics display-flex">
@@ -50,9 +52,11 @@
       </section>
     </main>
 
+    <div class="modal hidden">
+      <p class="game-over paragraph"></p>
+      <button class="btn btn-again">play again</button>
+    </div>
     <div class="overlay hidden"></div>
-    <button class="btn btn-again hidden">play again</button>
-
   </div>
 </body>
 
