@@ -9,19 +9,19 @@
   <script defer src="main.js"></script>
 </head>
 
-<body>
-  <main>
+<body class="display-flex">
+  <main class="main display-flex ">
     <h1 class="heading-primary">age calculator</h1>
     <form class="form">
-      <label class="input__label" for="date">enter your date of birth</label>
+      <label class="input__label" for="date">enter your date of birth:</label>
       <input class="input__data" id="DOB" type="date">
       <span class="wrong-input"></span>
       <button class="btn">calculate</button>
     </form>
 
     <section class="age__info">
-      <p class="birthday hidden"></p>
       <div class="age"></div>
+      <p class="birthday hidden"></p>
     </section>
   </main>
 </body>

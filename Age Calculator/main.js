@@ -77,7 +77,7 @@ function calcAge(userBD) {
 
   if (currentDate === userBDDate && currentMonth === userBDMonth) {
     displayBD.classList.remove('hidden');
-    displayBD.textContent = `Happy Birthday! 🥳🥳🥳`;
+    displayBD.innerHTML = `<span class="birthday-text">Happy Birthday!</span> 🥳🥳🥳`;
   }
 }
 
@@ -85,15 +85,19 @@ function updateDisplay() {
   displayAge.classList.remove('hidden');
 
   displayAge.innerHTML = `
-    <h2>your current age is: ${years} years 
-      ${months === 0 ? '' : `${months} months`}  
-      ${days === 0 ? '' : `${days} days`}</h2>
-    <p>age in months: <span> ${ageInMonths}</span></p>
-    <p>age in weeks: <span>${ageInWeeks}</span></p>
-    <p>age in days: <span>${ageInDays}</span></p>
-    <p>age in hours: <span>${ageInHours}</span></p>
-    <p>age in minutes: <span>${ageInMinutes}</span></p>
-    <p>age in seconds: <span>${ageInSeconds}</span></p>
+    <h2 class="heading-secondary">your current age is: 
+      <span class="age__value">${years}</span> years
+      ${
+        months === 0 ? '' : `<span class="age__value"> ${months}</span>  months`
+      }
+      ${days === 0 ? '' : `<span class="age__value"> ${days}</span>  days`}
+    </h2>
+    <p class="age__def">age in months: <span class="age__value"> ${ageInMonths}</span></p>
+    <p class="age__def">age in weeks: <span class="age__value">${ageInWeeks}</span></p>
+    <p class="age__def">age in days: <span class="age__value">${ageInDays}</span></p>
+    <p class="age__def">age in hours: <span class="age__value">${ageInHours}</span></p>
+    <p class="age__def">age in minutes: <span class="age__value">${ageInMinutes}</span></p>
+    <p class="age__def">age in seconds: <span class="age__value">${ageInSeconds}</span></p>
   `;
 }
 
