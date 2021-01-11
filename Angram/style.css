@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -9,65 +15,129 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Redressed', cursive;
+
+  font-family: 'Raleway', sans-serif;
   font-size: 2.5rem;
-  color: #ff5c33;
-  background-color: #321f28;
-  text-align: left;
+  color: #ff3300;
+  background-color: #4b0a28;
 }
 
-main {
-  width: 800px;
+.main {
+  position: relative;
 }
 
-h1,
-h1+p {
-  margin: 50px 0;
+.heading-primary {
+  margin-bottom: 4rem;
 }
 
-input[type='text'] {
+.open-modal {
+  cursor: pointer;
+  color: #ffff00;
+}
+
+.input__word,
+.input__possible-anagrams {
+  display: block;
+  margin-bottom: 4rem;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: 0.2rem;
+  padding: 0.4rem 0.5rem 0.2rem;
   border: none;
   border-bottom: 1px solid #ff5c33;
-  font-family: inherit;
-  font-size: 2rem;
-  letter-spacing: .2rem;
-  padding: 10px 0;
-  margin-right: 30px;
-  cursor: pointer;
   background-color: transparent;
+  cursor: pointer;
   color: #cffffe;
   outline: none;
-  width: 600px;
+  width: 60rem;
 }
 
-input[type='text']:focus,
-input[type='text']:hover {
+.input__word:focus,
+.input__possible-anagrams:focus,
+.input__word:hover,
+.input__possible-anagrams:hover {
   outline: 2px dotted #cffffe;
 }
 
-input[type='text']::placeholder {
-  color: #cffffe6c;
+.input__word::placeholder,
+.input__possible-anagrams::placeholder {
+  font-size: 2rem;
+  color: #cffffe;
 }
 
-button {
+.btn {
+  display: block;
   font-family: inherit;
   font-size: 2rem;
-  letter-spacing: .3rem;
-  border-radius: 10px;
+  letter-spacing: 0.3rem;
   border: none;
-  background-color: #ff5c33;
-  color: #092532;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1.5rem #00000041;
   cursor: pointer;
-  padding: 10px 14px;
+  transition: all 0.2s;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #cffffe;
+.btn:focus,
+.btn:hover {
+  outline: 2px dotted #ff0000;
+  transform: translateY(0.2rem);
+}
+
+.btn-check {
+  background-color: #ffff00;
+  color: #092532;
 }
 
 .result {
+  height: 3rem;
+  margin-top: 3rem;
+  font-size: 3rem;
+  color: #ffff00;
   text-align: center;
-  margin-top: 30px;
-  font-size: 3.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  width: 80rem;
+  height: 20rem;
+  position: absolute;
+  padding: 9rem 4rem 12rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 1rem #00000041;
+  background-color: #fff;
+  color: #092532;
+}
+
+.examples {
+  margin: 2rem 0 1rem;
+}
+
+.example__item {
+  margin-left: 3rem;
+  padding: 0.3rem 0;
+  list-style: disclosure-closed;
+}
+
+.btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 2.5rem;
+
+  font-size: 4rem;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btn-ok {
+  position: absolute;
+  bottom: 3rem;
+  right: 4.5rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #ff5c33;
 }

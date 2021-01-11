@@ -1,44 +1,71 @@
 'use strict';
 
-const word = document.querySelector('.word');
-const anagramInput = document.querySelector('.possible-anagrams');
-const btnCheck = document.querySelector('button');
-const result = document.querySelector('.result');
+const wordInput = document.querySelector('.input__word');
+const anagramInput = document.querySelector('.input__possible-anagrams');
+const btnCheck = document.querySelector('.btn-check');
+const displayAnagram = document.querySelector('.result');
+const displayInfo = document.querySelector('.modal');
+const btnOpenModal = document.querySelector('.open-modal');
+const btnCloseModal = document.querySelectorAll('.close-modal');
 
-
-btnCheck.addEventListener('click', (e) => {
+btnCheck.addEventListener('click', e => {
   e.preventDefault();
 
-  let string = word.value;
+  let word = wordInput.value;
   let possibleAnagrams = anagramInput.value;
 
-  if ((string.length === 0) || (possibleAnagrams.length === 0)) {
+  if (!word || !possibleAnagrams) {
+    displayAnagram.textContent = '⚠️ invalid input';
     return;
   }
 
-  isAnagram(string, possibleAnagrams);
+  let anagrams = isAnagram(word, possibleAnagrams);
+  displayAnagram.textContent = `  
+  ${
+    anagrams.length > 0 ? `${word} -> ${anagrams.join(', ')}` : 'no anagrams 😭'
+  }`;
+
+  wordInput.value = '';
+  anagramInput.value = '';
 });
 
+function isAnagram(word, possibleAnagrams) {
+  // Removing whitespace characters form the begin and end of the word
+  word = word.trim();
 
-function isAnagram(string, possibleAnagrams) {
-  string = string.trim();
+  // Splitting the list of possible anagrams into an array
   possibleAnagrams = possibleAnagrams.split(' ');
 
+  // Looking for anagrams in the list
   let anagrams = possibleAnagrams.filter(
     anagram =>
-    (string.toLowerCase() !== anagram.toLowerCase()) &&
-    (compare(string, anagram.toLowerCase()))
+      word.toLowerCase() !== anagram.toLowerCase() &&
+      compare(word, anagram.toLowerCase()),
   );
 
-  (anagrams.length > 0) ?
-    result.textContent = anagrams.join(', ') :
-    result.textContent = 'no anagrams!';
-};
+  return anagrams;
+}
 
+// Comparing the word and the possible anagram letter by letter
+function compare(word, anagram) {
+  word = word.split('').sort().join('');
+  anagram = anagram.split('').sort().join('');
 
-function compare(firstWord, secondWord) {
-  firstWord = firstWord.split('').sort().join('');
-  secondWord = secondWord.split('').sort().join('');
+  return word === anagram;
+}
 
-  return firstWord === secondWord;
-};
+// Handling information modal
+btnOpenModal.addEventListener('click', () => {
+  displayInfo.classList.remove('hidden');
+});
+
+btnCloseModal.forEach(btn => {
+  btn.addEventListener('click', () => {
+    displayInfo.classList.add('hidden');
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !btnCloseModal.classList.contains('hidden'))
+    displayInfo.classList.add('hidden');
+});
