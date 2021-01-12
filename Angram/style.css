@@ -16,6 +16,7 @@ body {
   align-items: center;
   justify-content: center;
 
+  box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
   font-size: 2.5rem;
   color: #ff3300;
@@ -35,18 +36,24 @@ body {
   color: #ffff00;
 }
 
+/* FORM STYLE */
+.input__word,
+.input__possible-anagrams,
+.btn {
+  display: block;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
 .input__word,
 .input__possible-anagrams {
-  display: block;
   margin-bottom: 4rem;
-  font-family: inherit;
   font-size: inherit;
   letter-spacing: 0.2rem;
   padding: 0.4rem 0.5rem 0.2rem;
-  border: none;
   border-bottom: 1px solid #ff5c33;
   background-color: transparent;
-  cursor: pointer;
   color: #cffffe;
   outline: none;
   width: 60rem;
@@ -66,15 +73,11 @@ body {
 }
 
 .btn {
-  display: block;
-  font-family: inherit;
   font-size: 2rem;
   letter-spacing: 0.3rem;
-  border: none;
   padding: 1rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 1.5rem #00000041;
-  cursor: pointer;
   transition: all 0.2s;
 }
 
@@ -89,6 +92,7 @@ body {
   color: #092532;
 }
 
+/* RESULT STYLE */
 .result {
   height: 3rem;
   margin-top: 3rem;
@@ -97,14 +101,19 @@ body {
   text-align: center;
 }
 
+/* MODAL STYLE */
 .hidden {
   display: none;
 }
 
 .modal {
-  width: 80rem;
-  height: 20rem;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80rem;
+  height: 40rem;
   padding: 9rem 4rem 12rem;
   font-size: 2rem;
   border-radius: 1rem;
@@ -125,10 +134,12 @@ body {
 
 .btn-close {
   position: absolute;
-  top: 1rem;
-  right: 2.5rem;
+  top: 2.2rem;
+  right: 2.7rem;
 
-  font-size: 4rem;
+  padding: 1rem;
+  line-height: 2.5rem;
+  font-size: 5rem;
   box-shadow: none;
   background-color: transparent;
 }
@@ -137,6 +148,7 @@ body {
   position: absolute;
   bottom: 3rem;
   right: 4.5rem;
+
   font-weight: 700;
   color: #fff;
   background-color: #ff5c33;

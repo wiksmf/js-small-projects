@@ -4,24 +4,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfect Number</title>
+  <title>Armstrong Number</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
-  <main>
-    <h1>Armstrong number</h1>
-    <p>Armstrong number is equal to the sum of
-      its own digits each raised to the power of the number of digits.</p>
-    <form>
-      <input type="text" placeholder="enter a number" class="number">
-      <button>check</button>
+  <main class="main">
+    <h1 class="heading-primary">Armstrong number<sup class="open-modal">🛈</sup></h1>
+    <form class="form">
+      <input type="number" placeholder="enter a number" class="input__number">
+      <button class="btn btn-check">check</button>
     </form>
 
-    <p class="result">...</p>
+    <p class="result"></p>
   </main>
 
-  <script src="main.js"></script>
+  <div class="modal hidden">
+    <button class="btn btn-close close-modal">&times;</button>
+    <p class="definition">
+      According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Narcissistic_number">Wikipedia</a>,
+      an Armstrong number is a number that is the sum of its own digits each raised to the power of the number of
+      digits.
+    </p>
+    <p class="examples">Examples:</p>
+    <ul class="example__list">
+      <li class="example__item">Armstrong number
+        <p>
+          <span class="armstrong-numbers">153</span> - number of digits: <span class="digits">3</span> ➡ 
+          <span class="armstrong-numbers">153</span> =
+          <span>1<sup class="digits">3</sup> + 5<sup class="digits">3</sup> + 3<sup class="digits">3</sup> 
+            = 1 + 125 + 27</span> =  <span class="armstrong-numbers">153</span>
+        </p>
+      </li>
+      <li class="example__item">not Armstrong number
+        <p>
+          <span class="not-armstrong-numbers">123</span> - number of digits: <span class="digits">3</span> ➡
+          <span class="not-armstrong-numbers">123</span> &ne;
+          <span>1<sup class="digits">3</sup> + 2<sup class="digits">3</sup> + 3<sup class="digits">3</sup> 
+            = 1 + 8 + 27</span> = <span class="not-armstrong-numbers">36</span>
+        </p>
+      </li>
+      <button class="btn btn-ok close-modal">OK</button>
+  </div>
+
 </body>
 
 </html>
