@@ -1,6 +1,6 @@
 'use strict';
 
-const number = document.querySelector('.number');
+const number = document.querySelector('#number');
 const initialBase = document.querySelector('#initial-base');
 const endBase = document.querySelector('#end-base');
 const btn = document.querySelector('.btn');
@@ -25,7 +25,7 @@ btn.addEventListener('click', e => {
     result = baseConverter(numb, initB, endB);
 
     displayResult.textContent = `
-    ${result === 'NaN' ? '😥 no conversion available' : result}`;
+    ${result === 'NaN' ? '😥 no conversion available' : `result: ${result}`}`;
   }
 });
 
