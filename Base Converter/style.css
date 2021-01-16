@@ -13,7 +13,7 @@ body {
   justify-content: center;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.8rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   color: #ffffff;
   background-color: #000000;
   text-align: left;
@@ -27,20 +27,24 @@ h1 {
   margin: 50px 0;
 }
 
-input[type='text'] {
+input {
   border: none;
   border-bottom: 1px solid #ffffff;
   font-family: inherit;
-  font-size: 1.5rem;
-  letter-spacing: .2rem;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
   padding: 10px 0;
   margin: 50px 30px 50px 0;
   cursor: pointer;
   background-color: transparent;
   color: #cffffe;
   outline: none;
-  width: 350px;
+  width: 85px;
   text-align: center;
+}
+
+input[type='number'] {
+  /* display: block; */
 }
 
 input[type='text']:focus,
@@ -55,7 +59,7 @@ input[type='text']::placeholder {
 button {
   font-family: inherit;
   font-size: 2rem;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   border-radius: 10px;
   border: 1px dotted #fff;
   background-color: #fff;
@@ -73,5 +77,5 @@ button:hover {
 .result {
   margin-top: 30px;
   font-size: 3.5rem;
-  display: inline;
+  height: 30px;
 }
