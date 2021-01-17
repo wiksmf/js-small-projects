@@ -4,23 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Factorial !</title>
+  <title>Factorial!</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="main.js"></script>
 </head>
 
 <body>
-  <main>
-    <h1>Factorial</h1>
-    <p>In mathematics, the factorial (n!) is the product of all positive integers less than or equal to of a positive
-      integer n.</p>
-    <form>
-      <input type="text" placeholder="enter a number" class="number">
-      <button>▶</button>
-      <p class="result">...</p>
+  <main class="main">
+    <h1 class="heading-primary">Factorial <sup class="open-modal">🛈</sup></h1>
+    <form class="form">
+      <input type="number" placeholder="enter a number" class="form__input">
+      <button class="btn btn-calc">calc!</button>
+      <p class="result"></p>
     </form>
   </main>
 
+
+  <div class="modal hidden">
+    <button class="btn btn-close close-modal">&times;</button>
+    <p class="definition-1">
+      According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Factorial">Wikipedia</a>,
+      the factorial of a positive integer n, denoted by n!, is the product of all positive integers
+      less than or equal to n:
+    </p>
+    <p class="definition-2">n! = 1 * 2 * 3 * (n + 1) * (n + 2) * (n + 3) * ..... * n</p>
+    <p class="examples">Examples:</p>
+    <ul class="example__list">
+      <li class="example__item">3! = 1 * 2 * 3 = 6</li>
+      <li class="example__item">5! = 1 * 2 * 3 * 4 * 5 = 120</li>
+      <li class="example__item">7! = 1 * 2 * 3 * 4 * 5 * 6 * 7 = 5040</li>
+    </ul>
+    <button class="btn btn-ok close-modal">OK</button>
+  </div>
 </body>
 
 </html>

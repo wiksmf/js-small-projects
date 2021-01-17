@@ -1,78 +1,153 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: 'Antic Slab', serif;
-  font-size: 1.8rem;
-  letter-spacing: .2rem;
-  color: #01c5c4;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  color: #ffcbf2;
   background-color: #31112c;
   text-align: left;
 }
 
-main {
-  width: 996px;
+/* MAIN */
+.main {
+  width: 100rem;
 }
 
-h1,
-h1+p {
-  margin: 50px 0;
+.heading-primary {
+  margin-bottom: 5rem;
 }
 
-input[type='text'] {
-  border: none;
-  border-bottom: 1px solid #01c5c4;
+.form__input,
+.btn {
   font-family: inherit;
-  font-size: 1.5rem;
-  letter-spacing: .2rem;
-  padding: 10px 0;
-  margin-right: 30px;
-  cursor: pointer;
-  background-color: transparent;
-  color: #cffffe;
+  font-size: 2.6rem;
+  letter-spacing: 0.3rem;
+  border: none;
+  border-radius: 1rem;
   outline: none;
-  width: 250px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.form__input {
+  width: 20rem;
+  padding: 1.2rem;
+  background-color: #44ffff26;
+  border: 1px solid #01c5c4;
+  color: #ffffff;
   text-align: center;
 }
 
-input[type='text']:focus,
-input[type='text']:hover {
-  outline: 2px dotted #cffffe;
+.form__input::placeholder {
+  color: #cffffea6;
+  font-size: 1.7rem;
 }
 
-input[type='text']::placeholder {
-  color: #cffffe6c;
+.btn {
+  font-weight: 700;
+  color: #31112c;
+  margin-left: 2rem;
+  padding: 1rem 1.4rem;
 }
 
-button {
-  font-family: inherit;
-  font-size: 3rem;
-  letter-spacing: .3rem;
-  border-radius: 10px;
-  border: none;
-  background-color: transparent;
-  color: #01c5c4;
-  cursor: pointer;
-  margin: 0 50px;
-  padding: 10px 14px;
+.form__input:focus,
+.form__input:hover {
+  outline: 1px dotted #cffffe;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #cffffe;
+.btn:focus,
+.btn:hover {
+  box-shadow: 0 0 1rem #000000a9;
+}
+
+.btn:active {
+  transform: translateY(0.3rem);
 }
 
 .result {
-  margin-top: 30px;
-  font-size: 3.5rem;
-  display: inline;
+  height: 5rem;
+  margin-top: 5rem;
+  font-size: 4.3rem;
+}
+
+/* MODAL STYLE */
+.hidden {
+  display: none;
+}
+
+.open-modal {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100rem;
+  height: 37rem;
+  padding: 7rem 8rem 7rem 4rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 1rem #00000041;
+  background-color: #fff;
+  color: #092532;
+}
+
+.definition-2 {
+  margin-top: 1.5rem;
+}
+
+.examples {
+  margin: 2rem 0 1rem;
+}
+
+.example__item {
+  margin-left: 3rem;
+  padding: 0.3rem 0;
+  list-style: disclosure-closed;
+}
+
+.btn-close {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.6rem;
+
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 5rem;
+  font-weight: 500;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btn-ok {
+  position: absolute;
+  bottom: 3rem;
+  right: 4.5rem;
+
+  font-weight: 700;
+  color: #fff;
+  background-color: #31112c;
 }
