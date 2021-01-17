@@ -1,28 +1,34 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap');
+
+/* RESET */
+* {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Goldman', cursive;
-  font-size: 3rem;
-  color: #fff;
-  background: linear-gradient(-45deg, #fff021, #f83232, #ff357f, #3523d5);
-  background-size: 200% 200%;
-  animation: gradient 20s linear infinite;
+  box-sizing: inherit;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
+html {
+  font-size: 62.5%;
+}
 
-  50% {
-    background-position: 50% 100%;
-  }
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  100% {
-    background-position: 0% 50%;
-  }
+  font-family: 'Goldman', cursive;
+  font-size: 6rem;
+  text-shadow: 0.1rem 0.1rem 0.3rem #000;
+  text-align: left;
+  color: #fff;
+  background: linear-gradient(-45deg, #fff021, #f83232, #ff357f, #3523d5);
+}
+
+/* MAIN */
+.date,
+.time {
+  height: 10rem;
 }

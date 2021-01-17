@@ -1,23 +1,24 @@
-const day = document.querySelector('.day');
-const date = document.querySelector('.date');
-const time = document.querySelector('.time');
+'use strict';
 
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
-];
+const displayDate = document.querySelector('.date');
+const displayTime = document.querySelector('.time');
 
-const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-  'Friday', 'Saturday'
-]
+// Display the date
+displayDate.textContent = new Intl.DateTimeFormat('default', {
+  dateStyle: 'full',
+}).format(new Date());
 
+// Display the time
+function getTime() {
+  displayTime.textContent = new Intl.DateTimeFormat('default', {
+    timeStyle: 'medium',
+  }).format(new Date());
+}
 
-day.textContent = `today is ${dayNames[new Date().getDay()]}`;
+// Display the time once the page loads
+getTime();
 
-
-date.textContent = `it is ${monthNames[new Date().getMonth()]} 
-  ${new Date().getDate()}, ${new Date().getFullYear()}`;
-
-
+// Update the time every second
 setInterval(() => {
-  time.textContent = `the time is ${new Date().toLocaleTimeString()}`;
-}, 1000)
+  getTime();
+}, 1000);
