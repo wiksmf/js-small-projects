@@ -1,36 +1,40 @@
 'use strict';
 
-const userInput = document.querySelector('input');
-const btnCheck = document.querySelector('button');
+const userInput = document.querySelector('.form__input');
+const btnCount = document.querySelector('.btn');
 const result = document.querySelector('.result');
 
-
-btnCheck.addEventListener('click', (e) => {
+btnCount.addEventListener('click', e => {
   e.preventDefault();
 
-  result.textContent = "";
+  result.textContent = '';
 
-  let string = userInput.value;
+  if (!userInput.value) {
+    result.textContent = '⚠️ missing input';
+    resetInput();
+    return;
+  }
 
-  if (string === '') return;
-
-  count(string);
+  count(userInput.value);
+  resetInput();
 });
 
-
+// Count occurrences of each word in the string
 function count(string) {
   let count = {};
 
   string
     .toLowerCase()
     .match(/\b\w+('\w)?/g)
-    .forEach(item => {
-      count[item] = (count[item] || 0) + 1;
-    });
-
-  console.log(count);
+    .forEach(item => (count[item] = (count[item] || 0) + 1));
 
   for (const [key, value] of Object.entries(count)) {
-    result.textContent += `${key}: ${value} `;
+    result.innerHTML += `${key}: ${value} <br/>`;
   }
+}
+
+// Reset input
+function resetInput() {
+  userInput.value = '';
+  userInput.focus();
 }

@@ -21,6 +21,7 @@ body {
   font-family: 'Monoton', cursive;
   text-align: center;
   background-color: #ff00ff;
+  box-sizing: border-box;
 }
 
 /* BODY */
