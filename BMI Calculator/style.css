@@ -140,7 +140,7 @@ input[type='number']:active {
 .btn:hover,
 .btn:active {
   background-color: #28abb9;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.424);
+  box-shadow: 0 0 1rem #0000006c;
   outline: 0.2rem dotted #b9b6d3;
 }
 

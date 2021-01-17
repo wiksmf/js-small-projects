@@ -84,7 +84,7 @@ function showResult(bmi) {
   if (bmi < 18.5) {
     infoBMI.textContent = `you are underweight 🖤`;
   } else if (bmi >= 18.5 && bmi <= 24.9) {
-    infoBMI.textContent = `You are at a healthy weight 💚`;
+    infoBMI.textContent = `you are at a healthy weight 💚`;
   } else if (bmi >= 25 && bmi <= 29.9) {
     infoBMI.textContent = `you are slightly overweight 💛`;
   } else {
