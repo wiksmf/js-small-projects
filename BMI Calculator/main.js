@@ -1,101 +1,93 @@
-const unit = document.querySelectorAll('[type="radio"]');
-const userInput = document.querySelectorAll('[type="text"]');
-const warningHeight = document.querySelector('.warningHeight');
-const warningWeight = document.querySelector('.warningWeight');
-const btnCalculate = document.querySelector('button');
+'use strict';
+
+const units = document.querySelectorAll('[type="radio"]');
+const userInput = document.querySelectorAll('[type="number"]');
+const heightInput = document.querySelector('#height');
+const weightInput = document.querySelector('#weight');
+const warning = document.querySelector('.warning');
+const btnCalc = document.querySelector('.btn');
 const result = document.querySelector('.result');
 const infoBMI = document.querySelector('.infoBMI');
 
-let bmi;
-let metricUnit = true;
-let heightCheck = false;
-let weightCheck = false;
-
+let bmi,
+  height,
+  weight,
+  metricUnit = true,
+  inputCheck = false;
 
 // Update the ui with user's choice
-for (let i = 0; i < unit.length; i++) {
-  unit[i].addEventListener('click', () => {
-    if (unit[i].value === 'metric') {
-      height.placeholder = 'Height (cm)';
-      weight.placeholder = 'Weight (kg)';
-      enableUserInput();
+units.forEach(unit => {
+  unit.addEventListener('click', () => {
+    if (unit.value === 'metric') {
+      displayPlaceholder('cm', 'kg');
       metricUnit = true;
     } else {
-      height.placeholder = 'Height (in)';
-      weight.placeholder = 'Weight (lbs)';
-      enableUserInput();
+      displayPlaceholder('in', 'lbs');
       metricUnit = false;
     }
-  })
-}
+    enableUserInput();
+  });
+});
 
+// Display correct placeholder
+function displayPlaceholder(heightInfo, weightInfo) {
+  heightInput.setAttribute('placeholder', `height (${heightInfo})`);
+  weightInput.setAttribute('placeholder', `weight (${weightInfo})`);
+}
 
 // Enable the user to enter data once a unit is selected
 function enableUserInput() {
-  for (let i = 0; i < userInput.length; i++) {
-    userInput[i].disabled = false;
-  }
-
-  btnCalculate.disabled = false;
+  userInput.forEach(input => (input.disabled = false));
+  btnCalc.disabled = false;
 }
-
 
 // Handle user request for BMI index
-btnCalculate.addEventListener('click', (e) => {
+btnCalc.addEventListener('click', e => {
   e.preventDefault();
 
-  let height = document.querySelector('#height').value;
-  let weight = document.querySelector('#weight').value;
+  height = +heightInput.value;
+  weight = +weightInput.value;
 
-  if (checkData(height, weight)) {
+  if (checkData(height, heightInput) && checkData(weight, weightInput))
     calcBMI(height, weight, metricUnit);
-  }
 });
 
-
 // Check if it's a valid input
-function checkData(height, weight) {
-
-  if ((height === '') || (height < 0) || (isNaN(height))) {
-    warningHeight.classList.remove('hidden');
+function checkData(input, inputInfo) {
+  if (!input || input < 0) {
+    warning.textContent = `Please provide a valid 
+      ${inputInfo.getAttribute('placeholder')}
+    `;
+    warning.classList.remove('hidden');
+    inputCheck = false;
   } else {
-    warningHeight.classList.add('hidden');
-    heightCheck = true;
+    warning.classList.add('hidden');
+    inputCheck = true;
   }
-
-  if ((weight === '') || (weight < 0) || (isNaN(weight))) {
-    warningWeight.classList.remove('hidden');
-  } else {
-    warningWeight.classList.add('hidden');
-    weightCheck = true;
-  }
-
-  return heightCheck && weightCheck;
+  return inputCheck;
 }
-
 
 // Calculate the BMI
 function calcBMI(height, weight, metricUnit) {
   if (metricUnit) {
-    bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+    bmi = (weight / (height / 100) ** 2).toFixed(1);
   } else {
-    bmi = ((730 * weight) / (height ** 2)).toFixed(1);
+    bmi = ((730 * weight) / height ** 2).toFixed(1);
   }
   showResult(bmi);
 }
 
-
 // Show the result
 function showResult(bmi) {
-  result.textContent = `Your BMI is ${bmi}`;
+  result.textContent = `your BMI is ${bmi}`;
 
   if (bmi < 18.5) {
-    infoBMI.textContent = `You are underweight`;
+    infoBMI.textContent = `you are underweight 🖤`;
   } else if (bmi >= 18.5 && bmi <= 24.9) {
-    infoBMI.textContent = `You are at a healthy weight`;
+    infoBMI.textContent = `You are at a healthy weight 💚`;
   } else if (bmi >= 25 && bmi <= 29.9) {
-    infoBMI.textContent = `You are slightly overweight`;
+    infoBMI.textContent = `you are slightly overweight 💛`;
   } else {
-    infoBMI.textContent = `You are heavily overweight`;
+    infoBMI.textContent = `you are heavily overweight 🖤`;
   }
 }

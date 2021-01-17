@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -30,13 +32,13 @@ form {
   padding: 40px 35px;
 }
 
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
+[type='radio']:checked,
+[type='radio']:not(:checked) {
   display: none;
 }
 
-[type="radio"]:checked+label,
-[type="radio"]:not(:checked)+label {
+[type='radio']:checked + label,
+[type='radio']:not(:checked) + label {
   display: inline;
   position: relative;
   padding-left: 30px;
@@ -45,8 +47,8 @@ form {
   cursor: pointer;
 }
 
-[type="radio"]:checked+label:before,
-[type="radio"]:not(:checked)+label:before {
+[type='radio']:checked + label:before,
+[type='radio']:not(:checked) + label:before {
   content: '';
   position: absolute;
   top: 0;
@@ -58,8 +60,8 @@ form {
   background-color: #fff;
 }
 
-[type="radio"]:checked+label:after,
-[type="radio"]:not(:checked)+label:after {
+[type='radio']:checked + label:after,
+[type='radio']:not(:checked) + label:after {
   content: '';
   position: absolute;
   top: 4px;
@@ -68,15 +70,15 @@ form {
   height: 14px;
   background: #0e918c;
   border-radius: 100%;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-[type="radio"]:not(:checked)+label:after {
+[type='radio']:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
 
-[type="radio"]:checked+label:after {
+[type='radio']:checked + label:after {
   opacity: 1;
   transform: scale(1);
 }
@@ -86,27 +88,30 @@ form {
   display: inline;
 }
 
-input[type='text'] {
-  display: block;
-  border: none;
-  border-bottom: 1px solid #b9b6d3;
+input[type='number'] {
+  display: inline-block;
+  border: 1px solid #b9b6d3;
   font-family: 'Oxygen', sans-serif;
   font-size: 1rem;
   letter-spacing: 2.5px;
-  padding: 15px 65px 15px 10px;
+  padding: 15px 5px;
   margin: 30px auto;
   cursor: pointer;
 }
 
-input[type='text']:focus,
-input[type='text']:hover,
-input[type='text']:active {
+input[type='number']:not(last-child) {
+  margin-left: 0.8rem;
+}
+
+input[type='number']:focus,
+input[type='number']:hover,
+input[type='number']:active {
   outline: 2px dotted #b9b6d3;
 }
 
-.warningHeight,
-.warningWeight {
-  font-size: .9rem;
+.warning {
+  height: 1.5rem;
+  font-size: 0.9rem;
   color: #ff0000;
 }
 
@@ -147,8 +152,9 @@ button[disabled] {
   text-decoration: underline;
   letter-spacing: 2.5px;
   padding: 5px;
+  height: 1.5rem;
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
