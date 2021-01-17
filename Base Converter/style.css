@@ -49,12 +49,12 @@ body {
   width: 18rem;
 }
 
-input::placeholder {
+#number::placeholder {
   color: #cffffe6c;
   font-size: 1.5rem;
 }
 
-button {
+.btn {
   display: block;
   padding: 1rem 1.5rem;
   background-color: #fff;

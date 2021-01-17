@@ -11,16 +11,16 @@ let numb, initB, endB, result;
 btn.addEventListener('click', e => {
   e.preventDefault();
 
-  numb = +number.value;
+  numb = number.value;
   initB = +initialBase.value;
   endB = +endBase.value;
 
   if (!numb) {
-    displayResult.textContent = `⚠ invalid input`;
+    displayResult.textContent = `⚠️ invalid input`;
   } else if (initB < 2 || initB.value > 36) {
-    displayResult.textContent = `⚠ initial base must be between 2 and 36`;
+    displayResult.textContent = `⚠️ initial base must be between 2 and 36`;
   } else if (endB < 2 || endB > 36) {
-    displayResult.textContent = `⚠ end base must be between 2 and 36`;
+    displayResult.textContent = `⚠️ end base must be between 2 and 36`;
   } else {
     result = baseConverter(numb, initB, endB);
 
@@ -31,5 +31,5 @@ btn.addEventListener('click', e => {
 
 // Convert a number from one base to another
 function baseConverter(numb, initB, endB) {
-  return parseInt(numb + '', initB).toString(endB);
+  return parseInt(numb, initB).toString(endB);
 }
