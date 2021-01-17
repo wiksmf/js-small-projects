@@ -1,67 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&family=Fredericka+the+Great&display=swap');
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #222831;
+
   font-family: 'Fredericka the Great', cursive;
-  color: rgb(255, 255, 255);
+  background-color: #222831;
+  color: #ffffff;
   text-align: center;
 }
 
-section {
+.display-flex {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+/* MAIN */
+section {
   justify-content: space-between;
 }
-
-h1 {
-  font-size: 3rem;
-  letter-spacing: .5rem;
+.heading-primary {
+  font-size: 5rem;
+  letter-spacing: 0.7rem;
 }
 
-p {
+.paragraph {
   display: inline-block;
-  width: 400px;
-  font-size: 13rem;
-  margin: 50px 100px;
+  width: 35rem;
+  font-size: 16rem;
+  margin: 5rem 10rem;
 }
 
 .negative-value {
-  color: rgb(213, 63, 98);
+  color: #ff003c;
 }
 
 .positive-value {
-  color: rgb(40, 223, 153);
+  color: #00ff9d;
 }
 
-button {
+.btn {
   background-color: transparent;
-  border: 3.5px dotted rgb(255, 255, 255);
+  border: 0.35rem dotted #ffffff;
   border-radius: 100%;
   font-family: 'Freckle Face', cursive;
-  color: rgb(255, 255, 255);
-  font-size: 3rem;
-  padding: 20px 35px;
+  color: inherit;
+  font-size: 5rem;
+  padding: 2rem 4rem;
   cursor: pointer;
   outline: none;
+  transition: all 0.3s;
 }
 
 .add:focus,
 .add:hover {
-  background-color: rgba(40, 223, 153, 0.1);
-  border-color: rgb(40, 223, 153);
-  color: rgb(40, 223, 153);
+  background-color: #28df991a;
+  border-color: #00ff9d;
+  color: #00ff9d;
 }
 
 .subtract:focus,
 .subtract:hover {
-  background-color: rgba(228, 95, 126, 0.1);
-  border-color: rgb(213, 63, 98);
-  color: rgb(213, 63, 98);
+  background-color: #e45f7e1a;
+  border-color: #ff003c;
+  color: #ff003c;
+}
+
+.btn:active {
+  transform: translateY(0.3rem);
 }
