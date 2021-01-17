@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
 
+/* RESET  */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -11,25 +17,26 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Oxygen', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   background-color: #6a8caf;
   background-image: url(images/dimension.png);
   text-align: center;
 }
 
+/* MAIN */
 main {
-  width: 500px;
+  width: 50rem;
   background-color: #feffe6;
-  border-radius: 10px;
-  padding: 40px 35px;
+  border-radius: 1rem;
+  padding: 4rem 3.5rem;
 }
 
-h1 {
+.heading-primary {
   text-decoration: underline;
 }
 
-form {
-  padding: 40px 35px;
+.form {
+  padding: 5rem 3.5rem 2rem;
 }
 
 [type='radio']:checked,
@@ -41,9 +48,9 @@ form {
 [type='radio']:not(:checked) + label {
   display: inline;
   position: relative;
-  padding-left: 30px;
-  padding-right: 20px;
-  line-height: 20px;
+  padding-left: 3rem;
+  padding-right: 2rem;
+  line-height: 2rem;
   cursor: pointer;
 }
 
@@ -53,8 +60,8 @@ form {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   border: 1px solid #b9b6d3;
   border-radius: 100%;
   background-color: #fff;
@@ -64,10 +71,10 @@ form {
 [type='radio']:not(:checked) + label:after {
   content: '';
   position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 14px;
-  height: 14px;
+  top: 0.4rem;
+  left: 0.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
   background: #0e918c;
   border-radius: 100%;
   transition: 0.3s ease-in-out;
@@ -84,61 +91,65 @@ form {
 }
 
 .units {
-  margin: 20px 10px 10px 0;
+  margin: 2rem 1rem;
   display: inline;
+}
+
+input,
+.btn {
+  font-family: inherit;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  border: 0.1rem solid #b9b6d3;
+  border-radius: 0.2rem;
+  transition: all 0.2s;
 }
 
 input[type='number'] {
   display: inline-block;
-  border: 1px solid #b9b6d3;
-  font-family: 'Oxygen', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 2.5px;
-  padding: 15px 5px;
-  margin: 30px auto;
-  cursor: pointer;
+  padding: 1.5rem 0.5rem;
+  margin: 3rem auto;
 }
 
 input[type='number']:not(last-child) {
-  margin-left: 0.8rem;
+  margin-left: 1rem;
 }
 
 input[type='number']:focus,
 input[type='number']:hover,
 input[type='number']:active {
-  outline: 2px dotted #b9b6d3;
+  outline: 0.2rem dotted #b9b6d3;
 }
 
 .warning {
   height: 1.5rem;
-  font-size: 0.9rem;
   color: #ff0000;
 }
 
-button {
-  font-family: 'Oxygen', sans-serif;
-  font-size: 1rem;
+.btn {
+  margin: 4rem auto 2rem;
+  padding: 2rem 5rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  border: none;
   background-color: #0e918c;
-  border-radius: 5px;
   color: #fff;
-  cursor: pointer;
-  padding: 20px 50px;
-  margin: 40px auto 0px;
 }
 
-button:focus,
-button:hover,
-button:active {
+.btn:focus,
+.btn:hover,
+.btn:active {
   background-color: #28abb9;
-  outline: 2px dotted #b9b6d3;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.424);
+  outline: 0.2rem dotted #b9b6d3;
 }
 
-button:disabled,
-button[disabled] {
+.btn:active {
+  transform: translateY(0.5rem);
+}
+
+.btn:disabled,
+.btn[disabled] {
   background-color: #cccccc;
   color: #666666;
   outline: none;
@@ -147,12 +158,10 @@ button[disabled] {
 
 .result,
 .infoBMI {
+  height: 2rem;
   font-weight: 700;
-  text-transform: lowercase;
-  text-decoration: underline;
-  letter-spacing: 2.5px;
-  padding: 5px;
-  height: 1.5rem;
+  letter-spacing: 0.3rem;
+  padding: 0.5rem;
 }
 
 .hidden {

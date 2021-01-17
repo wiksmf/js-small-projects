@@ -55,7 +55,7 @@ btnCalc.addEventListener('click', e => {
 // Check if it's a valid input
 function checkData(input, inputInfo) {
   if (!input || input < 0) {
-    warning.textContent = `Please provide a valid 
+    warning.textContent = `please provide a valid 
       ${inputInfo.getAttribute('placeholder')}
     `;
     warning.classList.remove('hidden');
