@@ -11,15 +11,31 @@
 
 <body>
   <main>
-    <h1>Fibonacci</h1>
-    <p>Enter a positive number to get the first n Fibonacci numbers.</p>
+    <h1 class="heading-primary">Fibonacci <sup class="open-modal">🛈</sup></h1>
     <form>
-      <input type="text" placeholder="enter a number" class="number">
-      <button>▶</button>
-      <p class="result">...</p>
+      <label class="form__label" for="fib-sequence">Enter a positive number to get the first n Fibonacci numbers.</label>
+      <input type="number" placeholder="enter a number" id="fib-sequence" class="form__input">
+      <button class="btn">get sequence</button>
+      <p class="result"></p>
     </form>
   </main>
 
+  <div class="modal hidden">
+    <button class="btn btn-close close-modal">&times;</button>
+    <p class="definition-1">
+      According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Fibonacci_number">Wikipedia</a>,
+      the Fibonacci numbers, commonly denoted F<sub>n</sub>, form a sequence, called the Fibonacci sequence, such that each 
+      number is the sum of the two preceding ones, starting from 0 and 1.
+      <p class="definition-2"> That is,</p>
+      <p class="fibonacci-numbers">F<sub>0</sub> = 0</p>
+      <p class="fibonacci-numbers">F<sub>1</sub> = 1</p>
+      and for n > 1
+      <p class="fibonacci-numbers">F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></p>
+    </p>
+    <p class="examples">The beginning of the sequence is thus:</p>
+      <p class="">0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, ...</p>
+    <button class="btn btn-ok close-modal">OK</button>
+  </div>
 </body>
 
 </html>

@@ -1,78 +1,154 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: 'Antic Slab', serif;
-  font-size: 1.8rem;
-  letter-spacing: .2rem;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
   color: #ffa5a5;
   background-color: #373a40;
   text-align: left;
 }
 
+/* MAIN */
 main {
-  width: 996px;
+  width: 80rem;
 }
 
-h1,
-h1+p {
-  margin: 50px 0;
+.heading-primary {
+  margin-bottom: 5rem;
 }
 
-input[type='text'] {
-  border: none;
-  border-bottom: 1px solid #ffa5a5;
+.form__label {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.form__input,
+.btn {
+  margin-bottom: 2rem;
   font-family: inherit;
-  font-size: 1.5rem;
-  letter-spacing: .2rem;
-  padding: 10px 0;
-  margin-right: 30px;
-  cursor: pointer;
-  background-color: transparent;
-  color: #cffffe;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  border: none;
+  border-radius: 1rem;
   outline: none;
-  width: 250px;
-  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-input[type='text']:focus,
-input[type='text']:hover {
-  outline: 2px dotted #cffffe;
+.form__input {
+  width: 30rem;
+  border: 0.1rem solid #ffa5a5;
+  padding: 1rem;
+  background-color: #ffa5a541;
+  color: #cffffe;
 }
 
-input[type='text']::placeholder {
+.form__input::placeholder {
   color: #cffffe6c;
 }
 
-button {
-  font-family: inherit;
-  font-size: 3rem;
-  letter-spacing: .3rem;
-  border-radius: 10px;
-  border: none;
-  background-color: transparent;
-  color: #ffa5a5;
-  cursor: pointer;
-  margin: 0 50px;
-  padding: 10px 14px;
+.btn {
+  display: block;
+  border-radius: 1rem;
+  background-color: #ffa5a5;
+  color: #373a40;
+  padding: 1.2rem 1.5rem;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #cffffe;
+.form__input:focus,
+.form__input:hover,
+.btn:focus,
+.btn:hover {
+  outline: 0.2rem dotted #ff00d4;
+}
+
+.btn:active {
+  transform: translateY(0.3rem);
 }
 
 .result {
-  margin-top: 30px;
-  font-size: 3.5rem;
-  display: inline;
+  height: 5rem;
+  margin-top: 5rem;
+  font-size: 4.3rem;
+}
+
+/* MODAL STYLE */
+.hidden {
+  display: none;
+}
+
+.open-modal {
+  cursor: pointer;
+  color: #ff00d4;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100rem;
+  height: 50rem;
+  padding: 7rem 8rem 7rem 4rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 1rem #00000041;
+  background-color: #fff;
+  color: #092532;
+}
+
+.definition-2 {
+  margin-top: 1.5rem;
+}
+
+.fibonacci-numbers {
+  margin: 1rem 2rem;
+}
+
+.examples {
+  margin: 2rem 0 1rem;
+}
+
+.btn-close {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.6rem;
+
+  margin: 0;
+  padding: 0;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 5rem;
+  font-weight: 500;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btn-ok {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 4.5rem;
+
+  font-weight: 700;
+  color: #fff;
+  background-color: #31112c;
 }

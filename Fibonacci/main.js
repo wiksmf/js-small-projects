@@ -1,31 +1,53 @@
 'use strict';
 
-const userInput = document.querySelector('.number');
-const btnCheck = document.querySelector('button');
+const userInput = document.querySelector('.form__input');
+const btn = document.querySelector('.btn');
 const result = document.querySelector('.result');
+const displayInfo = document.querySelector('.modal');
+const btnOpenModal = document.querySelector('.open-modal');
+const btnCloseModal = document.querySelectorAll('.close-modal');
 
-let next;
+let sequence = [];
 
-btnCheck.addEventListener('click', (e) => {
+btn.addEventListener('click', e => {
   e.preventDefault();
 
-  let number = +userInput.value;
+  if (!userInput.value || userInput.value < 0) {
+    result.textContent = `⚠️ it must be a positive integer`;
+    resetInput();
+    return;
+  }
 
-  if (isNaN(number) || (number === '')) return;
-
-  result.textContent = `${fibonacci(number)}`;
-
-  userInput.value = '';
-  next = [];
+  for (let i = 0; i <= userInput.value; i++) sequence.push(fibonacci(i));
+  result.textContent = sequence.join(', ');
+  resetInput();
 });
 
-
-function fibonacci(number) {
-
-  if (number === 1) return [0, 1];
-  else {
-    next = fibonacci(number - 1)
-    next.push(next[next.length - 1] + next[next.length - 2]);
-    return next;
-  }
+// Get the first n Fibonacci numbers
+function fibonacci(n) {
+  if (n < 2) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }
+
+// Reset input field and sequence array
+function resetInput() {
+  userInput.value = '';
+  userInput.focus();
+  sequence = [];
+}
+
+// Handling information modal
+btnOpenModal.addEventListener('click', () => {
+  displayInfo.classList.remove('hidden');
+});
+
+btnCloseModal.forEach(btn => {
+  btn.addEventListener('click', () => {
+    displayInfo.classList.add('hidden');
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !btnCloseModal.classList.contains('hidden'))
+    displayInfo.classList.add('hidden');
+});
