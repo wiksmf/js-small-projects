@@ -20,6 +20,6 @@ const tellJoke = async function () {
     const joke = await getJoke.json();
     parJoke.textContent = joke.joke;
   } catch (err) {
-    console.log(`💥 ${err}`);
+    alert(`💥 ${err}`);
   }
 };
