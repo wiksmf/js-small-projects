@@ -5,23 +5,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leap Year</title>
-  <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
   <main>
-    <h1>Is it a Leap Year?</h1>
-
+    <h1 class="heading-primary">Is it a Leap Year<sup class="open-modal">🛈</sup>?</h1>
     <form>
-      <input type="text" placeholder="enter a valid year">
-      <button>check</button>
+      <input type="number" class="form__input" placeholder="enter an year">
+      <button class="btn btn-check">check</button>
     </form>
 
-    <p>...</p>
+    <p class="result"></p>
   </main>
 
-  <script src="main.js"></script>
+  <div class="modal hidden">
+    <button class="btn btn-close close-modal">&times;</button>
+    <p class="definition">
+      According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Leap_year">Wikipedia</a>, 
+      A leap year is a calendar year that contains an additional day (or, in the case of a lunisolar calendar, a month) 
+      added to keep the calendar year synchronized with the astronomical year or seasonal year
+    </p>
+    <p class="examples">Examples:</p>
+    <ul class="example__list">
+      <li class="example__item">1904</li>
+      <li class="example__item">1936</li>
+      <li class="example__item">1972</li>
+      <li class="example__item">2016</li>
+    </ul>
+    <button class="btn btn-ok close-modal">OK</button>
+  </div>
 </body>
 
 </html>

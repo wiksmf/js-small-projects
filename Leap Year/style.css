@@ -1,54 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   background-color: #283149;
   background-image: url(images/asfalt-light.png);
   color: #93deff;
   font-family: 'Chelsea Market', cursive;
   font-size: 2.8rem;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   text-align: center;
 }
 
-form {
-  margin: 100px auto;
+/* MAIN */
+.heading-primary {
+  margin-bottom: 5rem;
 }
 
-input {
-  padding: 10px 20px;
+.form__input,
+.btn {
   font-family: 'Chelsea Market', cursive;
   font-size: 2rem;
-  letter-spacing: .5rem;
-  text-align: center;
-  background-color: transparent;
-  border-radius: 10px;
-  border: 3px dotted #fbffa8;
-  color: #fbffa8;
+  letter-spacing: 0.5rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
   outline: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.1s;
 }
 
-input::placeholder {
+.form__input {
+  background-color: transparent;
+  border: 0.3rem dotted #fbffa8;
+  color: #fbffa8;
+}
+
+.form__input::placeholder {
   color: #afc3fa;
   font-size: 1.5rem;
 }
 
-button {
-  font-family: 'Chelsea Market', cursive;
-  font-size: 2rem;
+.btn {
   background-color: #fbffa8;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
   color: #283149;
-  outline: none;
-  cursor: pointer;
+}
+
+.form__input:focus,
+.form__input:hover,
+.btn:focus,
+.btn:hover {
+  outline: 0.2rem dotted #d8a8ff;
+}
+
+.btn:active {
+  transform: translateY(0.2rem);
+}
+
+.result {
+  height: 3rem;
+  margin-top: 3rem;
+  font-size: 3rem;
 }
 
 .is-leap {
@@ -57,4 +86,63 @@ button {
 
 .is-not-leap {
   color: #ff0000;
+}
+
+/* MODAL STYLE */
+.hidden {
+  display: none;
+}
+
+.open-modal {
+  cursor: pointer;
+  color: #fbffa8;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80rem;
+  height: 40rem;
+  padding: 9rem 4rem 12rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 1rem #00000041;
+  background-color: #fff;
+  color: #092532;
+  text-align: left;
+}
+
+.examples {
+  margin: 2rem 0 1rem;
+}
+
+.example__item {
+  margin-left: 3rem;
+  padding: 0.3rem 0;
+  list-style: disclosure-closed;
+}
+
+.btn-close {
+  position: absolute;
+  top: 2.2rem;
+  right: 2.7rem;
+
+  padding: 1rem;
+  line-height: 2.5rem;
+  font-size: 5rem;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btn-ok {
+  position: absolute;
+  bottom: 3rem;
+  right: 4.5rem;
+
+  font-weight: 700;
+  color: #fff;
+  background-color: #092532;
 }
