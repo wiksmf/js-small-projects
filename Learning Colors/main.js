@@ -1,31 +1,32 @@
+'use strict';
+
 const bgColor = document.querySelector('body');
-const btnChange = document.querySelector('button');
-const paragraph = document.querySelector('p');
+const btnChange = document.querySelector('.btn');
+const paragraph = document.querySelector('.color-name');
 
 const baseURL = `https://www.thecolorapi.com/id?hex`;
-let url;
 
 btnChange.addEventListener('click', updatePage);
 
+async function updatePage() {
+  try {
+    const res = await fetch(`${baseURL}=${getRandomColor()}`);
+    if (!res.ok)
+      throw new Error('Whoops.. there are some problems getting the color 🎨');
 
-function updatePage() {
-  paragraph.classList.remove('fade');
-  url = `${baseURL}=${getRandomColor()}`;
+    const color = await res.json();
 
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.name.value === 'Black' && data.hex.value !== '#000') {
-        paragraph.textContent = `unknown 🤔`;
-        paragraph.classList.add('fade');
-      } else {
-        paragraph.textContent = data.name.value;
-        paragraph.classList.add('fade');
-      }
-      bgColor.style.backgroundColor = data.hex.value;
-    });
-};
-
+    paragraph.textContent = `
+    ${
+      color.name.value === 'Black' && color.hex.value !== '#000'
+        ? 'unknown 🤔'
+        : `${color.name.value}`
+    }`;
+    bgColor.style.backgroundColor = color.hex.value;
+  } catch (err) {
+    alert(err);
+  }
+}
 
 function getRandomColor() {
   return Math.floor(Math.random() * 10000000).toString(16);

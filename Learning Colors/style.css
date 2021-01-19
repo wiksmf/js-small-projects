@@ -1,84 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Raleway:ital,wght@1,200&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
+  box-sizing: border-box;
   height: 100vh;
+  flex-direction: column;
+
   background-color: #32e0c4;
   color: #222831;
   font-family: 'Barrio', cursive;
-  font-size: 1.3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
-h1 {
-  margin-bottom: 150px;
+.display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-img {
-  width: 250px;
+/* MAIN */
+.main {
+  width: 70rem;
+}
+.heading-primary {
+  margin-bottom: 8rem;
+}
+.container {
+  justify-content: space-evenly;
 }
 
-div>p {
-  font-size: 3rem;
-}
-
-button {
+.btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #ffffdd;
+.btn-img {
+  width: 20rem;
 }
 
-footer {
+.btn:focus,
+.btn:hover {
+  outline: 0.2rem dotted #ffffdd;
+}
+
+.color-name {
+  height: 10rem;
+  width: 20rem;
+  font-size: 3rem;
+}
+
+.footer {
   font-family: 'Raleway', sans-serif;
-  font-size: .7rem;
+  font-size: 0.7rem;
   color: #ffffdd;
   letter-spacing: 0.2rem;
   position: fixed;
-  bottom: 25px;
-  right: 5px;
+  bottom: 2.5rem;
+  right: 0.5rem;
   transform: rotate(180deg);
   writing-mode: vertical-rl;
 }
 
-a {
+.footer__link {
   text-decoration-style: dotted;
   color: #ffffdd;
 }
 
-a:focus,
-a:hover {
-  outline: 2px dotted #ffffdd;
-}
-
-.fade {
-  animation: fadeIn ease 0.5s;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  main {
-    max-width: 600px;
-  }
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
+.footer__link:focus,
+.footer__link:hover {
+  outline: 0.2rem dotted #ffffdd;
 }
