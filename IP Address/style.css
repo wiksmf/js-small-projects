@@ -1,23 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: 'JetBrains Mono', monospace;
-  letter-spacing: .4rem;
+  letter-spacing: 0.4rem;
   text-align: center;
 }
 
-
+/* MAIN */
 .ip-address {
-  margin-top: 30px;
-  font-size: 5rem;
+  margin-top: 3rem;
+  font-size: 6rem;
 }

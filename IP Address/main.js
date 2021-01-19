@@ -1,17 +1,23 @@
 'use strict';
 
-const url = `https://geo.ipify.org/api/v1?apiKey=at_1QfBS2E81fiEQCp9HnKNyG2RT2VsI`;
+const url = `https://geo.ipify.org/api/v1?apiKey=${config.API_KEY}`;
 
-const btnCreate = document.querySelector('button');
 const userIP = document.querySelector('.ip-address');
 
+// Get user's IP address
 async function getIP(url) {
-  await fetch(url)
-    .then(res => res.json())
-    .then(data => userIP.textContent = data.ip)
-    .catch((err) => {
-      console.log(`There has been a problem with your fetch operation: ${err.message}`);
-    });
-};
+  try {
+    const res = await fetch(url);
+    if (!res.ok)
+      throw new Error(
+        `Whoops... it looks like we're having problem getting location data 😟`,
+      );
+
+    const getIP = await res.json();
+    userIP.textContent = getIP.ip;
+  } catch (err) {
+    alert(err);
+  }
+}
 
 getIP(url);
