@@ -1,78 +1,175 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: 'Antic Slab', serif;
-  font-size: 1.8rem;
-  letter-spacing: .2rem;
-  color: #ea2c62;
-  background-color: #9ad3bc;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  color: #ad2048;
+  background-color: #c2ffe6;
   text-align: left;
 }
 
-main {
-  width: 996px;
+/* MAIN */
+.main {
+  width: 80rem;
 }
 
-h1,
-h1+p {
-  margin: 50px 0;
+.heading-primary {
+  margin-bottom: 5rem;
 }
 
-input[type='text'] {
-  border: none;
-  border-bottom: 1px solid #ea2c62;
+.form__label {
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.form__input,
+.btn {
+  margin-bottom: 2rem;
   font-family: inherit;
-  font-size: 1.5rem;
-  letter-spacing: .2rem;
-  padding: 10px 0;
-  margin: 50px 30px;
-  cursor: pointer;
-  background-color: transparent;
-  color: #ea2c62;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  border: none;
+  border-radius: 1rem;
   outline: none;
-  width: 250px;
-  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-input[type='text']:focus,
-input[type='text']:hover {
-  outline: 2px dotted #ea2c62;
+.form__input {
+  width: 22rem;
+  border: 0.1rem solid #ea2c62;
+  padding: 1.3rem;
+  background-color: #fffafc6e;
+  color: #ea2c62;
 }
 
-input[type='text']::placeholder {
+.form__input::placeholder {
   color: #ea2c626c;
 }
 
-button {
-  font-family: inherit;
-  font-size: 3rem;
-  letter-spacing: .3rem;
-  border-radius: 10px;
-  border: none;
-  background-color: transparent;
-  color: #ea2c62;
-  cursor: pointer;
-  margin: 0 50px;
-  padding: 10px 14px;
+.btn {
+  margin-left: 2rem;
+  background-color: #ad2048;
+  color: #ffffff;
+  padding: 1.2rem 1.5rem;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #ea2c62;
+.form__input:focus,
+.form__input:hover,
+.btn:focus,
+.btn:hover {
+  outline: 0.2rem dotted #f700ff;
+}
+
+.btn:active {
+  transform: translateY(0.3rem);
 }
 
 .result {
-  margin-top: 30px;
-  font-size: 3.5rem;
-  display: inline;
+  height: 5rem;
+  margin-top: 3rem;
+  font-size: 2.2rem;
+}
+
+/* MODAL STYLE */
+.hidden {
+  display: none;
+}
+
+.open-modal {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80rem;
+  height: 45rem;
+  padding: 7rem 8rem 7rem 4rem;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 1rem #00000041;
+  background-color: #fff;
+  color: #092532;
+}
+
+.examples {
+  margin: 2rem 0 1rem;
+}
+
+.example__list {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.example__item {
+  margin-left: 3rem;
+  padding: 0.3rem 0;
+  list-style: square;
+}
+
+.happy-number,
+.intermediate-sum,
+.final-sum {
+  font-weight: bolder;
+}
+
+.happy-number {
+  color: #04c70e;
+}
+
+.intermediate-sum {
+  color: #33b2d1;
+}
+
+.final-sum {
+  color: #ff56f7;
+}
+
+.btn-close {
+  position: absolute;
+  top: 3.2rem;
+  right: 3rem;
+
+  margin: 0;
+  padding: 0;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 5rem;
+  font-weight: 500;
+  color: #ad2048;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btn-ok {
+  position: absolute;
+  bottom: 0.3rem;
+  right: 3.8rem;
+
+  font-weight: 700;
+  color: #fff;
+  background-color: #ad2048;
 }
