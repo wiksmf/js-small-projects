@@ -1,29 +1,24 @@
 'use strict';
 
-const input = document.querySelector('input');
-const btnFind = document.querySelector('button');
+const input = document.querySelector('.form__input');
+const btnFind = document.querySelector('.btn');
 const displayResult = document.querySelector('.result');
 
-
-btnFind.addEventListener('click', (e) => {
+btnFind.addEventListener('click', e => {
   e.preventDefault();
 
-  let string = input.value;
+  if (!input.value) {
+    displayResult.textContent = '⚠️ invalid input';
+    return;
+  }
 
-  if (string.length === 0) return;
-
-  displayResult.textContent = findLongestWord(string);
+  displayResult.textContent = findLongestWord(input.value);
 });
 
-
+// Find and return the longest word in the sentence
 function findLongestWord(string) {
-  let strArray = string.match(/\w[a-z]{0,}/gi);
-  let longestWord = strArray[0];
+  const strArray = string.match(/\w[a-z]{0,}/gi);
+  const longestWord = strArray.sort((a, b) => b.length - a.length);
 
-  for (let i = 1; i < strArray.length; i++) {
-    if (longestWord.length < strArray[i].length) {
-      longestWord = strArray[i];
-    }
-  }
-  return longestWord;
+  return `${longestWord[0]}: ${longestWord[0].length} letters`;
 }

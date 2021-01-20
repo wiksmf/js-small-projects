@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap');
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -15,60 +21,56 @@ body {
   font-size: 2.5rem;
   color: #eeff00;
   background-color: #ff4800;
-  text-align: center;
 }
 
+/* MAIN */
 main {
-  width: 800px;
+  width: 80rem;
 }
 
-h1 {
-  margin: 50px 0;
+.heading-primary {
+  margin-bottom: 5rem;
 }
 
-input[type='text'] {
-  border: none;
-  border-bottom: 1px solid #eeff00;
+.form__input,
+.btn {
   font-family: inherit;
   font-size: 2rem;
-  letter-spacing: .2rem;
-  padding: 10px 0;
-  margin-right: 30px;
+  letter-spacing: 0.3rem;
+  border: none;
+  outline: none;
   cursor: pointer;
+}
+
+.form__input {
+  border-bottom: 1px solid #eeff00;
+  padding: 1rem 0;
+  margin-right: 3rem;
   background-color: transparent;
   color: #cffffe;
-  outline: none;
-  width: 600px;
+  width: 60rem;
 }
 
-input[type='text']:focus,
-input[type='text']:hover {
-  outline: 2px dotted #cffffe;
-}
-
-input[type='text']::placeholder {
+.form__input::placeholder {
   color: #fff45dc2;
 }
 
-button {
-  font-family: inherit;
-  font-size: 2rem;
-  letter-spacing: .3rem;
+.btn {
   border-radius: 10px;
-  border: none;
   background-color: #eeff00;
   color: #ff4800;
-  cursor: pointer;
-  padding: 10px 14px;
+  padding: 1rem 1.4rem;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #cffffe;
+.form__input:focus,
+.form__input:hover,
+.btn:focus,
+.btn:hover {
+  outline: 0.2rem dotted #cffffe;
 }
 
 .result {
-  text-align: center;
-  margin-top: 30px;
+  height: 4rem;
+  margin-top: 4rem;
   font-size: 3.5rem;
 }
