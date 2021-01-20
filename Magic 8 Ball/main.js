@@ -1,39 +1,33 @@
-const userInput = document.querySelector('input');
+'use strict';
+
+const userInput = document.querySelector('.form__input');
 const result = document.querySelector('.result');
-const btnAsk = document.querySelector('button');
+const btnAsk = document.querySelector('.btn');
 
-var answers = ["It is certain.",
-  "It is decidedly so.",
-  "Without a doubt.",
-  "Yes, definitely.",
-  "You may rely on it.",
-  "As I see it, yes.",
-  "Most likely.",
-  "Outlook good.",
-  "Yes.",
-  "Signs point to yes.",
-  "Don't count on it.",
-  "My reply is no.",
-  "My sources say no.",
-  "Outlook not so good.",
-  "Very doubtful.",
-  "Reply hazy, try again.",
-  "Ask again later.",
-  "Better not tell you now.",
-  "Cannot predict now.",
-  "Concentrate and ask again."
-];
+const url = 'https://8ball.delegator.com/magic/JSON/';
 
-
-btnAsk.addEventListener("click", (e) => {
+btnAsk.addEventListener('click', e => {
   e.preventDefault();
 
-  let question = userInput.value;
+  if (!userInput.value) {
+    result.textContent = '⚠️ enter a question';
+    return;
+  }
 
-  if (question.length === 0) return;
-  result.textContent = answers[randomNumber(answers.length)];
+  getAnswer(userInput.value);
 });
 
-function randomNumber(answers) {
-  return Math.floor(Math.random() * answers);
+async function getAnswer(question) {
+  try {
+    const res = await fetch(`${url}${question}`);
+    if (!res.ok)
+      throw new Error(
+        'Great question, but are you sure you want to know the answer?',
+      );
+
+    const answer = await res.json();
+    result.textContent = answer.magic.answer;
+  } catch (err) {
+    alert(`💥 ${err}`);
+  }
 }

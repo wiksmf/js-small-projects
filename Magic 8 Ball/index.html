@@ -9,17 +9,23 @@
   <script defer src="main.js"></script>
 </head>
 
-<body>
-  <main>
-    <h1>Magic 8 Ball</h1>
-    <p>Ask me what you want to know</p>
+<body class="display-flex">
+  <main class="main display-flex">
+    <h1 class="heading-primary">Magic 8 Ball</h1>
+    <p class="paragraph">Ask me what you want to know</p>
 
-    <form>
-      <input type="text">
-      <button>ASK</button>
+    <form class="display-flex">
+      <input type="text" class="form__input">
+      <button class="btn">ASK</button>
     </form>
 
-    <p class="result">...</p>
+    <div class="display-flex result-external-container">
+      <div class="display-flex result-internal-container">
+        <div class="display-flex result-container">
+          <p class="result"></p>
+        </div>
+      </div>
+    </div>
 </body>
 
 </html>
