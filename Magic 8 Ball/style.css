@@ -16,7 +16,7 @@ body {
   height: 100vh;
   background-color: #252525;
   color: #00f7ff;
-  font-family: 'Bungee Outline', cursive;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.7rem;
   text-align: center;
 }
@@ -33,12 +33,19 @@ body {
 }
 
 .heading-primary {
+  font-family: 'Bungee Outline', cursive;
   text-shadow: 0.3rem 0.3rem 0.3rem #009499;
+}
+
+.paragraph {
+  margin-bottom: 2rem;
 }
 
 .form__input {
   margin-right: 2rem;
-  padding: 1.2rem 25rem 0.5rem 1rem;
+  border-radius: 2rem;
+  padding: 1.2rem 1rem;
+  width: 50rem;
 }
 
 .btn {
@@ -85,7 +92,6 @@ body {
 
   margin-top: 3rem;
   max-width: 15rem;
-  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   color: #fff;
 }
