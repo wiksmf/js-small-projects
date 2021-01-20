@@ -1,57 +1,80 @@
 'use strict';
 
-const slideList = [
-  {
-    img: 'images/img1.jpg',
-    text: `<a href='https://www.pexels.com/'>Photos on Pexels</a>`
-  },
-  {
-    img: 'images/img2.jpg',
-    text: `<a href='https://www.pexels.com/'>Photos on Pexels</a>`
-  },
-  {
-    img: 'images/img3.jpg',
-    text: `<a href='https://www.pexels.com/'>Photos on Pexels</a>`
-  },
-  {
-    img: 'images/img4.jpg',
-    text: `<a href='https://www.pexels.com/'>Photos on Pexels</a>`
-  },
-  {
-    img: 'images/img5.jpg',
-    text: `<a href='https://www.pexels.com/'>Photos on Pexels</a>`
-  },
-  {
-    img: 'images/img6.jpg',
-    text: `<a href='https://www.pexels.com/'>Photos on Pexels</a>`
-  },
-];
+const slides = document.querySelectorAll('.slide');
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+const dotsContainer = document.querySelector('.dots');
 
-const image = document.querySelector('img.slider');
-const h1 = document.querySelector('h1.slider');
-const dots = [...document.querySelectorAll('.dots span')];
+let currentSlide = 0;
+const maxSlide = slides.length;
 
-const time = 5000;
-let active = 0;
-
-
-const changeDot = () => {
-  const activeDot = dots.findIndex(dot => dot.classList.contains('active'));
-  dots[activeDot].classList.remove('active');
-  dots[active].classList.add('active');
-};
-
-
-const changeSlider = () => {
-  active++;
-  if (active === slideList.length) {
-    active = 0;
-  }
-
-  image.src = slideList[active].img;
-  h1.innerHTML = slideList[active].text;
-  changeDot();
+// Create the dots (number of dots = number of slides)
+function createDots() {
+  slides.forEach((_, i) => {
+    dotsContainer.insertAdjacentHTML(
+      'beforeend',
+      `<button class="dots__dot" data-slide="${i}"></button>`,
+    );
+  });
 }
 
+// Highlight the dot corresponding to the active slide
+function activeDot(slide) {
+  document
+    .querySelectorAll('.dots__dot')
+    .forEach(dot => dot.classList.remove('dots__dot--active'));
 
-setInterval(changeSlider, time);
+  document
+    .querySelector(`.dots__dot[data-slide="${slide}"]`)
+    .classList.add('dots__dot--active');
+}
+
+// Move to the selected slide slide
+function goToSlide(slide) {
+  slides.forEach(
+    (sl, i) => (sl.style.transform = `translateX(${100 * (i - slide)}%)`),
+  );
+}
+
+// Move to the next slide
+function nextSlide() {
+  currentSlide === maxSlide - 1 ? (currentSlide = 0) : currentSlide++;
+
+  goToSlide(currentSlide);
+  activeDot(currentSlide);
+}
+
+// Move to the previous slide
+function previousSlide() {
+  currentSlide === 0 ? (currentSlide = maxSlide - 1) : currentSlide--;
+
+  goToSlide(currentSlide);
+  activeDot(currentSlide);
+}
+
+// Event handlers
+btnRight.addEventListener('click', nextSlide);
+btnLeft.addEventListener('click', previousSlide);
+
+document.addEventListener('keydown', e => {
+  e.key === 'ArrowLeft' && previousSlide();
+  e.key === 'ArrowRight' && nextSlide();
+});
+
+dotsContainer.addEventListener('click', e => {
+  if (e.target.classList.contains('dots__dot')) {
+    const { slide } = e.target.dataset;
+    goToSlide(slide);
+    activeDot(slide);
+  }
+});
+
+// Initialize functions
+function init() {
+  goToSlide(0);
+  createDots();
+
+  activeDot(0);
+}
+
+init();

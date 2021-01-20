@@ -6,23 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photo Slider</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
 
 <body>
   <main>
-    <div>
-      <img class="slider" src="images/img1.jpg" alt="">
-      <h1 class="slider"><a href='https://www.pexels.com/'>Photos on Pexels</a></h1>
-      <div class="dots">
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="slider">
+      <div class="slide">
+        <img class="slider" src="images/img1.jpg" alt="">
       </div>
-  </main>
 
-  <script src="main.js"></script>
+      <div class="slide">
+        <img class="slider" src="images/img2.jpg" alt="">
+      </div>
+
+      <div class="slide">
+        <img class="slider" src="images/img3.jpg" alt="">
+      </div>
+
+      <div class="slide">
+        <img class="slider" src="images/img4.jpg" alt="">
+      </div>
+
+      <div class="slide">
+        <img class="slider" src="images/img5.jpg" alt="">
+      </div>
+
+      <div class="slide">
+        <img class="slider" src="images/img6.jpg" alt="">
+      </div>
+    </div>
+
+    <button class="slider__btn slider__btn--left">◀</button>
+    <button class="slider__btn slider__btn--right">▶</button>
+    <div class="dots"></div>
+    <p class="attribution"><a href='https://www.pexels.com/'>Photos on Pexels</a></p>
+  </main>
 
 </body>
 
