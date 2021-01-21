@@ -6,37 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weight conversion</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
   <main>
     <section class="form">
-      <h1>weight conversion</h1>
-      <form>
-        <label for="value">weight value: </label>
-        <input type="text" id="value">
-        <br>
-        <label for="unit">weight unit: </label>
-        <select id="unit">
-          <option value="kg">kg</option>
-          <option value="lb">lb</option>
-          <option value="oz">oz</option>
-          <option value="st">st</option>
-        </select>
-        <br>
-        <button>convert</button>
-      </form>
-    </section>
+      <h1 class="heading-primary">weight conversion</h1>
+      <label for="kg">kilograms (kg): </label>
+      <input type="number" class="kg" id="kg">
 
-    <section class="show-results">
-      <p>kilograms: <span class="result-kg">...</span> kg</p>
-      <p>pounds: <span class="result-lb">...</span> lb</p>
-      <p>ounces: <span class="result-oz">...</span> oz</p>
-      <p>stones: <span class="result-st">...</span> st</p>
+      <label for="lb">pounds (lb): </label>
+      <input type="number" class="lb" id="lb">
+
+      <label for="oz">ounces (oz): </label>
+      <input type="number" class="oz" id="oz">
+
+      <label for="st">stones (st):</label>
+      <input type="number" class="st" id="st">
+
     </section>
   </main>
-
-  <script src="main.js"></script>
 </body>
 
 </html>

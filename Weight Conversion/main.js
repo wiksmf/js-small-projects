@@ -1,59 +1,30 @@
 'use strict';
 
-const userInput = document.querySelector('input');
-const units = document.getElementById('unit');
-const resultKG = document.querySelector('.result-kg');
-const resultLB = document.querySelector('.result-lb');
-const resultOZ = document.querySelector('.result-oz');
-const resultST = document.querySelector('.result-st');
-const btnConvert = document.querySelector('button');
+const showKG = document.querySelector('.kg');
+const showLB = document.querySelector('.lb');
+const showOZ = document.querySelector('.oz');
+const showST = document.querySelector('.st');
 
-
-btnConvert.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  if (isNaN(userInput.value)) {
-    return;
-  }
-
-  if (unit.value === 'kg') {
-    convertFromKG();
-  } else if (unit.value === 'lb') {
-    convertFromLB();
-  } else if (unit.value === 'oz') {
-    convertFromOZ();
-  } else if (unit.value === 'st') {
-    convertFromST();
-  }
+showKG.addEventListener('input', () => {
+  showLB.value = (showKG.value * 2.2046).toFixed(1);
+  showOZ.value = (showKG.value * 35.274).toFixed(1);
+  showST.value = (showKG.value * 0.1574).toFixed(1);
 });
 
+showLB.addEventListener('input', () => {
+  showKG.value = (showLB.value / 2.2046).toFixed(1);
+  showOZ.value = (showLB.value * 16).toFixed(1);
+  showST.value = (showLB.value * 0.071429).toFixed(1);
+});
 
-function convertFromKG() {
-  resultKG.textContent = userInput.value;
-  resultLB.textContent = (userInput.value * 2.2046).toFixed(3);
-  resultOZ.textContent = (userInput.value * 35.274).toFixed(3);
-  resultST.textContent = (userInput.value * 0.1574).toFixed(3);
-}
+showOZ.addEventListener('input', () => {
+  showKG.value = (showOZ.value / 35.274).toFixed(1);
+  showLB.value = (showOZ.value * 0.0625).toFixed(1);
+  showST.value = (showOZ.value * 0.0044643).toFixed(1);
+});
 
-
-function convertFromLB() {
-  resultLB.textContent = userInput.value;
-  resultKG.textContent = (userInput.value / 2.2046).toFixed(3);
-  resultOZ.textContent = (userInput.value * 16).toFixed(3);
-  resultST.textContent = (userInput.value * 0.071429).toFixed(3);
-}
-
-
-function convertFromOZ() {
-  resultOZ.textContent = userInput.value;
-  resultKG.textContent = (userInput.value / 35.274).toFixed(3);
-  resultLB.textContent = (userInput.value * 0.0625).toFixed(3);
-  resultST.textContent = (userInput.value * 0.0044643).toFixed(3);
-}
-
-function convertFromST() {
-  resultST.textContent = userInput.value;
-  resultKG.textContent = (userInput.value / 0.15747).toFixed(3);
-  resultLB.textContent = (userInput.value * 14).toFixed(3);
-  resultOZ.textContent = (userInput.value * 224).toFixed(3);
-}
+showST.addEventListener('input', () => {
+  showKG.value = (showST.value / 0.15747).toFixed(1);
+  showLB.value = (showST.value * 14).toFixed(1);
+  showOZ.value = (showST.value * 224).toFixed(1);
+});
