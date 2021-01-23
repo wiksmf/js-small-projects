@@ -3,24 +3,46 @@
 const userInput = document.querySelector('input');
 const btnCheck = document.querySelector('button');
 const result = document.querySelector('.result');
+const displayInfo = document.querySelector('.modal');
+const btnOpenModal = document.querySelector('.open-modal');
+const btnCloseModal = document.querySelectorAll('.close-modal');
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-btnCheck.addEventListener('click', (e) => {
+btnCheck.addEventListener('click', e => {
   e.preventDefault();
 
-  let sentence = userInput.value;
+  if (!userInput.value) {
+    result.textContent = '⚠️ invalid input';
+    return;
+  }
 
-  if (sentence === '') return;
+  result.innerHTML = `${userInput.value} is
+      ${isPangram(userInput.value) ? 'pangram 🤩' : 'not a pangram 😫'}
+     `;
 
-  isPangram(sentence) ?
-    result.textContent = 'pangram!' :
-    result.textContent = 'not pangram!';
+  userInput.value = '';
+  userInput.focus();
 });
 
 function isPangram(sentence) {
-  sentence = sentence.toLowerCase();
-  sentence = sentence.replace(/([^a-z])/g, '');
+  sentence = sentence.toLowerCase().replace(/([^a-z])/g, '');
 
   return [...alphabet].every(letter => sentence.includes(letter));
 }
+
+// Handling information modal
+btnOpenModal.addEventListener('click', () => {
+  displayInfo.classList.remove('hidden');
+});
+
+btnCloseModal.forEach(btn => {
+  btn.addEventListener('click', () => {
+    displayInfo.classList.add('hidden');
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !btnCloseModal.classList.contains('hidden'))
+    displayInfo.classList.add('hidden');
+});

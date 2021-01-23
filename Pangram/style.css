@@ -1,73 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Redressed', cursive;
+
+  font-family: 'Raleway', sans-serif;
   font-size: 2.5rem;
-  color: #f638dc;
+  color: #ff7eee;
   background-color: #200f21;
-  text-align: center;
 }
 
-main {
-  width: 800px;
+.main {
+  position: relative;
 }
 
-h1,
-h1+p {
-  text-align: left;
-  margin: 50px 0;
+.heading-primary {
+  margin-bottom: 4rem;
 }
 
-input[type='text'] {
-  border: none;
-  border-bottom: 1px solid #f638dc;
+.input__word,
+.btn {
+  display: block;
   font-family: inherit;
-  font-size: 2rem;
-  letter-spacing: .2rem;
-  padding: 10px 0;
-  margin-right: 30px;
+  font-size: inherit;
+  letter-spacing: 0.3rem;
   cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.1s;
+}
+
+.input__word {
+  margin-bottom: 4rem;
+  padding: 0.4rem 0.5rem 0.2rem;
+  border-bottom: 1px solid #ff7eee;
   background-color: transparent;
   color: #cffffe;
-  outline: none;
-  width: 600px;
+  width: 60rem;
 }
 
-input[type='text']:focus,
-input[type='text']:hover {
-  outline: 2px dotted #cffffe;
-}
-
-input[type='text']::placeholder {
-  color: #cffffe6c;
-}
-
-button {
-  font-family: inherit;
+.input__word::placeholder§ {
   font-size: 2rem;
-  letter-spacing: .3rem;
-  border-radius: 10px;
-  border: none;
-  background-color: #f638dc;
-  color: #200f21;
-  cursor: pointer;
-  padding: 10px 14px;
+  color: #cffffe;
 }
 
-button:focus,
-button:hover {
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1.5rem #00000041;
+  background-color: #ff7eee;
+}
+
+.input__word:focus,
+.input__word:hover,
+.btn:focus,
+.btn:hover {
   outline: 2px dotted #cffffe;
+}
+
+.btn:active {
+  transform: translateY(0.2rem);
+}
+
+.btn-check {
+  background-color: #cffffe;
+  color: #092532;
 }
 
 .result {
-  margin-top: 30px;
-  font-size: 3.5rem;
+  height: 3rem;
+  width: 100rem;
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+
+/* MODAL STYLE */
+.hidden {
+  display: none;
+}
+
+.open-modal {
+  cursor: pointer;
+  color: #00ff9d;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80rem;
+  height: 40rem;
+  padding: 9rem 4rem 12rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 1rem #00000041;
+  background-color: #fff;
+  color: #092532;
+}
+
+.examples {
+  margin: 2rem 0 1rem;
+}
+
+.example__item {
+  margin-left: 3rem;
+  padding: 0.3rem 0;
+  list-style: disclosure-closed;
+}
+
+.btn-close {
+  position: absolute;
+  top: 2.2rem;
+  right: 2.7rem;
+
+  padding: 1rem;
+  line-height: 2.5rem;
+  font-size: 5rem;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btn-ok {
+  position: absolute;
+  bottom: 3rem;
+  right: 4.5rem;
+
+  font-weight: 700;
+  color: #fff;
+  background-color: #092532;
 }

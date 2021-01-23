@@ -5,23 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pangram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
   <main>
-    <h1>is it pangram?</h1>
-    <p>A pangram is a sentence that uses every letter of a given alphabet at least once.</p>
+    <h1 class="heading-primary">is it pangram<sup class="open-modal">🛈</sup> ?</h1>
     <form>
-      <input type="text" placeholder="enter a sentence">
-      <button>check</button>
+      <input type="text" class="input__word" placeholder="enter a word">
+      <button class="btn">check</button>
     </form>
-
-    <p class="result">...</p>
+    <p class="result"></p>
   </main>
 
-  <script src="main.js"></script>
+  <div class="modal hidden">
+    <button class="btn btn-close close-modal">&times;</button>
+    <p class="definition">
+      According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Pangrame">Wikipedia</a>,
+      a pangram or holoalphabetic sentence is a sentence using every letter of a given alphabet at least once.
+    </p>
+    <p class="examples">Examples:</p>
+    <ul class="example__list">
+      <li class="example__item">The quick brown fox jumps over a lazy dog</li>
+      <li class="example__item">Pack my box with five dozen liquor jugs</li>
+      <li class="example__item">The five boxing wizards jump quickly.</li>
+    </ul>
+    <button class="btn btn-ok close-modal">OK</button>
+  </div>
 </body>
 
 </html>
