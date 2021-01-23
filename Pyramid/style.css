@@ -3,60 +3,74 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+
   font-family: 'Megrim', cursive;
-  font-size: 1.2rem;
+  font-size: 2.5rem;
   background-color: #fca652;
   background-image: url('images/shattered-dark.png');
   color: #fff;
   text-align: center;
 }
 
-main {}
-
 h1 {
-  font-size: 3.5rem;
-  letter-spacing: .5rem;
+  font-size: 5rem;
+  letter-spacing: 0.5rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
 }
 
 p {
   font-family: 'Bungee Inline', cursive;
+  margin-top: 3rem;
 }
-
-form {
-  margin: 50px auto;
+input,
+button {
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 2rem;
+  outline: none;
+  cursor: pointer;
 }
 
 input {
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  padding: 0px 20px;
-  letter-spacing: .02rem;
-  text-align: center;
-  background-color: transparent;
+  border: 0.1rem solid #fff;
+  background-color: #be81449f;
   color: #fff;
-  font-size: 2rem;
-  max-width: 50px;
+  padding: 1.1rem;
+  text-align: center;
 }
 
 input::placeholder {
   color: #fff;
-
 }
 
 button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  padding: 10px 20px;
-  font-size: 1.5rem;
-  color: #fff;
+  border: 0.5rem solid #6b441d;
+  background-color: #fff;
+  color: #fca652;
+  padding: 1rem;
+  transition: all 0.2s;
+}
 
+button:focus,
+button:hover {
+  background-color: #6b441d;
+  color: #fff;
+}
+
+button:active {
+  transform: translateY(0.2rem);
 }
