@@ -10,16 +10,17 @@ const btnCloseModal = document.querySelectorAll('.close-modal');
 btnCheck.addEventListener('click', e => {
   e.preventDefault();
 
-  let string = userInput.value;
-
   if (!userInput.value) {
     result.textContent = '⚠️ invalid input';
     return;
   }
 
   result.textContent = `
-   ${isIsogram(string) ? 'isogram 🤭!' : 'not isogram 😓!'};
+   ${isIsogram(userInput.value) ? 'isogram 🤭!' : 'not isogram 😓!'}
   `;
+
+  userInput.value = '';
+  userInput.focus();
 });
 
 // Check if the input is isogram
