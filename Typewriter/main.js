@@ -1,7 +1,7 @@
-const spanText = document.querySelector('.text');
-const updateText = document.querySelector('input');
+const spanText = document.querySelector('.text__field');
+const updateText = document.querySelector('.input__field');
 const cursor = document.querySelector('.cursor');
-const txt = [
+const defaultTxt = [
   'Welcome ☺...',
   'You can use the input field to write some text...',
 ];
@@ -9,37 +9,33 @@ const txt = [
 let activeLetter = -15;
 let activeText = 0;
 
-
-const addLetter = () => {
-  if (activeLetter >= 0) {
-    spanText.textContent += txt[activeText][activeLetter];
-  }
+// Create the typewriter effect
+function addLetter() {
+  if (activeLetter >= 0)
+    spanText.textContent += defaultTxt[activeText][activeLetter];
   activeLetter++;
-  if (activeLetter === txt[activeText].length) {
 
+  if (activeLetter === defaultTxt[activeText].length) {
     activeText++;
-    if (activeText === txt.length) return;
+
+    if (activeText === defaultTxt.length) return;
 
     return setTimeout(() => {
       activeLetter = -15;
       spanText.textContent = '';
-      addLetter()
+      addLetter();
     }, 2000);
-
   }
-  setTimeout(addLetter, 100)
+  setTimeout(addLetter, 150);
 }
 addLetter();
 
-
+// Display the user's text
 updateText.addEventListener('input', () => {
-  if (activeLetter >= 0) {
-    spanText.textContent = updateText.value;
-  }
+  if (activeLetter >= 0) spanText.textContent = updateText.value;
 });
 
-
-const cursorAnimation = () => {
+// Toggle the visibility of the cursor
+setInterval(() => {
   cursor.classList.toggle('active');
-}
-setInterval(cursorAnimation, 400);
+}, 350);
