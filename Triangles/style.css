@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap');
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -15,7 +21,6 @@ body {
   font-size: 1.5rem;
   color: #b7fbff;
   background-color: #233142;
-  text-align: center;
 }
 
 main {
@@ -27,7 +32,7 @@ form {
 }
 
 h1,
-h1+p {
+h1 + p {
   margin: 50px 0;
 }
 
@@ -36,7 +41,7 @@ input[type='text'] {
   border-bottom: 1px solid #b7fbff;
   font-family: inherit;
   font-size: 2rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   padding: 10px 0;
   cursor: pointer;
   background-color: transparent;
@@ -58,7 +63,7 @@ input[type='text']::placeholder {
 button {
   font-family: inherit;
   font-size: 2rem;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   border-radius: 10px;
   border: none;
   background-color: #b7fbff;
@@ -76,4 +81,59 @@ button:hover {
   text-align: center;
   margin-top: 30px;
   font-size: 3.5rem;
+}
+
+/* MODAL STYLE */
+.hidden {
+  display: none;
+}
+
+.open-modal {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80rem;
+  height: 37rem;
+  padding: 7rem 8rem 7rem 4rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 1rem #00000041;
+  background-color: #fff;
+  color: #092532;
+}
+
+.triangle-img {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-close {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.6rem;
+
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 5rem;
+  font-weight: 500;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btn-ok {
+  position: absolute;
+  bottom: 3rem;
+  right: 4.5rem;
+
+  font-weight: 700;
+  color: #fff;
+  background-color: #31112c;
 }
