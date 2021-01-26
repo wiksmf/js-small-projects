@@ -17,70 +17,78 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: 'Hind', sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #b7fbff;
   background-color: #233142;
 }
 
+/* MAIN */
 main {
-  width: 800px;
+  width: 80rem;
 }
 
-form {
-  text-align: center;
+.heading-primary {
+  margin-bottom: 5rem;
 }
 
-h1,
-h1 + p {
-  margin: 50px 0;
+.form {
+  margin-top: 3rem;
 }
 
-input[type='text'] {
-  border: none;
-  border-bottom: 1px solid #b7fbff;
-  font-family: inherit;
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
-  padding: 10px 0;
-  cursor: pointer;
-  background-color: transparent;
-  color: #cffffe;
-  outline: none;
-  text-align: center;
-  width: 200px;
-}
-
-input[type='text']:focus,
-input[type='text']:hover {
-  outline: 2px dotted #cffffe;
-}
-
-input[type='text']::placeholder {
-  color: #cffffe6c;
-}
-
-button {
+.form__input,
+.btn {
+  margin-bottom: 2rem;
   font-family: inherit;
   font-size: 2rem;
   letter-spacing: 0.3rem;
-  border-radius: 10px;
   border: none;
-  background-color: #b7fbff;
-  color: #233142;
+  border-radius: 1rem;
+  outline: none;
   cursor: pointer;
-  padding: 10px 14px;
+  transition: all 0.2s;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #cffffe;
+.form__input {
+  width: 15rem;
+  border: 0.1rem solid #b7fbff;
+  padding: 1rem;
+  background-color: #cffffe4b;
+  color: #cffffe;
+}
+
+.form__input::placeholder {
+  color: #cffffebb;
+}
+
+.btn {
+  margin-left: 2rem;
+  background-color: #b7fbff;
+  color: #233142;
+  padding: 1.2rem 1.5rem;
+}
+
+.form__input:focus,
+.form__input:hover,
+.btn:focus,
+.btn:hover {
+  outline: 0.2rem dotted #00bd74;
+}
+
+.btn:active {
+  transform: translateY(0.3rem);
 }
 
 .result {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 3.5rem;
+  height: 5rem;
+  margin-top: 5rem;
+  font-size: 3.6rem;
+}
+
+.triangle-type {
+  color: #fbff00;
+  text-decoration: underline;
 }
 
 /* MODAL STYLE */
@@ -90,7 +98,7 @@ button:hover {
 
 .open-modal {
   cursor: pointer;
-  color: #ff0000;
+  color: #fbff00;
 }
 
 .modal {
@@ -99,7 +107,7 @@ button:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 80rem;
+  width: 55rem;
   height: 37rem;
   padding: 7rem 8rem 7rem 4rem;
   font-size: 2rem;
@@ -109,31 +117,30 @@ button:hover {
   color: #092532;
 }
 
-.triangle-img {
-  margin-top: 2rem;
-  text-align: center;
+.definition {
+  margin-bottom: 1rem;
 }
 
-.btn-close {
+.btn-close-x {
   position: absolute;
-  top: 3.2rem;
+  top: 2rem;
   right: 3.6rem;
 
   margin: 0;
   padding: 0;
-  line-height: 0;
+  line-height: 1;
   font-size: 5rem;
   font-weight: 500;
   box-shadow: none;
   background-color: transparent;
 }
 
-.btn-ok {
+.btn-close-ok {
   position: absolute;
-  bottom: 3rem;
+  bottom: 2.5rem;
   right: 4.5rem;
 
   font-weight: 700;
   color: #fff;
-  background-color: #31112c;
+  background-color: #233142;
 }

@@ -11,64 +11,71 @@
 
 <body>
   <main>
-    <h1>what triangle is it?</h1>
+    <h1 class="heading-primary">📐 what triangle is it?</h1>
     <p>Given three integers as A, B, and C representing the three sides of a triangle,
-      I will help you check whether the triangle formed by the given sides is
-      equilateral<sup class="open-modal">🛈</sup>,
-      isosceles<sup class="open-modal">🛈</sup>,
-      or scalene<sup class="open-modal">🛈</sup>.</p>
-    <form>
-      <input type="text" placeholder="side a" class="a">
-      <input type="text" placeholder="side b" class="b">
-      <input type="text" placeholder="side c" class="c">
-      <button>check</button>
+      let's check whether the triangle formed by the given sides is
+      equilateral<sup class="open-modal" data-modal-id="modal-1">🛈</sup>,
+      isosceles<sup class="open-modal" data-modal-id="modal-2">🛈</sup>,
+      or scalene<sup class="open-modal" data-modal-id="modal-3">🛈</sup>.</p>
+    <form class="form">
+      <input type="number" placeholder="side a" class="a form__input">
+      <input type="number" placeholder="side b" class="b form__input">
+      <input type="number" placeholder="side c" class="c form__input">
+      <button class="btn">check</button>
     </form>
 
     <p class="result">...</p>
   </main>
 
-
-  <div class="modal hidden">
-    <button class="btn btn-close close-modal">&times;</button>
-    <p class="definition">
-      According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Triangle#Types_of_triangle">Wikipedia</a>,
-      an equilateral triangle is a triangle in which all three sides have the same length.
-    </p>
-    <div class="triangle-img">
-      <a title="No machine-readable author provided. Syp assumed (based on copyright claims)., Public domain, via Wikimedia Commons"
-        href="https://commons.wikimedia.org/wiki/File:Triangle.Equilateral.svg"><img width="200"
-          alt="Triangle.Equilateral"
+  <div class="modal-wrapper">
+    <div class="modal hidden" id="modal-1">
+      <button class="btn btn-close-x close-modal">&times;</button>
+      <p class="definition">
+        According to 
+        <a class="defintion__link" href="https://en.wikipedia.org/wiki/Triangle#Types_of_triangle">Wikipedia</a>,
+        an equilateral triangle is a triangle in which all three sides have the same length.
+      </p>
+      <div class="triangle-img">
+        <a title="No machine-readable author provided. Syp assumed (based on copyright claims)., Public domain, via Wikimedia Commons"
+          href="https://commons.wikimedia.org/wiki/File:Triangle.Equilateral.svg">
+          <img width="200" alt="Equilateral triangle"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Triangle.Equilateral.svg/512px-Triangle.Equilateral.svg.png"></a>
+      </div>
+      <button class="btn btn-close-ok close-modal">OK</button>
     </div>
-    <button class="btn btn-ok close-modal">OK</button>
-  </div>
 
-  <div class="modal hidden">
-    <button class="btn btn-close close-modal">&times;</button>
-    <p class="definition">
-      According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Triangle#Types_of_triangle">Wikipedia</a>,
-      an isosceles triangle is a triangle that has two sides of equal length..
-    </p>
-    <div class="triangle-img">
-      <a title="No machine-readable author provided. Syp assumed (based on copyright claims)., Public domain, via Wikimedia Commons"
-        href="https://commons.wikimedia.org/wiki/File:Triangle.Isosceles.svg"><img width="100" alt="Triangle.Isosceles"
+    <div class="modal hidden" id="modal-2">
+      <button class="btn btn-close-x close-modal">&times;</button>
+      <p class="definition">
+        According to 
+        <a class="defintion__link" href="https://en.wikipedia.org/wiki/Triangle#Types_of_triangle">Wikipedia</a>,
+        an isosceles triangle is a triangle that has two sides of equal length.
+      </p>
+      <div class="triangle-img">
+        <a title="No machine-readable author provided. Syp assumed (based on copyright claims)., Public domain, via Wikimedia Commons"
+          href="https://commons.wikimedia.org/wiki/File:Triangle.Isosceles.svg">
+          <img width="134"
+          alt="Isosceles triangle"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Triangle.Isosceles.svg/64px-Triangle.Isosceles.svg.png"></a>
+      </div>
+      <button class="btn btn-close-ok close-modal">OK</button>
     </div>
-    <button class="btn btn-ok close-modal">OK</button>
-  </div>
 
-  <div class="modal hidden">
-    <button class="btn btn-close close-modal">&times;</button>
-    <p class="definition">
-      According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Triangle#Types_of_triangle">Wikipedia</a>,
-      a scalene triangle has all its sides of different lengths.
-    </p>
-    <div class="triangle-img">
-      <a title="No machine-readable author provided. Syp assumed (based on copyright claims)., Public domain, via Wikimedia Commons"
-        href="https://commons.wikimedia.org/wiki/File:Triangle.Scalene.svg"><img width="200" alt="Triangle.Scalene"
+    <div class="modal hidden" id="modal-3">
+      <button class="btn btn-close-x close-modal">&times;</button>
+      <p class="definition">
+        According to 
+        <a class="defintion__link" href="https://en.wikipedia.org/wiki/Triangle#Types_of_triangle">Wikipedia</a>,
+        a scalene triangle has all its sides of different lengths.
+      </p>
+      <div class="triangle-img">
+        <a title="No machine-readable author provided. Syp assumed (based on copyright claims)., Public domain, via Wikimedia Commons"
+          href="https://commons.wikimedia.org/wiki/File:Triangle.Scalene.svg">
+          <img width="300" alt="Scalene triangle."
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Triangle.Scalene.svg/128px-Triangle.Scalene.svg.png"></a>
+      </div>
+      <button class="btn btn-close-ok close-modal">OK</button>
     </div>
-    <button class="btn btn-ok close-modal">OK</button>
   </div>
 </body>
 

@@ -1,46 +1,68 @@
 'use strict';
 
-const a = document.querySelector('.a');
-const b = document.querySelector('.b');
-const c = document.querySelector('.c');
+const sideA = document.querySelector('.a');
+const sideB = document.querySelector('.b');
+const sideC = document.querySelector('.c');
 const btnCheck = document.querySelector('button');
 const result = document.querySelector('.result');
-const displayInfo = document.querySelector('.modal');
-const btnOpenModal = document.querySelector('.open-modal');
+
+const modalWrapper = document.querySelector('.modal-wrapper');
+const btnOpenModal = document.querySelectorAll('.open-modal');
 const btnCloseModal = document.querySelectorAll('.close-modal');
+
+const currentlyOpenModals = {};
 
 btnCheck.addEventListener('click', e => {
   e.preventDefault();
 
-  const sideA = Number(a.value);
-  const sideB = Number(b.value);
-  const sideC = Number(c.value);
-
-  if (sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB) {
-    if (sideA === sideB && sideB === sideC) {
-      result.textContent = 'equilateral triangle';
-    } else if (sideB === sideC || sideA === sideC) {
-      result.textContent = 'isosceles triangle';
-    } else if (sideA !== sideB && sideB !== sideC && sideA !== sideC) {
-      result.textContent = 'scalene triangle';
-    }
-  } else {
-    result.textContent = 'not a triangle';
+  if (!sideA.value || !sideB.value || !sideC.value) {
+    result.textContent = '⚠️ please enter a valid input';
+    return;
   }
+
+  result.innerHTML = `it is 
+    <span class="triangle-type">
+      ${checkTriangle(+sideA.value, +sideB.value, +sideC.value)}
+    </span> triangle
+  `;
 });
 
-// Handling information modal
-btnOpenModal.addEventListener('click', () => {
-  displayInfo.classList.remove('hidden');
-});
+// Check triangle type
+function checkTriangle(a, b, c) {
+  if (a < b + c && b < a + c && c < a + b) {
+    return (
+      ((a === b && b === c) && 'an equilateral') ||
+      ((a === b || b === c || a === c) && 'an isosceles') ||
+      ((a !== b && b !== c && a !== c) && 'a scalene')
+    );
+  } else {
+    return 'not a';
+  }
+}
+
+// Handling information modals
+btnOpenModal.forEach(btn =>
+  btn.addEventListener('click', clickEvent => {
+    const modalId = clickEvent.target.getAttribute('data-modal-id');
+    const modal = document.getElementById(`${modalId}`);
+    modal.classList.remove('hidden');
+    currentlyOpenModals[modalId] = modal;
+  }),
+);
 
 btnCloseModal.forEach(btn => {
-  btn.addEventListener('click', () => {
-    displayInfo.classList.add('hidden');
+  btn.addEventListener('click', clickEvent => {
+    const modalToClose = clickEvent.target.closest('.modal');
+    closeModal(modalToClose.id);
   });
 });
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && !btnCloseModal.classList.contains('hidden'))
-    displayInfo.classList.add('hidden');
+document.addEventListener('keydown', keyEvent => {
+  if (keyEvent.key === 'Escape')
+    Object.keys(currentlyOpenModals).forEach(closeModal);
 });
+
+function closeModal(modalId) {
+  const modal = currentlyOpenModals[modalId];
+  modal.classList.add('hidden');
+}
