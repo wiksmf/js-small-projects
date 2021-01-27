@@ -9,13 +9,47 @@
 
 <body>
   <main>
-    <h1></h1>
-    <input type="text" placeholder="enter a number">
-    <button>▶</button>
+    <!-- <h1 class="heading-primary">Timer</h1> -->
+
+    <div class="timer">
+      <svg class="timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g class="timer__circle">
+          <circle class="timer__path-elapsed" cx="50" cy="50" r="45" />
+          <path id="base-timer-path-remaining" stroke-dasharray="283"
+            class="base-timer__path-remaining ${remainingPathColor}" d="
+            M 50, 50
+            m -45, 0
+            a 45,45 0 1,0 90,0
+            a 45,45 0 1,0 -90,0
+          "></path>
+        </g>
+      </svg>
+    </div>
+
+    <div class="timer__labels">
+      <div class="setters">
+        <div class="hours-set">
+          <button class="btn time-setter hours-plus">+</button>
+          <button class="btn time-setter hours-minus">-</button>
+        </div>
+        <div class="minutes-set">
+          <button class="btn time-setter minutes-plus">+</button>
+          <button class="btn time-setter minutes-minus">-</button>
+        </div>
+        <div class="seconds-set">
+          <button class="btn time-setter seconds-plus">+</button>
+          <button class="btn time-setter seconds-minus">-</button>
+        </div>
+      </div>
+
+      <p class="display-time-left"><span>00:00:30</span></p>
+          
+
+      <div class="controls">
+        <button class="btn play">▶</button>
+      </div>
+    </div>
   </main>
-
-  <script src="main.js"></script>
-
 </body>
 
 </html>

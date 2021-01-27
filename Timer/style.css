@@ -3,62 +3,88 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  background-color: #03506f;
-  background-image: url(images/diagmonds.png);
-}
-
-main {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-family: 'Merriweather', serif;
   text-align: center;
+  background-color: #00b7ff9a;
+  background-image: url(images/diagmonds.png);
 }
 
-h1 {
-  height: 400px;
-  width: 400px;
-  line-height: 400px;
-  margin-right: 70px;
-  background: linear-gradient(#1d1b38, #04427c, #1d1b38);
-  border-radius: 100%;
-  border: 4px solid #1d1b38;
-  color: #fff;
-  font-size: 4.5rem;
+.timer {
+  height: 60rem;
+  width: 60rem;
 }
 
-input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 3px solid #2aacf1;
-  color: #fff;
+.timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.timer__path-elapsed {
+  stroke-width: 0.4rem;
+  stroke: #01131a;
+}
+
+.timer__labels {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+}
+
+.hours-set,
+.minutes-set,
+.seconds-set {
+  display: inline-block;
+  padding: 0 1.8rem;
+}
+
+.display-time-left {
+  margin-top: -2.5rem;
+  font-size: 9rem;
+  color: #01131a;
+}
+
+/* BUTTONS */
+.btn {
+  background: transparent;
+  text-shadow: 0 0 2rem #000000be;
   font-family: inherit;
-  font-size: 4rem;
-  width: 200px;
-  text-align: center;
-  padding: 6px;
-  margin-right: 40px;
-  outline: none;
-}
-
-input::placeholder {
-  font-size: 1.5rem;
-  color: #2aabf171;
-}
-
-button {
-  background-color: transparent;
+  font-weight: 700;
   border: none;
-  border-radius: 50%;
-  border-bottom: 3px solid #2aacf1;
-  padding: 10px 15px 10px 25px;
-  cursor: pointer;
-  font-size: 3rem;
-  color: #fff;
+  color: #fadcaa;
   outline: none;
+  cursor: pointer;
+}
+
+.time-setter {
+  font-size: 3.5rem;
+  padding: 0 1.1rem;
+}
+
+.play {
+  margin-top: 3rem;
+  font-size: 8rem;
+
+}
+
+.play:focus,
+.play:hover,
+.time-setter:focus,
+.time-setter:hover {
+  color: #f05454;
 }
