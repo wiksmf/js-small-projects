@@ -1,30 +1,38 @@
 'use strict';
 
-const displayTimer = document.querySelector('h1');
 const userInput = document.querySelector('input');
-const btnStart = document.querySelector('button');
+const btnStart = document.querySelector('.play');
+
+const buttons = document.querySelectorAll('button');
+
+const displayHours = document.querySelector('.display-hours');
+const displayMinutes = document.querySelector('.display-minutes');
+const displaySeconds = document.querySelector('.display-seconds');
 
 
-const clock = () => {
-  let value = Number(userInput.value);
-  
-  if (value <= 0) {
-    return;
-  }
-  
-  displayTimer.textContent = `${value}`;
-  
-  const timer = () => {
-    value -= 1;
-    displayTimer.textContent = `${value}`;
-    if (value === 0) {
-      clearInterval(startTimer)
-      displayTimer.textContent = `🎊 0 🎊`;
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
 
-    };
-  }
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
 
-  const startTimer = setInterval(timer, 1000);
+    if (btn.classList.contains('hours-plus')  && (hours < 24)) hours++;
+    if (btn.classList.contains('hours-minus') && (hours > 0)) hours--;
+
+    if (btn.classList.contains('minutes-plus') && (minutes < 59)) minutes++;
+    if (btn.classList.contains('minutes-minus') && (minutes > 0)) minutes--;
+
+    if (btn.classList.contains('seconds-plus') && (seconds < 59)) seconds++;
+    if (btn.classList.contains('seconds-minus') && (seconds > 0)) seconds--;
+
+    console.log(hours, minutes, seconds);
+    updateUI();
+  })
+});
+
+function updateUI() {
+  displayHours.textContent = `${hours < 10 ? `0${hours}` : `${hours}`}`;
+  displayMinutes.textContent = `${minutes < 10 ? `0${minutes}` : `${minutes}`}`;
+  displaySeconds.textContent = `${seconds < 10 ? `0${seconds}` : `${seconds}`}`;
 }
-
-btnStart.addEventListener('click', clock);

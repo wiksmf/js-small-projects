@@ -24,8 +24,8 @@ body {
 }
 
 .timer {
-  height: 60rem;
-  width: 60rem;
+  height: 70rem;
+  width: 70rem;
 }
 
 .timer__circle {
@@ -40,7 +40,7 @@ body {
 
 .timer__labels {
   position: absolute;
-  top: 55%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5rem;
@@ -50,12 +50,11 @@ body {
 .minutes-set,
 .seconds-set {
   display: inline-block;
-  padding: 0 1.6rem;
+  padding: 0 4.3rem;
 }
 
 .display-time-left {
-  margin-top: -2.5rem;
-  font-size: 9rem;
+  font-size: 9.5rem;
   color: #01131a;
 }
 
