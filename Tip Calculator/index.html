@@ -5,18 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tip Calculator</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
   <main>
     <h1>TIP CALCULATOR</h1>
-    <div class="main">
+    <div class="container">
       <form>
         <label for="bill">How much is your bill?</label>
-        <input type="text" id="bill">
+        <input type="number" id="bill" placeholder="enter the total bill amount">
 
         <label for="tip">How was the service?</label>
         <select id="tip">
@@ -29,20 +28,18 @@
         </select>
 
         <label for="people">How many people are sharing the bill?</label>
-        <input type="text" id="people">
+        <input type="number" id="people" placeholder="enter the number of people">
 
         <button>calculate</button>
       </form>
 
       <div class="results">
-        <p>Tip amount: $ <span class="tip">...</span></p>
-        <p>Total amount: $ <span class="total">...</span></p>
-        <p>Amount per person: $ <span class="per-person">...</span> each</p>
+        <p>Tip amount: $ <span class="result tip">...</span></p>
+        <p>Total amount: $ <span class="result total">...</span></p>
+        <p>Amount per person: $ <span class="result per-person">...</span> each</p>
       </div>
     </div>
   </main>
-
-  <script src="main.js"></script>
 </body>
 
 </html>

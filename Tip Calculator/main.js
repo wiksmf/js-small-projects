@@ -1,55 +1,52 @@
 'use strict';
 
+const bill = document.getElementById('bill');
+const tip = document.getElementById('tip');
+const people = document.getElementById('people');
 const calculateBtn = document.querySelector('button');
-const tip = document.querySelector('.tip');
-const total = document.querySelector('.total');
-const perPerson = document.querySelector('.per-person');
 
+const displayTip = document.querySelector('.tip');
+const displayTotal = document.querySelector('.total');
+const displayTotalPerPerson = document.querySelector('.per-person');
 
-calculateBtn.addEventListener('click', (e) => {
+let tipAmount, totalAmount, amountPerPerson;
+
+calculateBtn.addEventListener('click', e => {
   e.preventDefault();
 
-  const bill = Number(document.getElementById('bill').value);
-  const tip = Number(document.getElementById('tip').value);
-  const people = Number(document.getElementById('people').value);
-
-  if (checkInput(bill, tip, people)) {
-    calculateAmounts(bill, tip, people);
-  }
+  if (checkInput(bill.value, +tip.value, people.value))
+    calculateAmounts(+bill.value, +tip.value, +people.value);
 });
 
-
 function checkInput(bill, tip, people) {
-  if (bill === 0 || isNaN(bill)) {
-    alert("Please enter the total bill amount.");
+  if (!bill) {
+    alert('Please enter the total bill amount.');
     return;
   }
 
   if (tip === 0) {
-    alert("Please tell us how was the service.");
+    alert('Please tell us how was the service.');
     return;
   }
 
-  if (isNaN(people) || people === "" || people < 1) {
-    alert("Please check the number of people.");
+  if (!people || people < 1) {
+    alert('Please check the number of people.');
     return;
   }
 
   return true;
 }
 
-
 function calculateAmounts(bill, tip, people) {
-  let tipAmount = bill * tip;
-  let totalAmount = bill + tipAmount;
-  let amountPerPerson = totalAmount / people;
+  tipAmount = (bill * tip).toFixed(2);
+  totalAmount = bill + +tipAmount;
+  amountPerPerson = (totalAmount / people).toFixed(2);
 
   updateUI(tipAmount, totalAmount, amountPerPerson);
 }
 
-
 function updateUI(tipAmount, totalAmount, amountPerPerson) {
-  tip.textContent = tipAmount;
-  total.textContent = totalAmount;
-  perPerson.textContent = amountPerPerson;
+  displayTip.textContent = tipAmount;
+  displayTotal.textContent = totalAmount;
+  displayTotalPerPerson.textContent = amountPerPerson;
 }

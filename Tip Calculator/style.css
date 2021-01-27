@@ -1,97 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400&display=swap');
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: 'Exo 2', sans-serif;
-  font-size: 1rem;
+  font-size: 1.8rem;
   text-align: center;
   background: linear-gradient(#fcdab7, #ee5555);
 }
 
+/* MAIN */
 main {
   background-color: #fff;
-  border-radius: 10px;
-  padding: 40px;
-  max-width: 768px;
+  border-radius: 1rem;
+  padding: 4rem;
+  max-width: 90rem;
 }
 
-.main {
+.container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
 form {
-  padding-right: 50px;
-}
-
-.results {
-  text-align: left;
-  align-self: center;
-  padding-left: 50px;
-  border-left: 1px solid #000;
+  padding-right: 5rem;
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
   text-decoration-line: underline;
   text-decoration-style: wavy;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
 }
 
 label {
   display: block;
-  margin: 20px auto;
+  margin: 3rem auto 1.5rem;
 }
 
-input {
-  font-family: 'Exo 2', sans-serif;
-  font-size: 1rem;
-  text-align: center;
-  border: none;
-  border-bottom: 1px solid #000;
+input,
+select {
+  font-family: inherit;
+  font-size: 1.5rem;
+  border: 0.1rem solid #363232ad;
+  padding: 0.5rem 0.7rem;
+  width: 22.5rem;
   outline: none;
 }
 
 input:focus,
 input:hover {
-  outline: 1px dotted #000;
+  outline: 0.2rem dotted #000;
 }
 
 select {
-  font-family: 'Exo 2', sans-serif;
   font-weight: 200;
-  font-size: 1rem;
-  padding: 5px 10px;
   outline: none;
 }
 
 button {
   display: block;
-  margin: 20px auto;
-  font-family: 'Exo 2', sans-serif;
-  font-size: 400;
-  letter-spacing: .2rem;
+  margin: 2rem auto;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
   background-color: #e94560;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   border-radius: 5px;
   cursor: pointer;
   outline: none;
+  transition: all 0.2s;
 }
 
 button:focus,
 button:hover {
-  outline: 1px dotted #000;
+  outline: 0.2rem dotted #000;
   background-color: #e41b3c;
 }
 
+button:active {
+  transform: translateY(0.2rem);
+}
+
+.results {
+  text-align: left;
+  align-self: center;
+  padding-left: 5rem;
+  border-left: 0.1rem solid #000;
+}
+
+.result {
+  color: #119daa;
+  font-weight: 800;
+}
+
 p {
-  padding: 10px 0;
+  padding: 1.5rem 0;
 }
