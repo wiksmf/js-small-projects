@@ -50,7 +50,7 @@ body {
 .minutes-set,
 .seconds-set {
   display: inline-block;
-  padding: 0 1.8rem;
+  padding: 0 1.6rem;
 }
 
 .display-time-left {
