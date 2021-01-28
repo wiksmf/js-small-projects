@@ -75,10 +75,11 @@ body {
   padding: 0 1.1rem;
 }
 
-.play {
-  margin-top: 3rem;
-  font-size: 8rem;
-
+.play,
+.pause,
+.restart {
+  padding: 3rem 3rem;
+  font-size: 5rem;
 }
 
 .play:focus,
