@@ -24,6 +24,7 @@ body {
 }
 
 .heading-primary {
+  margin-bottom: 3rem;
   font-size: 5rem;
   letter-spacing: .5rem;
   color: #fadcaa;
@@ -47,7 +48,7 @@ body {
 
 .timer__labels {
   position: absolute;
-  top: 53%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5rem;
