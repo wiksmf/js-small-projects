@@ -9,8 +9,9 @@ const displaySeconds = document.querySelector('.display-seconds');
 let hours = 0;
 let minutes = 0;
 let seconds = 0;
-let totalTime, timeLeft, timer;
+let totalTime, timer;
 
+// Handle buttons
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
     if (btn.classList.contains('hours-plus') && (hours < 24)) hours++;
@@ -22,43 +23,56 @@ buttons.forEach(btn => {
     if (btn.classList.contains('seconds-plus') && (seconds < 59)) seconds++;
     if (btn.classList.contains('seconds-minus') && (seconds > 0)) seconds--;
 
-    if (btn.classList.contains('play')) startTimer();
+    if (btn.classList.contains('play')) startTimer()
     if (btn.classList.contains('pause')) pauseTimer();
-    if (btn.classList.contains('restart')) restartTimer();
+    if (btn.classList.contains('reset')) resetTimer();
 
-    updateUI(hours, minutes, seconds);
+    displayTimer(hours, minutes, seconds);
   })
 });
 
-
+// Start the timer
 function startTimer() {
+  document.querySelector('.play').disabled = true;
+
   totalTime = (hours * 60 * 60) + (minutes * 60) + seconds;
-  if (!totalTime) return;
 
+  if (!totalTime) {
+    document.querySelector('.play').disabled = false;
+    return;
+  }
+
+  // Remove one second from the total time every second
   timer = setInterval(() => {
-    timeLeft = --totalTime;
-    formatTime(timeLeft);
+    --totalTime;
+    formatTime(totalTime);
+    displayTimer(hours, minutes, seconds);
 
-    if (timeLeft <= 0) clearInterval(timer);
+    if (totalTime <= 0) clearInterval(timer);
   }, 1000);
 }
 
+// Pause the timer
 function pauseTimer() {
+  document.querySelector('.play').disabled = false;
+  clearInterval(timer);
 }
 
-function restartTimer() {
-  clearInterval(timer)
+// Reset the timer 
+function resetTimer() {
+  hours = minutes = seconds = 0;
+  pauseTimer();
 }
 
+// Format the time as hh:mm:ss
 function formatTime(timeLeft) {
-  const hoursLeft = Math.floor((timeLeft / 3600) % 24);
-  const minutesLeft = Math.floor((timeLeft / 60) % 60)
-  const secondsLeft = Math.floor(timeLeft % 60);
-
-  updateUI(hoursLeft, minutesLeft, secondsLeft);
+  hours = Math.floor((timeLeft / 3600) % 24);
+  minutes = Math.floor((timeLeft / 60) % 60)
+  seconds = Math.floor(timeLeft % 60);
 }
 
-function updateUI(hours, minutes, seconds) {
+// Display the timer
+function displayTimer(hours, minutes, seconds) {
   displayHours.textContent = hours < 10 ? `0${hours}` : hours;
   displayMinutes.textContent = minutes < 10 ? `0${minutes}` : minutes;
   displaySeconds.textContent = seconds < 10 ? `0${seconds}` : seconds;

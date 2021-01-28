@@ -77,7 +77,7 @@ body {
 
 .play,
 .pause,
-.restart {
+.reset {
   padding: 3rem 3rem;
   font-size: 5rem;
 }
