@@ -23,6 +23,13 @@ body {
   background-image: url(images/diagmonds.png);
 }
 
+.heading-primary {
+  font-size: 5rem;
+  letter-spacing: .5rem;
+  color: #fadcaa;
+  text-shadow: 0 0 2rem #000000be;
+}
+
 .timer {
   height: 70rem;
   width: 70rem;
@@ -84,6 +91,10 @@ body {
 
 .play:focus,
 .play:hover,
+.pause:focus,
+.pause:hover,
+.reset:focus,
+.reset:hover,
 .time-setter:focus,
 .time-setter:hover {
   color: #f05454;
