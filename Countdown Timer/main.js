@@ -1,71 +1,58 @@
-const userInput = document.querySelector('input');
-const btnCheck = document.querySelector('button');
+'use strict';
+
+const userInput = document.querySelector('.date-input');
+const btnCheck = document.querySelector('.btn');
+
 const dayDisplay = document.querySelector('.days');
 const hoursDisplay = document.querySelector('.hours');
 const minutesDisplay = document.querySelector('.minutes');
 const secondsDisplay = document.querySelector('.seconds');
-const timerDisplay = document.querySelector('.endTimer');
+const endTimerDisplay = document.querySelector('.end-timer');
 
-let inputDate;
-let days;
-let hours;
-let minutes;
-let seconds;
-
+let days, hours, minutes, seconds, end;
 
 // Store the user's input
-userInput.addEventListener('change', () => {
-  inputDate = userInput.value;
-  btnCheck.disabled = false;
-});
-
+userInput.addEventListener('change', () => btnCheck.disabled = false);
 
 // Handle the user's request
 btnCheck.addEventListener('click', countdown);
 
-
 // Count down to the specified date
-function countdown(event) {
-  event.preventDefault();
+function countdown(e) {
+  e.preventDefault();
 
-  timerDisplay.textContent = '';
+  end = false;
+  endTimerDisplay.textContent = '';
 
-  let timer = setInterval(() => {
-    let today = new Date().getTime();
-    let endDate = new Date(userInput.value).getTime();
-
-    let timeLeft = endDate - today;
-
-    days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
+  const timer = setInterval(() => {
+    const today = new Date().getTime();
+    const endDate = new Date(userInput.value).getTime();
+    const timeLeft = endDate - today;
+    getTimeLeft(timeLeft)
     updateDisplay();
 
     if (timeLeft < 0) {
+      end = true;
+      updateDisplay();
       clearInterval(timer);
-      endTimer();
     }
-
   }, 1000);
 }
 
+// Calculate the remaining time
+function getTimeLeft(timeLeft){
+  days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+}
 
 // Update the user's interface
 function updateDisplay() {
-  dayDisplay.textContent = `${days}`;
-  hoursDisplay.textContent = `${hours}`;
-  minutesDisplay.textContent = `${minutes}`;
-  secondsDisplay.textContent = `${seconds}`;
-}
+  dayDisplay.textContent = days > 0 ? days : '0';
+  hoursDisplay.textContent = hours > 0 ? hours : '00';
+  minutesDisplay.textContent = minutes > 0 ? minutes : '00';
+  secondsDisplay.textContent = seconds > 0 ? seconds : '00';
 
-
-// Update the user's interface when the count down is finished
-function endTimer() {
-  dayDisplay.textContent = `0`;
-  hoursDisplay.textContent = `00`;
-  minutesDisplay.textContent = `00`;
-  secondsDisplay.textContent = `00`;
-  timerDisplay.textContent = `expired`;
+  if(end) endTimerDisplay.textContent = `❌ expired`;
 }

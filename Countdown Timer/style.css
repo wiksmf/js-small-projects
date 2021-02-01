@@ -1,46 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   font-family: 'Ubuntu', sans-serif;
-  font-size: 1.2rem;
+  font-size: 3rem;
   background: url(images/old-wall.png), linear-gradient(#14274e, #394867, #2d6187, #394867, #14274e);
   color: #fff;
   text-align: center;
 }
 
-main {
-  width: 768px;
-  border-radius: 2px;
-  border: 2px solid #fff;
-  padding: 40px;
-  margin: 0 50px;
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
+/* MAIN */
+.main {
+  width: 95rem;
+  border-radius: 0.5rem;
+  border: 0.4rem solid #fff;
+  padding: 40px;
+}
+
+.heading-primary {
   letter-spacing: .5rem;
 }
 
-form {
-  padding: 40px 35px;
+.form {
+  padding: 5rem;
 }
 
-input[type='date'] {
+.date-input,
+.btn {
+  background-color: #ffffff13;
   border: none;
-  border-bottom: 1px solid #fff;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: .6rem;
-  padding: 10px 0;
-  margin-right: 30px;
+  border: 0.2rem solid #fff;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-weight: 900;
   cursor: pointer;
-  background-color: transparent;
+  transition: all .2s;
+}
+
+.date-input {
+  font-size: 2rem;
+  letter-spacing: .6rem;
+  padding: 1.5rem;
+  margin-right: 3rem;
   color: #fff;
   text-align: center;
 }
@@ -49,55 +69,57 @@ input[type='date'] {
   display: none;
 }
 
-input[type='date']:focus,
-input[type='date']:hover,
-input[type='date']:active {
-  outline: 2px dotted #fff;
-}
-
-button {
-  font-size: 1.5rem;
-  background-color: transparent;
-  border-radius: 100%;
-  border: 1px solid #fff;
+.btn {
+  font-size: inherit;
   color: #fff;
-  cursor: pointer;
-  padding: 10px 14px;
+  border-radius: 100%;
+  padding: 0.8rem 1.8rem;
 }
 
-button:focus,
-button:hover,
-button:active {
-  outline: 2px dotted #fff;
+.btn:focus,
+.btn:hover,
+.date-input:focus,
+.date-input:hover {
+  outline: 0.4rem dotted #1eff00;
 }
 
+.btn:active{
+  transform: translateY(.2rem);
+}
 
-button:disabled {
-  background-color: transparent;
-  border: 1px solid #929191;
-  color: #929191;
+.btn:disabled {
+  background-color: #92919126;
+  border: 0.2rem solid #424040;
+  color: #424040;
   outline: none;
   cursor: default;
 }
 
 .counter {
   display: inline-block;
-  border: 1px solid #fff;
-  min-width: 100px;
-  height: 100px;
-  padding: 20px;
-  margin: 10px;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #fff;
+  background-color: #ffffff13;
+  width: 19rem;
+  height: 15rem;
+  padding: 2rem;
+  margin: 1rem;
 }
 
-span {
+.time-left-info {
   display: block;
-  padding: 25px 10px;
-  font-size: 2.5rem;
+  padding: 2rem 1rem;
+  font-size: 2.8rem;
   font-weight: bolder;
 }
 
-.endTimer {
-  padding: 25px;
-  font-size: 1.7rem;
-  font-style: italic;
+.end-timer {
+  height: 10rem;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ff0000;
+  text-shadow: -2px 2px 0 #000,
+    2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000;
 }
