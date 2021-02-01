@@ -11,14 +11,41 @@
 
 <body>
   <main>
-    <h1>Pascal's Triangle</h1>
+    <h1 class="heading-primary">Pascal's Triangle<sup class="open-modal">🛈</sup></h1>
+   <p class="paragraph">Enter the number of rows and I'll compute Pascal's triangle up to the given number.</p>
     <form>
-      <input type="text" placeholder="enter a number" class="number">
-      <button>▶</button>
-      <p class="result">...</p>
+      <input class="input-data" type="number" placeholder="number of rows">
+      <button class="btn btn-calc">calc</button>
+      <p class="result"></p>
     </form>
   </main>
 
+  <div class="modal hidden">
+    <button class="btn btn-close close-modal">&times;</button>
+    <div class="definition">
+      <p class="definition-1">
+        According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Pascal%27s_triangle">Wikipedia</a>,
+        Pascal's triangle is a triangular array of the binomial coefficients that arises in probability theory,
+        combinatorics, and algebra.
+      </p>
+      <p class="definition-2">
+        The triangle may be constructed in the following manner: in row 0 (the topmost row), there is a unique nonzero
+        entry 1.<br> Each entry of each subsequent row is constructed by adding the number above and to the left with the
+        number above and to the right, treating blank entries as 0.
+      </p>
+    </div>
+    <div class="example">
+      <a href="https://commons.wikimedia.org/wiki/File:PascalTriangleAnimated2.gif#/media/File:PascalTriangleAnimated2.gif">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif"
+          alt="Pascal triangle">
+      </a>
+      <p>By <a href="https://en.wikipedia.org/wiki/User:Hersfold" class="extiw" title="w:User:Hersfold">Hersfold</a> on the
+        English Wikipedia - <span class="int-own-work" lang="en">Own work</span>, Public Domain,
+        <a href="https://commons.wikimedia.org/w/index.php?curid=3902538">Link</a>
+      </p>
+      <button class="btn btn-ok close-modal">OK</button>
+      </div>
+  </div>
 </body>
 
 </html>
