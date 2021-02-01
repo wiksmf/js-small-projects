@@ -1,27 +1,24 @@
 'use strict';
 
-const word = document.querySelector('.word');
-const btnCheck = document.querySelector('button');
+const userInput = document.querySelector('.user-input');
+const btnCheck = document.querySelector('.btn');
 const result = document.querySelector('.result');
 
-
-btnCheck.addEventListener('click', (e) => {
+btnCheck.addEventListener('click', e => {
   e.preventDefault();
 
-  let string = word.value;
+  console.log(userInput.value);
 
-  if (string.length === 0) {
+  if (!userInput.value) {
+    result.textContent = `⚠️ invalid input`;
     return;
   }
 
-  result.textContent = reverseString(string);
+  result.textContent = reverseString(userInput.value);
+  userInput.value = '';
+  userInput.focus();
 });
 
-
 function reverseString(string) {
-  string = string.split('');
-  string = string.reverse();
-  string = string.join('');
-
-  return string;
-};
+  return string.split('').reverse().join('');
+}
