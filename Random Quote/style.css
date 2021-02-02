@@ -1,34 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Amita&family=Italianno&display=swap');
 
-body {
-  font-family: 'Amita', cursive;
-  background-color: #776d8a;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-family: 'Amita', cursive;
+  font-size: 3rem;
+  background-color: #776d8a;
 }
 
 main {
-  width: 996px;
+  width: 90rem;
 }
 
-h1 {
+.heading-primary {
   font-family: 'Italianno', cursive;
   letter-spacing: 0.3rem;
-  font-size: 2.8rem;
+  font-size: 4rem;
   color: #fff;
   text-shadow: 0 0 1rem #000;
 }
 
-p {
-  font-size: 2rem;
-}
-
 .quote {
   background-color: #fff;
-  box-shadow: 0 0 3rem 0.5rem rgb(32, 31, 31);
+  box-shadow: 0 0 3rem 0.5rem #201f1f;
   margin-top: 5rem;
-  padding: 2rem;
+  padding: 4rem 5rem;
+}
+
+.author {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-style: italic;
 }
