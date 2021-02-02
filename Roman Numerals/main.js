@@ -5,6 +5,8 @@ const btnRoman = document.querySelector('.btn-roman');
 const btnArabic = document.querySelector('.btn-arabic');
 const result = document.querySelector('.result');
 
+const regEx = /M|CM|D|CD|C|XC|L|XL|X|IX|V|IV|I/;
+
 const numeralsConversion = {
   M: 1000,
   CM: 900,
@@ -42,9 +44,11 @@ function toRoman() {
 
 // Convert from roman to arabic numerals
 function toArabic() {
-  if (!isNaN(userInput.value)) return;
+  const input = userInput.value.toUpperCase();
 
-  let number = userInput.value.toUpperCase().split('');
+  if (!isNaN(input) || !regEx.test(input)) return;
+
+  let number = input.split('');
   let arabicNumber = 0;
   let currentValue, nextValue;
 
