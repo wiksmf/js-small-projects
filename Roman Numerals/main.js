@@ -1,10 +1,11 @@
 'use strict';
 
-const userInput = document.querySelector('input');
-const btnConvert = document.querySelector('button');
-const displayInput = document.querySelector('.number');
-const displayResult = document.querySelector('.result');
-const romanToArabic = {
+const userInput = document.querySelector('.input-data');
+const btnRoman = document.querySelector('.btn-roman');
+const btnArabic = document.querySelector('.btn-arabic');
+const result = document.querySelector('.result');
+
+const numeralsConversion = {
   M: 1000,
   CM: 900,
   D: 500,
@@ -17,29 +18,48 @@ const romanToArabic = {
   IX: 9,
   V: 5,
   IV: 4,
-  I: 1
+  I: 1,
 };
 
+btnRoman.addEventListener('click', toRoman);
+btnArabic.addEventListener('click', toArabic);
 
-const toRoman = () => {
-  let number = +userInput.value;
-  displayInput.textContent = number;
+// Convert from arabic to roman numerals
+function toRoman() {
+  if (isNaN(userInput.value)) return;
 
   let romanNumber = '';
+  let number = +userInput.value;
 
-  for (let x in romanToArabic) {
-    while (number >= romanToArabic[x]) {
+  for (const x in numeralsConversion) {
+    while (number >= numeralsConversion[x]) {
       romanNumber += x;
-      number -= romanToArabic[x];
+      number -= numeralsConversion[x];
     }
   }
+  displayResult(+userInput.value, romanNumber);
+}
 
-  displayResult.textContent = romanNumber;
-};
+// Convert from roman to arabic numerals
+function toArabic() {
+  if (!isNaN(userInput.value)) return;
 
-btnConvert.addEventListener('click', function(e) {
-  e.preventDefault();
+  let number = userInput.value.toUpperCase().split('');
+  let arabicNumber = 0;
+  let currentValue, nextValue;
 
-  toRoman();
+  for (let i = 0; i < number.length; i++) {
+    currentValue = numeralsConversion[number[i]];
+    nextValue = numeralsConversion[number[i + 1]];
+
+    if (currentValue < nextValue) arabicNumber -= currentValue;
+    else arabicNumber += currentValue;
+  }
+  displayResult(userInput.value, arabicNumber);
+}
+
+// Display conversion results
+function displayResult(input, number) {
+  result.textContent = `${input} ➡ ${number}`;
   userInput.value = '';
-});
+}
