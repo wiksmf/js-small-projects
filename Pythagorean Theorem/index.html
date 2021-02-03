@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pythagorean Theorem</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="main.js"></script>
-  </head>
 
-  <body>
-    <main>
-      <h1>Pythagorean Theorem</h1>
-      <form>
-        <input type="text" placeholder="side A" class="side-a" />
-        <input type="text" placeholder="side B" class="side-b" />
-        <button>▶</button>
-        <p class="result">...</p>
-      </form>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pythagorean Theorem</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+
+<body class="display-flex">
+  <main>
+    <h1 class="heading-primary">Pythagorean Theorem<sup class="open-modal">🛈</sup> ?</h1>
+    <form>
+      <input type="number" placeholder="side A" class="input-data side-a" />
+      <input type="number" placeholder="side B" class="input-data side-b" />
+      <button class="btn">calc</button>
+      <p class="result"></p>
+    </form>
+  </main>
+
+  <div class="modal display-flex hidden">
+    <button class="btn btn-close close-modal">&times;</button>
+    <div class="definition">
+      <p class="definition-1">
+        According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Pythagorean_theorem">Wikipedia</a>,
+        the Pythagorean theorem states that the area of the square whose side is the hypotenuse (the side opposite the
+        right angle) is equal to the sum of the areas of the squares on the other two sides.
+      </p>
+      <p class="definition-2">
+        This theorem can be written as an equation relating the lengths of the sides a, b and c, often called the
+        Pythagorean equation:
+        <span class="definition-3">a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></span>,
+        where c represents the length of the hypotenuse and a and b the lengths of the triangle's other two sides.
+      </p>
+    </div>
+    <div class="example">
+      <a title="en:User:Wapcaplet, CC BY-SA 3.0 &lt;http://creativecommons.org/licenses/by-sa/3.0/&gt;, via Wikimedia Commons"
+        href="https://commons.wikimedia.org/wiki/File:Pythagorean.svg">
+        <img class="image"
+          alt="Pythagorean"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Pythagorean.svg/512px-Pythagorean.svg.png">
+      </a>
+    </div>
+    <button class="btn btn-ok close-modal">OK</button>
+  </div>
+</body>
 </html>
