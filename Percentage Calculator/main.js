@@ -1,18 +1,15 @@
 'use strict';
 
-const numb1 = document.querySelector('.numb1');
-const numbInput = document.querySelector('.numb2');
+const firstNumber = document.querySelector('.number-1');
+const secondNumber = document.querySelector('.number-2');
 const btnCalculate = document.querySelector('button');
 const result = document.querySelector('.result');
 
-
-btnCalculate.addEventListener('click', (e) => {
+btnCalculate.addEventListener('click', e => {
   e.preventDefault();
+  if (!firstNumber.value || !secondNumber.value) return;
 
-  let percentage = +numb1.value;
-  let number = +numbInput.value;
-
-  console.log(percentage);
-
-  result.textContent = `${(percentage / 100) * number}`
+  result.textContent = `
+    ${((firstNumber.value / 100) * secondNumber.value).toFixed(2)}
+  `;
 });
