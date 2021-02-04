@@ -1,7 +1,7 @@
 'use strict';
 
 const userInput = document.querySelector('.input-data');
-const btnCheck = document.querySelector('button');
+const btnCheck = document.querySelector('.btn-check');
 const result = document.querySelector('.result');
 
 const displayInfo = document.querySelector('.modal');
@@ -30,7 +30,7 @@ function isPrime(number) {
   return true;
 }
 
-// Reset input field and sequence array
+// Reset input field
 function resetInput() {
   userInput.value = '';
   userInput.focus();
