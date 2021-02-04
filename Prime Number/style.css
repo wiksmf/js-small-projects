@@ -1,78 +1,140 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: 'Antic Slab', serif;
   font-size: 1.8rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   color: #ff4646;
-  background-color: #03506f;
-  text-align: left;
+  background-color: #ffe4e4;
 }
 
+/* MAIN */
 main {
-  width: 996px;
+  width: 70rem;
 }
 
-h1,
-h1+p {
-  margin: 50px 0;
+.heading-primary {
+  margin-bottom: 5rem;
 }
 
-input[type='text'] {
-  border: none;
-  border-bottom: 1px solid #ff4646;
+.input-data,
+.btn {
+  margin-bottom: 2rem;
   font-family: inherit;
-  font-size: 1.5rem;
-  letter-spacing: .2rem;
-  padding: 10px 0;
-  margin: 50px 30px;
-  cursor: pointer;
-  background-color: transparent;
-  color: #cffffe;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  border: none;
+  border-radius: 1rem;
   outline: none;
-  width: 250px;
-  text-align: center;
-}
-
-input[type='text']:focus,
-input[type='text']:hover {
-  outline: 2px dotted #cffffe;
-}
-
-input[type='text']::placeholder {
-  color: #cffffe6c;
-}
-
-button {
-  font-family: inherit;
-  font-size: 3rem;
-  letter-spacing: .3rem;
-  border-radius: 10px;
-  border: none;
-  background-color: transparent;
-  color: #ff4646;
   cursor: pointer;
-  margin: 0 50px;
-  padding: 10px 14px;
+  transition: all 0.2s;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #cffffe;
+.input-data {
+  width: 30rem;
+  border: 0.1rem solid #ff4646;
+  padding: 1rem;
+  background-color: #ffa5a541;
+  color: #404949;
+}
+
+.input-data::placeholder {
+  color: #404949;
+}
+
+.btn {
+  display: block;
+  background-color: #ff4646;
+  color: #ffe4e4;
+  padding: 1.2rem 1.5rem;
+}
+
+.input-data:focus,
+.input-data:hover,
+.btn:focus,
+.btn:hover {
+  outline: 0.2rem dotted #ff4646;
+}
+
+.btn:active {
+  transform: translateY(0.3rem);
 }
 
 .result {
-  margin-top: 30px;
-  font-size: 3.5rem;
-  display: inline;
+  height: 5rem;
+  margin-top: 5rem;
+  font-size: 3rem;
+}
+
+/* MODAL STYLE */
+.hidden {
+  display: none;
+}
+
+.open-modal {
+  cursor: pointer;
+  color: #404949;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 75rem;
+  height: 35rem;
+  padding: 7rem 8rem 7rem 4rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 1rem #00000041;
+  background-color: #fff;
+  color: #092532;
+}
+
+.examples {
+  margin-top: 2rem;
+}
+
+.btn-close {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.6rem;
+
+  margin: 0;
+  padding: 0;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 5rem;
+  font-weight: 500;
+  color: #ff4646;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btn-ok {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 4.5rem;
+
+  font-weight: 700;
+  color: #fff;
+  background-color: #ff4646;
 }
