@@ -3,46 +3,60 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: 'Audiowide', cursive;
-  letter-spacing: .4rem;
+  letter-spacing: 0.4rem;
   color: #b0eb0d;
   background-color: #1462d8;
   text-align: center;
 }
 
-
 h1 {
-  margin: 50px 0;
-  font-size: 2rem;
+  margin: 5rem 0;
+  font-size: 3rem;
 }
 
-button {
+.uuid,
+.btn {
   font-family: inherit;
-  font-size: 1.7rem;
-  letter-spacing: .3rem;
-  border-radius: 10px;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  border-radius: 1rem;
   border: none;
+  padding: 1rem 1.5rem;
+  margin: 3rem;
+}
+
+.btn {
   background-color: #b0eb0d;
   color: #1462d8;
   cursor: pointer;
-  margin: 50px;
-  padding: 10px 14px;
+  transition: all 0.2s;
 }
 
-button:focus,
-button:hover {
-  outline: 2px dotted #cffffe;
+.btn:focus,
+.btn:hover {
+  outline: 0.2rem dotted #cffffe;
 }
 
-.result {
-  margin-top: 30px;
-  font-size: 2rem;
+.btn:active {
+  transform: translateY(0.2rem);
+}
+
+.uuid {
+  width: 65rem;
+  text-align: center;
 }
