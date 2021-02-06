@@ -32,11 +32,6 @@ body {
   margin-bottom: 3rem;
 }
 
-.open-modal {
-  cursor: pointer;
-  color: #f700ff;
-}
-
 /* FORM STYLE */
 .input__number,
 .btn {
@@ -92,6 +87,11 @@ button:hover {
 /* MODAL STYLE */
 .hidden {
   display: none;
+}
+
+.open-modal {
+  cursor: pointer;
+  color: #f700ff;
 }
 
 .modal {
