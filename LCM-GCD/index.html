@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCM & GCD</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+
+<body class="display-flex">
+  <main>
+    <h1 class="heading-primary">LCM<sup class="open-modal" data-modal-id="modal-1">🛈</sup> 
+      & GCD<sup class="open-modal" data-modal-id="modal-2">🛈</sup></h1>
+    <form>
+      <div class="display-flex">
+        Find the:
+        <span class="switch-label">LCM</span>
+        <label class="switch">
+          <input type="checkbox" class="switch-input">
+          <span class="slider"></span>
+        </label>
+        <span class="switch-label">GCD</span>
+      </div>
+      <div>
+        <input type="text" placeholder="enter one number or more" class="input-data first-number">
+      </div>
+      <button class="btn btn-calc">calc</button>
+    </form>
+
+    <p class="result"></p>
+  </main>
+
+
+  <div class="modal-wrapper">
+    <div class="modal hidden" id="modal-1">
+      <button class="btn btn-close-x close-modal">&times;</button>
+      <p class="definition">
+        According to
+        <a class="defintion__link" href="https://en.wikipedia.org/wiki/Least_common_multiple">Wikipedia</a>,
+        the least common multiple (lcm) of two or more integers is the smallest positive integer that is 
+        divisible by each of the integers.
+      </p>
+      <p class="examples">Examples: lcm (4, 6)</p>
+      <ul class="example__list">
+        <li class="example__item">Multiples of 4 are: 4, 8, 12, 16, 20, 24, 28, 32,36, ...</li>
+        <li class="example__item">Multiples of 6 are: 6, 12, 18, 24, 30, 36, 42, 48, ...</li>
+        <li class="example__item">Common multiples of 4 and 6 are the numbers that are in both lists: 12, 24, 36, ...</li>
+        <li class="example__item">Among this list, the smallest number is 12, hence the least common multiple is 12.</li>
+      </ul>
+      <button class="btn btn-close-ok close-modal">OK</button>
+    </div>
+
+    <div class="modal hidden" id="modal-2">
+      <button class="btn btn-close-x close-modal">&times;</button>
+      <p class="definition">
+        According to
+        <a class="defintion__link" href="https://en.wikipedia.org/wiki/Greatest_common_divisor">Wikipedia</a>,
+        the greatest common divisor (gcd) of two or more integers, which are not all zero, is the largest 
+        positive integer that divides each of the integers.
+      </p>
+      <p class="examples">Examples: gcd (54, 24)</p>
+      <ul class="example__list">
+        <li class="example__item">The divisors of 54 are: 1, 2, 3, 6, 9, 18, 27, 54</li>
+        <li class="example__item">The divisors of 24 are: 1, 2, 3, 4, 6, 8, 12, 24</li>
+        <li class="example__item">Common divisors of 54 and 34 are the numbers that are in both lists: 1, 2, 3, 6</li>
+        <li class="example__item">Among this list, the greatest number is 6, hence the greatest common divisor is 6.</li>
+      </ul>
+      <button class="btn btn-close-ok close-modal">OK</button>
+    </div>
+  </div>
+</body>
+
+</html>

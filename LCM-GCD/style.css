@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  justify-content: center;
+
+  font-family: 'Antic Slab', serif;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  color: #ffdd93;
+  background-color: #433d3c;
+  text-align: left;
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+}
+
+/* MAIN */
+main {
+  width: 90rem;
+}
+
+.heading-primary {
+  margin-bottom: 5rem;
+}
+
+.input-data,
+.btn {
+  margin-bottom: 2rem;
+  font-family: inherit;
+  font-size: 1.9rem;
+  letter-spacing: 0.2rem;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.input-data {
+  background-color: #ffdd9328;
+  border: 1px solid #ffdd93;
+  padding: 1rem 0.4rem;
+  margin: 3rem 0;
+  color: #fde0a1;
+  width: 100%;
+  text-align: center;
+}
+
+.input-data::placeholder {
+  color: #feffff9a;
+}
+
+.btn {
+  background-color: #ffdd93;
+  font-weight: bold;
+  color: #433d3c;
+  cursor: pointer;
+  padding: 1.1rem 2rem;
+}
+
+.input-data:focus,
+.input-data:hover,
+.btn:focus,
+.btn:hover {
+  outline: 0.2rem dotted #ffee93;
+}
+
+.btn:active {
+  transform: translateY(0.2rem);
+}
+
+.result {
+  height: 3rem;
+  margin-top: 3rem;
+  font-size: 3.6rem;
+  font-weight: bold;
+  color: #ebd4d4;
+}
+
+/* TOGGLE SWITCH */
+.switch {
+  display: inline-block;
+  position: relative;
+  height: 3rem;
+  width: 8rem;
+}
+
+.switch-label {
+  margin: 0 1rem;
+}
+
+.switch-input {
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 3rem;
+  background-color: #d8c292;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.3rem;
+  height: 2.4rem;
+  width: 3.4rem;
+  border-radius: 3rem;
+  background-color: #9b5151;
+}
+
+.switch-input:checked + .slider {
+  background-color: #ffee93;
+}
+
+.switch-input:checked + .slider::before {
+  transform: translateX(3.6rem);
+}
+
+/* MODAL STYLE */
+.hidden {
+  display: none;
+}
+
+.open-modal {
+  cursor: pointer;
+  color: #ebd4d4;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 95rem;
+  height: 37rem;
+  padding: 7rem 8rem 7rem 4rem;
+  font-size: 1.7rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 1rem #00000041;
+  background-color: #fff;
+  color: #092532;
+}
+
+.definition {
+  margin-bottom: 1rem;
+}
+
+.examples {
+  margin: 2rem 0 1rem;
+}
+
+.example__item {
+  margin-left: 3rem;
+  padding: 0.3rem 0;
+  list-style: disclosure-closed;
+}
+
+.btn-close-x {
+  position: absolute;
+  top: 2rem;
+  right: 3.6rem;
+
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 5rem;
+  font-weight: 500;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btn-close-ok {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 4.5rem;
+
+  font-weight: 700;
+  color: #fff;
+  background-color: #433d3c;
+}
+
+.btn-close-x:focus,
+.btn-close-ok:focus,
+.btn-close-x:hover,
+.btn-close-ok:hover {
+  outline: 0.2rem dotted #524c2d;
+}
