@@ -6,20 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caesar Cipher</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
   <main>
-    <h1>Caesar Cipher</h1>
+    <h1>Caesar Cipher<sup class="open-modal">🛈</sup></h1>
     <form>
-      <input type="text" placeholder="enter a sentence">
-      <button>encrypt</button>
+      <input type="text" class="string-input" placeholder="enter a string">
+      <input type="number" class="key-input" placeholder="key">
+      <button class="btn btn-encrypt">encrypt</button>
     </form>
 
-    <p class="result">...</p>
+    <p class="result"></p>
   </main>
 
-  <script src="main.js"></script>
+  <div class="modal hidden">
+    <button class="btn btn-close close-modal">&times;</button>
+    <p class="definition">
+      According to <a class="defintion__link" href="https://en.wikipedia.org/wiki/Caesar_cipher">Wikipedia</a>,
+      a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of 
+      the simplest and most widely known encryption techniques. It is a type of substitution cipher in which
+      each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
+    </p>
+    <p class="examples">Examples:</p>
+    <p class="examples">The transformation can be represented by aligning two alphabets; the cipher alphabet is the plain alphabet
+      rotated left or right by some number of positions.</p>
+    <p class="examples">For instance, here is a Caesar cipher using a left rotation of three places, equivalent to a right shift of 23
+      (the shift parameter is used as the key):</p>
+    <p class="example__item-1 display-flex">Plain: <span class="example__text">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span></p>
+    <p class="example__item-1 display-flex">Cipher: <span class="example__text">XYZABCDEFGHIJKLMNOPQRSTUVW</span></p>
+
+    <p class="examples">When encrypting, a person looks up each letter of the message in the "plain" line and writes down the
+      corresponding letter in the "cipher" line:</p>
+    <p class="example__item-2 display-flex">Plaintext:  <span class="example__text">THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</span></p>
+    <p class="example__item-2 display-flex">Ciphertext: <span class="example__text">QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD</span></p>
+
+    <button class="btn btn-ok close-modal">OK</button>
+  </div>
 </body>
 
 </html>
