@@ -1,7 +1,7 @@
 'use strict';
 
-const firstNumber = document.querySelector('.first-number');
-const checkboxBtn = document.querySelector('.switch-input');
+const numbers = document.querySelector('.first-number');
+const checkbox = document.querySelector('.switch-input');
 const btnCalc = document.querySelector('.btn-calc');
 const result = document.querySelector('.result');
 
@@ -15,16 +15,19 @@ const regEx = /^[0-9 ]+$/;
 btnCalc.addEventListener('click', e => {
   e.preventDefault();
 
-  if (!firstNumber.value || !regEx.test(firstNumber.value)) {
+  if (!numbers.value || !regEx.test(numbers.value)) {
     result.textContent = '⚠️ input must be a number';
     return;
   }
 
-  const inputData = firstNumber.value.split(' ');
+  const inputData = numbers.value.split(' ');
 
-  result.textContent = checkboxBtn.checked
+  result.textContent = checkbox.checked
     ? `The GCD of ${inputData.join(', ')} is: ${inputData.reduce(gcd)}`
     : `The LCM of ${inputData.join(', ')} is: ${inputData.reduce(lcm)}`;
+
+  numbers.value = '';
+  numbers.focus();
 });
 
 // Find the LCM
