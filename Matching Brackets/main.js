@@ -4,38 +4,29 @@ const userInput = document.querySelector('input');
 const btn = document.querySelector('button');
 const result = document.querySelector('.result');
 
-
-btn.addEventListener('click', (e) => {
+btn.addEventListener('click', e => {
   e.preventDefault();
 
-  let input = userInput.value;
+  if (!userInput.value) return;
 
-  if (!input) return;
-
-  isPaired(input);
+  result.textContent = `${
+    isPaired(userInput.value)
+      ? 'Matching Brackets 🙉'
+      : 'No Matching Brackets 🙊'
+  }`;
 });
 
-
-function isPaired(input) {
-  let brackets = "()[]{}";
+function isPaired(userInput) {
+  let bracketsSet = '()[]{}';
   let stack = [];
 
-  if (input === '') {
-    return true;
+  userInput = userInput.match(/[{}\(\)\[\]]/g);
+
+  for (const bracket of userInput) {
+    let bracketsIndex = bracketsSet.indexOf(bracket);
+    if (bracketsIndex % 2 === 0) stack.push(bracketsIndex + 1);
+    else if (stack.pop() !== bracketsIndex) return false;
   }
 
-  input = input.match(/[{}\(\)\[\]]/g);
-
-  for (let bracket of input) {
-    let bracketsIndex = brackets.indexOf(bracket);
-    if (bracketsIndex % 2 === 0) {
-      stack.push(bracketsIndex + 1);
-    } else {
-      if (stack.pop() !== bracketsIndex) {
-        return false;
-      }
-    }
-  }
-
-  result.textContent = `${stack.length === 0 ? 'yes :)' : 'no :('}`;
+  return stack.length === 0;
 }

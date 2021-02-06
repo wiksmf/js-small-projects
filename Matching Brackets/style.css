@@ -1,31 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: #ff4646;
-  color: #fff;
-  font-family: 'Langar', cursive;
-  font-size: 1.2rem;
-  text-align: center;
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: .2rem;
+
+  background-color: #ff4646;
+  color: #fff;
+  font-family: 'Langar', cursive;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+form {
+  margin: 4rem 0;
 }
 
 input,
 button {
   font-family: inherit;
-  font-size: 1.5rem;
-  border: 1px solid #fff;
-  border-radius: 20px;
+  font-size: inherit;
+  border: 0.1rem solid #fff;
+  border-radius: 2rem;
   color: #000;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   cursor: pointer;
-  outline: none
+  transition: all 0.2s;
+}
+
+input {
+  width: 50rem;
+}
+
+button:active {
+  transform: translateY(0.2rem);
 }
 
 .result {
-  font-size: 2rem;
+  height: 5rem;
+  font-size: 4rem;
   text-transform: uppercase;
 }
