@@ -1,39 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
   height: 100vh;
+  flex-direction: column;
 
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px;
+  font-size: 2.8rem;
   color: #fff;
-  background-color: #101d18;
+  background-color: #70af85;
 }
 
-input {
-  border: none;
-  border-bottom: 1px solid #fff;
-  background-color: transparent;
+.display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.heading-primary {
+  margin-bottom: 3rem;
+}
+
+#city-name,
+.btn {
   font-family: inherit;
   font-size: inherit;
-  color: inherit;
-
-  padding: 2px;
-  margin: 10px;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+  transition: all 0.2s;
 }
 
-button {
+#city-name {
   border: none;
-  border-radius: 10px;
-  padding: 5px 15px;
-  font-family: inherit;
+  border: 0.1rem solid #fff;
+  background-color: #b3a9ae6e;
+  color: #fff;
+  padding: 1rem;
+  margin: 0 2rem;
+}
+
+#city-name::placeholder {
+  color: #ffffffa1;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
   cursor: pointer;
 }
 
-.hidden {
-  visibility: hidden;
+#city-name:focus,
+#city-name:hover,
+.btn:focus,
+.btn:hover {
+  color: #fff;
+  background-color: #11695f;
+}
+
+.btn:active {
+  transform: translateY(0.2rem);
+}
+
+.weather-info {
+  flex-direction: column;
+  height: 45rem;
+  margin-top: 5rem;
+  padding: 4rem;
+  background-color: #ffffff6c;
+  box-shadow: 0 0 1rem #00000065;
+  color: #222831;
+}
+
+.city-info {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 4rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.weather {
+  width: 60rem;
+  margin-top: 3rem;
+  justify-content: space-evenly;
+}
+
+.temperature {
+  align-self: flex-start;
+  font-weight: bold;
+  font-size: 10rem;
+}
+
+.metric {
+  font-size: 8rem;
+}
+
+.description {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
 }
