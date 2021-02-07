@@ -3,34 +3,52 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-let paint = false;
-let x = 0;
-let y = 0;
+const color = document.querySelector('#color');
+const opacity = document.querySelector('#opacity');
+const size = document.querySelector('#size');
 
+const drawBtn = document.querySelector('#draw');
+const eraseBtn = document.querySelector('#erase');
+
+let paint = false;
+let coords = {
+  x: 0,
+  y: 0,
+};
+
+// Updates the coordinates of the mouse
 function getPosition(e) {
-  x = e.clientX - canvas.offsetLeft;
-  y = e.clientY - canvas.offsetTop;
+  coords.x = e.clientX - canvas.offsetLeft;
+  coords.y = e.clientY - canvas.offsetTop;
 }
 
+// Start drawing on canvas
 function startDraw(e) {
   paint = true;
   getPosition(e);
 }
 
+// Stop drawing on canvas
 function stopDraw() {
   paint = false;
 }
 
+// Draw on canvas
 function draw(e) {
   if (!paint) return;
 
-  ctx.strokeStyle = 'white';
-  ctx.lineWidth = 1;
+  size.defaultValue = 5;
+
+  if (drawBtn.checked) ctx.strokeStyle = color.value;
+  else if (eraseBtn.checked) ctx.strokeStyle = 'white';
+
+  ctx.lineCap = 'round';
+  ctx.lineWidth = size.value;
 
   ctx.beginPath();
-  ctx.moveTo(x, y);
+  ctx.moveTo(coords.x, coords.y);
   getPosition(e);
-  ctx.lineTo(x, y);
+  ctx.lineTo(coords.x, coords.y);
   ctx.stroke();
 }
 
