@@ -1,4 +1,6 @@
-document.addEventListener('keypress', (e) => {
+'use strict';
+
+document.addEventListener('keypress', e => {
   playSound(e.key);
   btnAnimation(e.key);
 });
@@ -29,13 +31,13 @@ function playSound(key) {
       new Audio('sounds/bass.mp3').play();
       break;
   }
-};
+}
 
 function btnAnimation(key) {
-  let activeBtn = document.querySelector("." + key);
-  activeBtn.classList.add("pressed");
+  let activeBtn = document.querySelector('.' + key);
+  activeBtn.classList.add('pressed');
 
   setTimeout(() => {
-    activeBtn.classList.remove("pressed");
+    activeBtn.classList.remove('pressed');
   }, 100);
-};
+}

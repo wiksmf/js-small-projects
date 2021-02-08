@@ -1,102 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: 'Poiret One', cursive;
-  background: url(images/skulls.png), rgb(97, 81, 96);
-  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  background: url(images/skulls.png), #615160;
+  color: #ffffff;
   text-align: center;
 }
 
 main {
-  width: 600px;
+  width: 70rem;
 }
 
 h1 {
-  font-size: 3rem;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
 }
 
-p {
-  font-size: 1.7rem;
-}
+.drum {
+  position: relative;
 
-button {
   font-family: 'Poiret One', cursive;
-  font-size: 1.8rem;
-  color: rgb(255, 255, 255);
-  background-color: rgba(58, 34, 56, 0.75);
-  border-radius: 5px;
-  border: 3.5px solid rgb(255, 255, 255);
-  padding: 15px 20px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  background-color: #3a2238ec;
+  border-radius: 0.5rem;
+  border: 0.4rem solid #ffffff;
+  padding: 1.5rem 2rem;
 }
 
 .pressed {
-  box-shadow: 2px 2px 4px 0 rgb(255, 255, 255);
+  box-shadow: 0.2rem 0.2rem 0.4rem 0 #ffffff;
   opacity: 0.3;
 }
 
 .a {
-  position: relative;
-  top: 200px;
-  left: -20px;
+  top: 20rem;
+  left: 0.6rem;
 }
 
 .s {
-  position: relative;
-  top: 350px;
-  left: -115px;
+  top: 35rem;
+  left: -11.5rem;
 }
 
 .d {
-  position: relative;
-  top: 460px;
-  left: 30px;
+  top: 46rem;
+  left: 3rem;
 }
 
 .j {
-  position: relative;
-  top: 100px;
-  right: -215px;
+  top: 10rem;
+  right: -21.5rem;
 }
 
 .k {
-  position: relative;
-  top: 200px;
-  right: -80px;
+  top: 20rem;
+  right: -6rem;
 }
 
 .l {
-  position: relative;
-  top: 305px;
-  right: -90px;
+  top: 30rem;
+  right: -6rem;
 }
 
 footer {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 2.5rem;
+  right: 2.5rem;
   transform: rotate(180deg);
   writing-mode: vertical-rl;
 }
 
 .attribution {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  background-color: #3838389a;
+  padding: 1.2rem 0.5rem;
 }
 
 a {
   text-decoration: none;
-  color: rgb(252, 50, 235);
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+  color: #ff8686;
 }
 
 a:focus,
 a:hover,
 a:active {
-  outline: 1px dotted rgb(252, 50, 235);
+  outline: 0.1rem dotted #32f5fc;
 }
