@@ -3,12 +3,10 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-const color = document.querySelector('#color');
-const opacity = document.querySelector('#opacity');
-const size = document.querySelector('#size');
-
 const drawBtn = document.querySelector('#draw');
 const eraseBtn = document.querySelector('#erase');
+const color = document.querySelector('#color');
+const size = document.querySelector('#size');
 
 let paint = false;
 let coords = {
