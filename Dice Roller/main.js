@@ -1,10 +1,12 @@
-const shakeBtn = document.querySelector('button');
-const result = document.querySelector('h1');
-const firstDice = document.querySelector('.firstDice');
-const secondDice = document.querySelector('.secondDice');
+'use strict';
 
-const dice = ['dice1', 'dice2', 'dice3', 'dice4', 'dice5', 'dice6'];
+const gameInfo = document.querySelector('.heading-primary');
+const shakeItem = document.querySelectorAll('.shake-item');
+const firstDice = document.querySelector('.first-dice');
+const secondDice = document.querySelector('.second-dice');
+const shakeBtn = document.querySelector('.btn-shake');
 
+const imgDice = ['dice1', 'dice2', 'dice3', 'dice4', 'dice5', 'dice6'];
 
 // Shake the dice when the button is pressed
 shakeBtn.addEventListener('click', () => {
@@ -12,37 +14,26 @@ shakeBtn.addEventListener('click', () => {
   setTimeout(getRandomDice, 1000);
 });
 
-
 // Function to shake the heading and the dice
 function shakeDice() {
-  result.textContent = `shake, shake, shake ...`;
-  result.classList.add('shake');
-  firstDice.classList.add('shake');
-  secondDice.classList.add('shake');
+  gameInfo.textContent = `shake, shake, shake ...`;
+  shakeItem.forEach(item => item.classList.add('shake'));
 }
-
 
 // Function to get a random dice and update the heading
 function getRandomDice() {
-  result.classList.remove('shake');
-  firstDice.classList.remove('shake');
-  secondDice.classList.remove('shake');
+  const randomN1 = randomNumber();
+  const randomN2 = randomNumber();
 
-  let randomNumber1 = randomNumber();
-  let randomNumber2 = randomNumber();
+  shakeItem.forEach(item => item.classList.remove('shake'));
 
-  firstDice.src = `images/${dice[randomNumber1]}.png`;
-  secondDice.src = `images/${dice[randomNumber2]}.png`;
+  firstDice.src = `images/${imgDice[randomN1]}.png`;
+  secondDice.src = `images/${imgDice[randomN2]}.png`;
 
-  if (randomNumber1 > randomNumber2) {
-    result.textContent = `🎊 Player 1 wins!`;
-  } else if (randomNumber1 < randomNumber2) {
-    result.textContent = `Player 2 wins! 🎊`;
-  } else {
-    result.textContent = `🎊 DRAW! 🎊`;
-  }
+  if (randomN1 > randomN2) gameInfo.textContent = `🎊 Player 1 wins!`;
+  else if (randomN1 < randomN2) gameInfo.textContent = `Player 2 wins! 🎊`;
+  else gameInfo.textContent = `🎊 DRAW! 🎊`;
 }
-
 
 // Function to get a random number between 0 and 5
 function randomNumber() {

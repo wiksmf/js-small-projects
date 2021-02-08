@@ -5,31 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dice Roller</title>
-  <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
-
   <main>
-    <h1>SHAKE THE DICE</h1>
+    <h1 class="shake-item heading-primary">🎲 SHAKE THE DICE 🎲</h1>
 
-    <div>
-      <div class="dice">
-        <p>Player 1</p>
-        <img class="firstDice" src="images/dice1.png" alt="">
+    <div class="container">
+      <div class="player-1">
+        <p class="player-paragraph">Player 1</p>
+        <img class="shake-item first-dice" src="images/dice1.png" alt="">
       </div>
-
-      <div class="dice">
-        <p>Player 2</p>
-        <img class="secondDice" src="images/dice1.png" alt="">
+      <div class="player-2">
+        <p class="player-paragraph">Player 2</p>
+        <img class="shake-item second-dice" src="images/dice1.png" alt="">
       </div>
     </div>
 
-    <button>SHAKE</button>
+    <button class="shake-item btn-shake">SHAKE</button>
   </main>
-
-  <script src="main.js"></script>
 </body>
 
 </html>
