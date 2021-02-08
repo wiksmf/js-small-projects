@@ -1,26 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@700&family=Ubuntu:wght@400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-family: 'Ubuntu', sans-serif;
+  font-size: 2rem;
   background-color: #e97171;
   background-image: url(images/swirl.png);
 }
 
 main {
   background-color: #fff;
-  border-radius: 10px;
-  padding: 40px;
+  border-radius: 1rem;
+  padding: 4rem;
   background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 45px #931a25;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4.5rem #931a25;
 }
 
 .main {
@@ -30,21 +39,21 @@ main {
 
 h1 {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 8rem;
   font-family: 'Oleo Script Swash Caps', cursive;
   font-size: 4rem;
 }
 
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 p {
-  margin: 15px 0;
+  margin: 1.5rem 0;
 }
 
 .instructions {
-  padding-right: 50px;
+  padding-right: 5rem;
 }
 
 span {
@@ -52,27 +61,27 @@ span {
 }
 
 .game {
-  padding-left: 50px;
-  border-left: 1px solid #000;
+  padding-left: 5rem;
+  border-left: 0.1rem solid #000;
   text-align: center;
 }
 
 .random-number {
-  margin: 50px auto;
+  margin: 5rem auto;
   font-size: 5rem;
   font-weight: bolder;
 }
 
 button {
-  padding: 15px 20px;
+  padding: 1.5rem 2rem;
   font-family: inherit;
   font-weight: bolder;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   border: none;
-  border-radius: 5px;
-  outline: none;
+  border-radius: 0.5rem;
   cursor: pointer;
   color: #fff;
+  transition: all 0.1s;
 }
 
 button:disabled {
@@ -80,9 +89,13 @@ button:disabled {
   cursor: default;
 }
 
-.startBtn {
+button:active {
+  transform: translateY(0.2rem);
+}
+
+.start-btn {
   display: block;
-  margin: 5px auto;
+  margin: 0.5rem auto;
 }
 
 .hidden {

@@ -1,20 +1,20 @@
-.startBtn {
+.start-btn {
   background-color: #28df99;
 }
 
-.fizzBtn {
+.fizz-btn {
   background-color: #9d65c9;
 }
 
-.buzzBtn {
+.buzz-btn {
   background-color: #ff5200;
 }
 
-.fizz-buzzBtn {
+.fizz-buzz-btn {
   background-color: #ec0101;
 }
 
-.nextBtn {
+.next-btn {
   background-color: #0278ae;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .next {
-  color: #0278ae
+  color: #0278ae;
 }
 
 .start {
