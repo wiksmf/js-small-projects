@@ -1,13 +1,22 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.5rem;
 }
 
 h1 {
   background-color: #ffffffa6;
-  padding: 10px 50px;
-  border-radius: 5px;
+  padding: 1rem 5rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
 }
 
 main {
@@ -16,17 +25,18 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   background-image: url(images/tree-flowers.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-
 footer {
+  font-size: 2rem;
   color: #ffffdd;
   position: fixed;
-  bottom: 25px;
-  right: 5px;
+  bottom: 2.5rem;
+  right: 0.5rem;
   transform: rotate(180deg);
   writing-mode: vertical-rl;
 }
@@ -34,9 +44,10 @@ footer {
 a {
   text-decoration-style: dotted;
   color: #ffffdd;
+  transition: all 0.2s;
 }
 
 a:focus,
 a:hover {
-  outline: 2px dotted #ffffdd;
+  outline: 0.1rem dotted #ffffdd;
 }
