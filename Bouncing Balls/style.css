@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
 body {
+  position: relative;
   font-family: 'Chewy', cursive;
-  text-align: center;
+  font-size: 2rem;
   cursor: pointer;
 }
 
-h1 {
-  font-size: 3rem;
-  letter-spacing: 0.4rem;
+.information {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  user-select: none;
 }
 
-canvas {
-  background-color: #fff;
+h1 {
+  letter-spacing: 0.4rem;
 }
