@@ -1,64 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap');
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1.2rem;
-  background-image: url(images/santa-claus.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
+
+  font-family: 'Kanit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgb(32, 32, 32);
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
   text-align: center;
 }
 
-main {
-  width: 768px;
-  border-radius: 5px;
-  border: 2px solid #fff;
-  background-color: #8080809d;
-  padding: 40px;
-  margin: 50px;
-}
-
 h1 {
-  letter-spacing: .5rem;
+  color: black;
 }
 
-span {
-  padding: 25px 10px;
-  font-size: 2.5rem;
-  font-weight: bolder;
+.img__attribuition {
+  display: none;
 }
 
-.endTimer {
-  font-size: 1.7rem;
+/****/
+.holiday {
+  position: relative;
+  width: 25rem;
+  height: 25rem;
+  clip-path: circle(50% at 50% 50%);
+  overflow: hidden;
+  cursor: pointer;
 }
 
-footer {
-  font-size: 1rem;
-  background-color: #8080809d;
-  letter-spacing: 0.2rem;
+.holiday__img {
+  height: 100%;
+  width: 100%;
+  transform: scale(1.5);
+  transition: all 0.5s;
+}
+
+.holiday__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+
+  display: inline-block;
+  padding: 2rem;
+  background-color: #ffffff96;
+  border-radius: 2rem;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.holiday:hover .holiday__caption {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.holiday:hover .holiday__img {
+  transform: scale(1);
+  filter: blur(3px) brightness(80%);
+}
+
+/* MODALS */
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: red;
+  background-image: url(images/img-1.jpg);
+
+  padding: 5rem;
+  border-radius: 5rem;
+
+  font-size: 2rem;
+  text-transform: lowercase;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.btn-x {
+  position: absolute;
+  top: 1rem;
+  right: 6rem;
+  font-size: 4rem;
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-ok {
+  position: absolute;
+  bottom: 2rem;
+  right: 6rem;
+  padding: 0.5rem 1.6rem;
+  border-radius: 1rem;
+}
+
+.modal__info {
+  margin: 2rem auto 3.5rem;
+  padding: 3rem;
+  background-color: #ffffffbd;
+  border-radius: 2rem;
+}
+
+.paragraph-1 {
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.paragraph-2 {
+  line-height: 1.7;
+}
+
+.attribuition {
   position: fixed;
-  bottom: 25px;
-  right: 5px;
+  bottom: 7.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+
   transform: rotate(180deg);
-  writing-mode: vertical-rl;
+  writing-mode: vertical-lr;
 }
 
-a {
-  text-decoration-style: dotted;
-  color: #ffffdd;
-}
-
-a:focus,
-a:hover {
-  outline: 2px dotted #ffffdd;
+.attribuition__link {
+  text-decoration: none;
+  color: #00a1ff;
 }
