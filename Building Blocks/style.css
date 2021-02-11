@@ -1,66 +1,133 @@
 @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
+  box-sizing: border-box;
+  height: 100vh;
+  position: relative;
+
   font-family: 'Redressed', cursive;
-  font-size: 2rem;
+  font-size: 3rem;
+  user-select: none;
 }
 
-.square-1 {
-  position: fixed;
+.information {
+  position: absolute;
+  top: 5rem;
+  right: 10rem;
+}
+
+/* BLOCKS */
+.block {
+  position: absolute;
   cursor: move;
-  width: 200px;
-  height: 200px;
-  background-color: #f06363;
 }
 
-.square-2 {
-  position: fixed;
-  cursor: move;
-  width: 100px;
-  height: 100px;
-  background-color: #fafa91;
+.rectangle-down {
+  height: 4rem;
+  width: 15rem;
+  top: 18rem;
+  left: 10rem;
+  background-color: #2ec1ac;
 }
 
-.rectangle {
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+.rectangle-up {
+  height: 15rem;
+  width: 4rem;
+  top: 7rem;
+  left: 4rem;
+  background-color: #df5e88;
 }
 
-.rectangle-1 {
-  position: fixed;
-  cursor: move;
-  width: 50px;
-  height: 50px;
-  background-color: #ababf5;
-}
-
-.rectangle-2 {
-  position: fixed;
-  cursor: move;
-  width: 100px;
-  height: 70px;
-  background-color: #44ff44;
+.square {
+  height: 10rem;
+  width: 10rem;
+  top: 32rem;
+  left: 4rem;
+  background-color: #ffd96a;
 }
 
 .circle {
-  border-radius: 100%;
+  height: 10rem;
+  width: 10rem;
+  top: 44rem;
+  left: 8rem;
+  border-radius: 50%;
+  background-color: #ff8080;
 }
 
-.circle-1 {
-  position: fixed;
-  cursor: move;
-  width: 80px;
-  height: 80px;
-  background-color: rgb(255, 145, 255);
+.semi-circle {
+  height: 5rem;
+  width: 10rem;
+  top: 25rem;
+  left: 4rem;
+  border-radius: 5rem 5rem 0 0;
+  background-color: #32ff6a;
 }
 
-.circle-2 {
-  position: fixed;
-  cursor: move;
-  width: 100px;
-  height: 100px;
-  background-color: rgb(96, 255, 255);
+.quartleft-circle {
+  height: 7rem;
+  width: 7rem;
+  top: 25rem;
+  left: 16rem;
+  border-top-left-radius: 7rem;
+  background-color: #00eaff;
 }
 
-.selected {
-  background-color: rgb(156, 153, 150);
+.quartright-circle {
+  height: 7rem;
+  width: 7rem;
+  top: 35rem;
+  left: 16rem;
+  border-top-right-radius: 7rem;
+  background-color: #6b76ff;
+}
+
+.triangle {
+  top: 7rem;
+  left: 10rem;
+  border-bottom: 8rem solid #f5b5fc;
+  border-left: 7rem solid transparent;
+  border-right: 7rem solid transparent;
+}
+
+.triangle-left {
+  top: 56rem;
+  left: 4rem;
+  border-bottom: 8rem solid #444444;
+  border-right: 8rem solid transparent;
+}
+
+.triangle-right {
+  top: 64rem;
+  left: 14rem;
+  border-bottom: 8rem solid #88a9f7;
+  border-left: 8rem solid transparent;
+}
+
+.parallelogram-right {
+  height: 6rem;
+  width: 10rem;
+  top: 66rem;
+  left: 4rem;
+  transform: skew(-25deg);
+  background-color: #8db1ab;
+}
+
+.parallelogram-left {
+  height: 6rem;
+  width: 10rem;
+  top: 56rem;
+  left: 12.5rem;
+  transform: skew(25deg);
+  background-color: #197697;
 }
