@@ -52,11 +52,6 @@ function renderModal(data) {
   }
 }
 
-loadData();
-
-
-
-
 // Handling modals
 document.addEventListener('click', clickEvent => {
   if (clickEvent.target.classList.contains('open-modal')) {
@@ -88,3 +83,5 @@ function closeModal(modalId) {
   const modal = currentlyOpenModals[modalId];
   modal.classList.add('hidden');
 }
+
+loadData();

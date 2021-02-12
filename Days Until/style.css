@@ -51,7 +51,7 @@ body {
   width: 19rem;
   height: 19rem;
   margin: 1rem 2rem;
-  filter: drop-shadow(0 0 0.75rem rgb(255, 241, 244));
+  filter: drop-shadow(0 0 0.75rem #fff1f4);
   border-radius: 100%;
   overflow: hidden;
   cursor: pointer;
@@ -156,7 +156,7 @@ body {
   writing-mode: vertical-lr;
 }
 
-.attribuition__link {
+.attribution__link {
   text-decoration: none;
   color: #00a1ff;
 }
