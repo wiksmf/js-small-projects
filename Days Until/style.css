@@ -68,9 +68,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
+  backface-visibility: hidden;
   height: 100%;
   width: 100%;
-  opacity: 0;
+  opacity: 1;
   background-color: #ffffff96;
   transition: all 0.5s;
 }

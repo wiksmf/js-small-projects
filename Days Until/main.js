@@ -31,8 +31,8 @@ function renderModal(data) {
   for (let i = 0; i < data.length; i++) {
     modalWrapper.insertAdjacentHTML(
       'beforeend',
-      `<div class="modal hidden" id="modal-${i + 1}">
-        <button class="btn btn-x btn-close-modal">&times;</button>
+      `<div class="modal hidden" id="modal-${i}">
+        <button class="btn btn-x close-modal">&times;</button>
         <div class="modal__info">
           <p class="paragraph-1">The ${data[i].holiday} is an unofficial holiday observed on ${data[i].date} of each year!</p>
           <p class="paragraph-2">
@@ -43,36 +43,36 @@ function renderModal(data) {
           <a class="attribution__link" href="${data[i].attribution.link}">${ data[i].attribution.author}</a> 
           from <a class="attribution__link" href="${data[i].attribution.page}">Pixabay</a>
         </span>
-        <button class="btn btn-ok btn-close-modal">great 😊</button>
+        <button class="btn btn-ok close-modal">great 😊</button>
       </div>`,
     );
     document.querySelector(
-      `#modal-${i + 1}`,
+      `#modal-${i}`,
     ).style.backgroundImage = `url(images/img-${i}.jpg)`;
   }
 }
 
 loadData();
 
+
+
+
 // Handling modals
-document.querySelectorAll('.open-modal').forEach(btn =>
-  btn.addEventListener('click', clickEvent => {
-    console.log('ok');
+document.addEventListener('click', clickEvent => {
+  if (clickEvent.target.classList.contains('open-modal')) {
     const modalId = clickEvent.target.getAttribute('data-modal-id');
     const modal = document.getElementById(`${modalId}`);
     modal.classList.remove('hidden');
     currentlyOpenModals[modalId] = modal;
-  }),
-);
+  }
+})
 
-document.querySelectorAll('.btn-close-modal').forEach(btn => {
-  btn.addEventListener('click', clickEvent => {
-    console.log(clickEvent.target.closest('.modal'));
-
+document.addEventListener('click', clickEvent => {
+  if (clickEvent.target.classList.contains('close-modal')) {
     const modalToClose = clickEvent.target.closest('.modal');
     closeModal(modalToClose.id);
-  });
-});
+  }
+})
 
 document.addEventListener('keydown', keyEvent => {
   if (keyEvent.key === 'Escape')
