@@ -1,62 +1,63 @@
-// const btnCheck = document.querySelector('button');
-// const dayDisplay = document.querySelector('.days');
-// const hoursDisplay = document.querySelector('.hours');
-// const minutesDisplay = document.querySelector('.minutes');
-// const secondsDisplay = document.querySelector('.seconds');
-// const timerDisplay = document.querySelector('.endTimer');
-
-const btnOpenModal = document.querySelectorAll('.open-modal');
-const btnCloseModal = document.querySelectorAll('.btn-close-modal');
+const container = document.querySelector('.container');
+const modalWrapper = document.querySelector('.modal-wrapper');
 
 const currentlyOpenModals = {};
 
-// let inputDate;
-// let days;
-// let hours;
-// let minutes;
-// let seconds;
+let days = 21;
+let hours = 22;
+let minutes = 54;
+let seconds = 22;
 
-// function countdown() {
-//   let timer = setInterval(() => {
-//     let today = new Date().getTime();
-//     let xmas = new Date('December 25, 2020').getTime();
+async function loadData() {
+  const res = await fetch('./file.json');
+  const data = await res.json();
+  renderHoliday(data);
+  renderModal(data);
+}
 
-//     let timeLeft = xmas - today;
+function renderHoliday(data) {
+  for (let i = 0; i < data.length; i++) {
+    container.insertAdjacentHTML(
+      'beforeend',
+      `<figure class="holiday">
+        <img class="holiday__img" src="images/img-${i}.jpg" alt="">
+        <figcaption class="holiday__caption display-flex open-modal" data-modal-id="modal-${i}">${data[i].holiday}</figcaption>
+      </figure>`,
+    );
+  }
+}
 
-//     days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-//     hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//     minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-//     seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+function renderModal(data) {
+  for (let i = 0; i < data.length; i++) {
+    modalWrapper.insertAdjacentHTML(
+      'beforeend',
+      `<div class="modal hidden" id="modal-${i + 1}">
+        <button class="btn btn-x btn-close-modal">&times;</button>
+        <div class="modal__info">
+          <p class="paragraph-1">The ${data[i].holiday} is an unofficial holiday observed on ${data[i].date} of each year!</p>
+          <p class="paragraph-2">
+            <span class="days">${days}</span> days, <span class="hours">${hours}</span> hours, 
+            <span class="minutes">${minutes}</span> minutes, <span class="seconds">${seconds}</span> seconds until next ${data[i].holiday}</p>
+        </div>
+        <span class="attribution">Image by
+          <a class="attribution__link" href="${data[i].attribution.link}">${ data[i].attribution.author}</a> 
+          from <a class="attribution__link" href="${data[i].attribution.page}">Pixabay</a>
+        </span>
+        <button class="btn btn-ok btn-close-modal">great 😊</button>
+      </div>`,
+    );
+    document.querySelector(
+      `#modal-${i + 1}`,
+    ).style.backgroundImage = `url(images/img-${i}.jpg)`;
+  }
+}
 
-//     updateDisplay();
-
-//     if (timeLeft < 0) {
-//       clearInterval(timer);
-//       endTimer();
-//     }
-//   }, 1000);
-// }
-
-// function updateDisplay() {
-//   dayDisplay.textContent = `${days}`;
-//   hoursDisplay.textContent = `${hours}`;
-//   minutesDisplay.textContent = `${minutes}`;
-//   secondsDisplay.textContent = `${seconds}`;
-// }
-
-// function endTimer() {
-//   dayDisplay.textContent = `0`;
-//   hoursDisplay.textContent = `00`;
-//   minutesDisplay.textContent = `00`;
-//   secondsDisplay.textContent = `00`;
-//   timerDisplay.textContent = `expired`;
-// }
-
-// countdown();
+loadData();
 
 // Handling modals
-btnOpenModal.forEach(btn =>
+document.querySelectorAll('.open-modal').forEach(btn =>
   btn.addEventListener('click', clickEvent => {
+    console.log('ok');
     const modalId = clickEvent.target.getAttribute('data-modal-id');
     const modal = document.getElementById(`${modalId}`);
     modal.classList.remove('hidden');
@@ -64,7 +65,7 @@ btnOpenModal.forEach(btn =>
   }),
 );
 
-btnCloseModal.forEach(btn => {
+document.querySelectorAll('.btn-close-modal').forEach(btn => {
   btn.addEventListener('click', clickEvent => {
     console.log(clickEvent.target.closest('.modal'));
 

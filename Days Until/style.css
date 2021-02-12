@@ -95,7 +95,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background: url(images/img-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 5rem;
@@ -146,7 +145,7 @@ body {
   line-height: 1.7;
 }
 
-.attribuition {
+.attribution {
   position: fixed;
   bottom: 7.5rem;
   right: 0.5rem;
