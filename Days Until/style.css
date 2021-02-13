@@ -21,7 +21,7 @@ body {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   text-align: center;
-  background-color: #00a4f0;
+  background-color: #0b1742;
   background-image: url(images/gplay.png);
 }
 
@@ -35,7 +35,9 @@ body {
   color: #fff;
   background-color: #ffffff6b;
   border-radius: 1rem;
-  margin-bottom: 3rem;
+  padding: 1rem;
+  margin: 0 auto 4rem;
+  width: 60rem;
 }
 
 .container {
@@ -48,10 +50,10 @@ body {
 /****/
 .holiday {
   position: relative;
-  width: 19rem;
-  height: 19rem;
+  width: 17rem;
+  height: 17rem;
   margin: 1rem 2rem;
-  filter: drop-shadow(0 0 0.75rem #fff1f4);
+  filter: drop-shadow(0 0 0.8rem #000);
   border-radius: 100%;
   overflow: hidden;
   cursor: pointer;
@@ -90,18 +92,33 @@ body {
   display: none;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff48;
+  backdrop-filter: blur(.2rem);
+  z-index: 0;
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  background-repeat: no-repeat;
-  background-size: cover;
+ 
+  height: 50rem;
+  width: 65rem;
   padding: 5rem;
-  border-radius: 5rem;
+  box-shadow: 0 0 1rem 1rem #1d1d1da2;
   font-size: 2rem;
   text-transform: lowercase;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+  z-index: 1;
 }
 
 .btn {
@@ -111,29 +128,28 @@ body {
   font-size: inherit;
   border: none;
   color: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+
+  background-color: #0b1742;
   cursor: pointer;
 }
 
 .btn-x {
-  top: 0.5rem;
-  right: 6rem;
-  font-size: 4rem;
-  background-color: transparent;
+  top: 3rem;
+  right: 3rem;
 }
 
 .btn-ok {
-  bottom: 2rem;
-  right: 6rem;
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
-  background-color: #00a4f0;
+  bottom: 3rem;
+  right: 3rem;
 }
 
 .modal__info {
   margin: 2rem auto 3.5rem;
   padding: 3rem;
   background-color: #ffffffbd;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .paragraph-1 {
@@ -142,13 +158,18 @@ body {
   margin-bottom: 2rem;
 }
 
-.paragraph-2 {
-  line-height: 1.7;
+.paragraph-bold {
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+
+.days {
+  display: block;
+  font-size: 5rem;
 }
 
 .attribution {
   position: fixed;
-  bottom: 7.5rem;
   right: 0.5rem;
   font-size: 1rem;
 
@@ -158,5 +179,5 @@ body {
 
 .attribution__link {
   text-decoration: none;
-  color: #00a1ff;
+  color: #0b1742;
 }
