@@ -5,30 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body>
   <main>
-    <h1>Calculator</h1>
-    <form>
-      <label for="first-number">1st number: </label>
-      <input type="text" id="firstNumber">
-      <br>
-      <label for="secondNumber">2nd number: </label>
-      <input type="text" id="secondNumber">
-      <br>
-      <button type="button" class="addBtn" name="button">add</button>
-      <button type="button" class="subtractBtn" name="button">subtract</button>
-      <button type="button" class="multiplyBtn" name="button">multiply</button>
-      <button type="button" class="divideBtn" name="button">divide</button>
-    </form>
+    <h1 class="heading-primary">Calculator</h1>
 
-    <p>The Result is: <span class="result">....</span></p>
+    <div class="calculator">
+      <input type="text" class="calculator-display" placeholder="0" readonly />
+      
+      <div class="calculator__items">
+        <button class="calculator__item operator" data-input-value="+">+</button>
+        <button class="calculator__item operator" data-input-value="-">-</button>
+        <button class="calculator__item operator" data-input-value="*">&times;</button>
+        <button class="calculator__item operator" data-input-value="/">&divide;</button>
+    
+        <button class="calculator__item number" data-input-value="7">7</button>
+        <button class="calculator__item number" data-input-value="8">8</button>
+        <button class="calculator__item number" data-input-value="9">9</button>
+        <button class="calculator__item number" data-input-value="4">4</button>
+        <button class="calculator__item number" data-input-value="5">5</button>
+        <button class="calculator__item number" data-input-value="6">6</button>   
+        <button class="calculator__item number" data-input-value="1">1</button>
+        <button class="calculator__item number" data-input-value="2">2</button>
+        <button class="calculator__item number" data-input-value="3">3</button>
+        <button class="calculator__item number" data-input-value="0">0</button>
+        
+        <button class="calculator__item number decimal" data-input-value=".">.</button>
+        <button class="calculator__item clear" data-input-value="AC">AC</button>
+        <button class="calculator__item operator equal" data-input-value="=">=</button> 
+      </div>
+    </div>
   </main>
-
-  <script src="main.js"></script>
 </body>
 
 </html>

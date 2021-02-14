@@ -1,51 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: #0a585c;
-  font-family: 'PT Mono', monospace;
-  font-size: 1.6rem;
-  letter-spacing: .2rem;
-  text-align: center;
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  font-family: 'PT Mono', monospace;
+}
+
+.heading-primary {
+  margin-bottom: 5rem;
+  font-size: 5rem;
+}
+
+.calculator {
+  background-color: #c9d6df;
+}
+
+.calculator-display {
+  padding-right: 2.5rem;
+  padding-left: 1.5rem;
+  height: 10rem;
+  font-size: 5rem;
+  background-color: #222831;
   color: #fff;
-
-}
-
-h1 {
-  margin-top: 0;
-  font-size: 4rem;
-}
-
-.result {
-  flex-basis: 10%;
-  height: 9vh;
-  background-color: #000;
-  color: #fff;
-  line-height: 9vh;
-  text-align: center;
-  padding: 5px 20px;
-  margin: 0 auto 10px;
-}
-
-button {
-  font-family: inherit;
-  font-size: 1.2rem;
-  font-weight: bold;
-  letter-spacing: inherit;
-  height: 8vh;
-  line-height: 8vh;
-  cursor: pointer;
+  text-align: right;
   border: none;
-  border-radius: 5px;
-  margin: 30px 5px;
-  background-color: #000;
-  color: #fff;
-  padding: 0 20px;
 }
 
-input {
-  padding: 10px;
-  margin: 4px;
-  border-radius: 5px;
+.calculator-display::placeholder {
+  color: #fff;
+}
+
+.calculator__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+
+  padding: 1rem;
+}
+
+.calculator__item {
+  height: 6rem;
+  font-size: 4rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.operator {
+  background-color: #65b2e6;
+}
+
+.operator:hover {
+  background-color: #69779b;
+  color: #fff;
+}
+
+.number {
+  background-color: #e47dc2;
+}
+
+.number:hover {
+  background-color: #5e1043;
+  color: #fff;
+}
+
+.clear {
+  background-color: #fecea8;
+}
+
+.clear:hover {
+  background-color: #e84a5f;
+  color: #fff;
+}
+
+.equal {
+  grid-row: 2 / 6;
+  grid-column: 4 / -1;
+  height: 100%;
+
+  background-color: #00ffbb;
+}
+
+.equal:hover {
+  background-color: #166678;
+  color: #fff;
 }
