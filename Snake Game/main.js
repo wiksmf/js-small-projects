@@ -2,7 +2,7 @@
 
 const displayScore = document.querySelector('.score');
 const displayGameOver = document.querySelector('.game-over');
-
+const playBtn = document.querySelector('.btn');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -13,12 +13,16 @@ const directions = {
   ArrowDown: 'down',
 };
 
-let height = (canvas.height = 400);
-let width = (canvas.width = 900);
-let blockSize = 10;
-let widthInBlocks = width / blockSize;
-let heightInBlocks = height / blockSize;
-let score = 0;
+let height = canvas.height = 400,
+  width = canvas.width = 900,
+  blockSize = 10,
+  widthInBlocks = width / blockSize,
+  heightInBlocks = height / blockSize,
+  score = 0,
+  intervalTimer = 100,
+  intervalID,
+  snake,
+  apple;
 
 // Draw a border around the canvas
 function drawBorder() {
@@ -29,7 +33,7 @@ function drawBorder() {
   ctx.fillRect(width - blockSize, 0, blockSize, height);
 }
 
-// Draw a border around the canvas
+// Draw a circle
 function circle(x, y, radius, fillCircle) {
   ctx.beginPath();
   ctx.arc(x, y, radius, 0, Math.PI * 2, false);
@@ -45,22 +49,22 @@ class Block {
   }
 
   // Draw a square in a particular block on the grid
-  drawSquare() {
+  drawSquare(color) {
     const x = this.col * blockSize;
     const y = this.row * blockSize;
-    ctx.fillStyle = '#00ff00';
+    ctx.fillStyle = color;
     ctx.fillRect(x, y, blockSize, blockSize);
   }
 
   // Draw a circle in a particular block on the grid
-  drawCircle() {
+  drawCircle(color) {
     const centerX = this.col * blockSize + blockSize / 2;
     const centerY = this.row * blockSize + blockSize / 2;
-    ctx.fillStyle = '#ff0000';
+    ctx.fillStyle = color;
     circle(centerX, centerY, blockSize / 2, true);
   }
 
-  // Check whether two blocks (apple and snake's head) are in the same location
+  // Check whether two blocks are in the same location
   equal(otherBlock) {
     return this.col === otherBlock.col && this.row === otherBlock.row;
   }
@@ -77,7 +81,10 @@ class Snake {
 
   // Draw the snake looping through each of the blocks in its segments array
   draw() {
-    this.segments.forEach(segment => segment.drawSquare());
+    this.segments.forEach((segment, i) => {
+      if (i % 2 === 0) segment.drawSquare('#00ff00');
+      else segment.drawSquare('#ff00d4');
+    });
   }
 
   // Move the snake one block in its current direction and check whether
@@ -105,13 +112,14 @@ class Snake {
 
     if (newHead.equal(apple.position)) {
       score++;
+      intervalTimer--;
       apple.move();
     } else {
       this.segments.pop();
     }
   }
 
-  // Check for collisions with the wall and with the snake itself
+  // Check for collisions with the wall and the snake itself
   checkCollision(head) {
     let selfCollision = false;
     const wallCollision =
@@ -147,7 +155,7 @@ class Apple {
 
   // Draw the apple
   draw() {
-    this.position.drawCircle();
+    this.position.drawCircle('#ff0000');
   }
 
   // Move the apple to a random new position within the game area
@@ -158,29 +166,40 @@ class Apple {
   }
 }
 
-// Create the snake and apple objects
-const snake = new Snake();
-const apple = new Apple();
-let play;
+// Start the game
+function startGame() {
+  // Create the snake and apple objects
+  snake = new Snake();
+  apple = new Apple();
 
-// Pass an animation function to setInterval
-let intervalId = setInterval(function () {
-  ctx.clearRect(0, 0, width, height);
-  displayScore.textContent = score;
-  snake.move();
-  snake.draw();
-  apple.draw();
-  drawBorder();
-}, 100);
+  // Pass an animation function to setInterval
+  intervalID = setInterval(() => {
+    ctx.clearRect(0, 0, width, height);
+    drawBorder();
+    displayScore.textContent = score;
+    snake.move();
+    snake.draw();
+    apple.draw();
+  }, intervalTimer);
+}
 
 // Clear the interval and display Game Over text
 function gameOver() {
-  clearInterval(intervalId);
+  clearInterval(intervalID)
   displayGameOver.classList.remove('hidden');
 }
+
+// Restart game after game over
+playBtn.addEventListener('click', () => {
+  displayGameOver.classList.add('hidden');
+  score = 0;
+  startGame();
+});
 
 // Keydown handler for handling direction key presses
 document.addEventListener('keydown', e => {
   const newDirection = directions[e.key];
   if (newDirection !== undefined) snake.setDirection(newDirection);
 });
+
+startGame();
