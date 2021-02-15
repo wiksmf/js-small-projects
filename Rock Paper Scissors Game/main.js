@@ -1,79 +1,85 @@
 'use strict';
 
-const gameSummary = {
-  numbers: 0,
-  wins: 0,
-  losses: 0,
-  draws: 0,
-}
+const displayUserScore = document.querySelector('.score--0');
+const displayAiScore = document.querySelector('.score--1');
+const displayUserChoice = document.querySelector('.user-choice');
+const displayAiChoice = document.querySelector('.ai-choice');
+const playBtn = document.querySelector('.btn--play');
+const hands = [...document.querySelectorAll('.hand')];
+
+const options = {
+  rock: '👊',
+  paper: '🖐️',
+  scissors: '✌️',
+};
 
 const game = {
-  playerHand: "",
-  aiHand: "",
+  user: '',
+  ai: '',
+};
+
+let userScore = 0,
+  aiScore = 0;
+
+hands.forEach(hand => hand.addEventListener('click', userSelection));
+playBtn.addEventListener('click', startGame);
+
+// Get user's choice
+function userSelection() {
+  const option = this.dataset.option;
+  game.user = option;
+  displayUserChoice.textContent = options[option];
 }
 
-const hands = [...document.querySelectorAll('.select img')];
-
-function handSelection() {
-  game.playerHand = this.dataset.option
-  console.log(game.playerHand);
-  hands.forEach(hand => hand.style.boxShadow = '');
-  this.style.boxShadow = '0 0 0 4px red';
+// Get computer choice
+function aiSelection() {
+  const option = hands[Math.floor(Math.random() * 3)].dataset.option;
+  displayAiChoice.textContent = options[option];
+  return option;
 }
 
-function aiChoice() {
-  return hands[Math.floor(Math.random() * 3)].dataset.option;
-}
-
-function checkResult(player, ai) {
-  if (player === ai) {
-    return 'draw';
+// Compare user anc computer choices
+function checkResult(user, ai) {
+  if (user === ai) {
+    document.querySelector('.player--0').classList.add('player--draw');
+    document.querySelector('.player--1').classList.add('player--draw');
   } else if (
-    (player === "paper" && ai === "rock") ||
-    (player === "rock" && ai === "scissors") ||
-    (player === "scissors" && ai === "paper")) {
-    return 'win';
+    (user === 'paper' && ai === 'rock') ||
+    (user === 'rock' && ai === 'scissors') ||
+    (user === 'scissors' && ai === 'paper')
+  ) {
+    userScore++;
+    displayUserScore.textContent = userScore;
+    document.querySelector('.player--0').classList.add('player--winner');
+    document.querySelector('.player--1').classList.add('player--looser');
   } else {
-    return 'loss';
+    aiScore++;
+    displayAiScore.textContent = aiScore;
+    document.querySelector('.player--0').classList.add('player--looser');
+    document.querySelector('.player--1').classList.add('player--winner');
   }
 }
 
-function publishResult(player, ai, result) {
-  document.querySelector('[data-summary="your-choice"]').textContent = player;
-  document.querySelector('[data-summary="ai-choice"]').textContent = ai;
-  document.querySelector('p.numbers span').textContent = ++gameSummary.numbers;
-
-  if (result === "win") {
-    document.querySelector('p.wins span').textContent = ++gameSummary.wins;
-    document.querySelector('[data-summary="who-win"]').textContent = "You win 🥳"
-    document.querySelector('[data-summary="who-win"]').style.color = "green";
-  } else if (result === "loss") {
-    document.querySelector('p.losses span').textContent = ++gameSummary.losses;
-    document.querySelector('[data-summary="who-win"]').textContent = "I win 😎"
-    document.querySelector('[data-summary="who-win"]').style.color = "red";
-  } else {
-    document.querySelector('p.draws span').textContent = ++gameSummary.draws;
-    document.querySelector('[data-summary="who-win"]').textContent = "Draw 🤨"
-    document.querySelector('[data-summary="who-win"]').style.color = "gray";
-  }
-}
-
-function endGame() {
-  document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = "";
-  game.playerHand = "";
-  game.aiHand = "";
-}
-
+// Start the game
 function startGame() {
-  if (!game.playerHand) {
-    return alert("please, make your choice 🤔");
-  }
-  game.aiHand = aiChoice();
-  const gameResult = checkResult(game.playerHand, game.aiHand);
-  console.log(gameResult);
-  publishResult(game.playerHand, game.aiHand, gameResult);
-  endGame()
+  if (!game.user) return alert('please, make your choice 🤔');
+
+  game.ai = aiSelection();
+  classRemove(0);
+  classRemove(1);
+  checkResult(game.user, game.ai);
+  endGame();
 }
 
-hands.forEach(hand => hand.addEventListener('click', handSelection));
-document.querySelector('.start').addEventListener('click', startGame);
+// End the game
+function endGame() {
+  game.user = '';
+  game.ai = '';
+}
+
+// Remove all classes
+function classRemove(player) {
+  document
+    .querySelector(`.player--${player}`)
+    .classList.remove('player--winner', 'player--looser', 'player--draw');
+}

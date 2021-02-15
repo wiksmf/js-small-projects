@@ -4,64 +4,42 @@
 <head>
   <meta charset="utf-8">
   <title>Rock Paper Scissors Game</title>
-
   <link rel="stylesheet" href="styles.css">
+  <script defer src="main.js"></script>
 </head>
 
-<body>
-  <main>
-    <h1>Rock Paper Scissors Game</h1>
-    <div class="select">
-      <p>Make your choice:</p>
-      <img data-option="rock" src="images/rock.png" alt="">
-      <img data-option="paper" src="images/paper.png" alt="">
-      <img data-option="scissors" src="images/scissors.png" alt="">
+<body class="display-flex">
+  <main class="">
+    <h1 class="heading-primary">Rock Paper Scissors Game 👊🖐️✌️</h1>
+    <div class="container container--player display-flex">
+      <section class="player player--0">
+        <h2 class="name">You</h2>
+        <p class="choice user-choice">🙂</p>
+        <div class="score">
+          <p class="score-label">Score</p>
+          <p class="score-info score--0">0</p>
+        </div>
+      </section>
+      <section class="player player--1">
+        <h2 class="name">Computer</h2>
+        <p class="choice ai-choice">🙃</p>
+        <div class="score">
+          <p class="score-label">Score</p>
+          <p class="score-info score--1">0</p>
+        </div>
+      </section>
     </div>
 
-    <button class="start">Let's play!</button>
-
-    <div class="panels">
-      <div class="panel-left">
-        <h2>Game Results:</h2>
-        <p>Your choice: <span data-summary="your-choice"></span></p>
-        <p>My choice: <span data-summary="ai-choice"></span></p>
-        <h3>Winner: <span data-summary="who-win"></span></h3>
-      </div>
-
-      <div class="panel-right">
-        <h2>Current Results:</h2>
-        <p class="numbers">Number of rounds: <span>0</span></p>
-        <p class="wins">Number of wins: <span>0</span></p>
-        <p class="losses">Number of losses: <span>0</span></p>
-        <p class="draws">Number of draws: <span>0</span></p>
+    <div class="container container--options">
+      <p class="paragraph">Make your choice:</p>
+      <div class="container--btn">
+        <button class="btn hand" data-option="rock">👊</button>
+        <button class="btn hand" data-option="paper">🖐️</button>
+        <button class="btn hand" data-option="scissors">✌️</button>
+        <button class="btn btn--play">play</button>
       </div>
     </div>
   </main>
-
-  <footer>
-    <p>
-      Image by <a
-        href="https://pixabay.com/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=310499">Clker-Free-Vector-Images</a>
-      from <a
-        href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=310499">Pixabay</a>
-    </p>
-    |
-    <p>
-      Image by <a
-        href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=150912">OpenClipart-Vectors</a>
-      from <a
-        href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=150912">Pixabay</a>
-    </p>
-    |
-    <p>
-      Image by <a
-        href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=576669">OpenClipart-Vectors</a>
-      from <a
-        href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=576669">Pixabay</a>
-    </p>
-  </footer>
-
-  <script src="main.js"></script>
 </body>
 
 </html>
