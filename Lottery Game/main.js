@@ -1,28 +1,58 @@
 'use strict';
 
-const btnPlay = document.querySelector('button');
-const container = document.querySelector('.container');
-let result = [];
+const lottoContainer = document.querySelector('.lotto-container');
+const ballContainer = document.querySelector('.ball-container');
+const btnPlay = document.querySelector('.btn');
 
-btnPlay.addEventListener('click', getNumber);
+const userNumbers = [];
+const lottoNumbers = [];
 
-function getNumber() {
+// Create lotto grid cells and add them to the page
+for (let i = 1; i <= 42; i++) {
+  lottoContainer.insertAdjacentHTML(
+    'beforeend',
+    `<div class="lotto-number" data-number="${i}">${i}</div>`,
+  );
+}
 
-  if (result.length === 6) {
-    btnPlay.textContent = 'end of game';
-    return;
-  };
+// Create lotto number balls and add them to the page
+for (let i = 0; i <= 5; i++) {
+  ballContainer.insertAdjacentHTML(
+    'beforeend',
+    `<div class="ball-number">
+      <span class="random-number" data-random-number="${i}"></span>
+    </div>`,
+  );
+}
 
-  const randomNumber = Math.floor(Math.random() * 49 + 1);
+// Event handlers
+document.querySelectorAll('[data-number]').forEach(number => {
+  number.addEventListener('click', getUserNumber);
+});
 
-  for (let i = 0; i < result.length; i++) {
-    if (randomNumber === result[i]) {
-      return getNumber()
-    }
+btnPlay.addEventListener('click', playLotto);
+
+// Track the numbers selected by the user
+function getUserNumber() {
+  if (userNumbers.length < 6) {
+    const number = this.dataset.number;
+    userNumbers.push(number);
+    document
+      .querySelector(`[data-number="${number}"]`)
+      .classList.add('selected');
   }
-  result.push(randomNumber);
+}
 
-  const item = document.createElement("li");
-  item.textContent = randomNumber;
-  container.appendChild(item);
+// Play the game
+function playLotto() {
+  for (let i = 0; i < 6; i++) {
+    const randomNumber = Math.floor(Math.random() * 42 + 1);
+    if (randomNumber === lottoNumbers[i]) return getNumber();
+    document.querySelector(
+      `[data-random-number="${i}"]`,
+    ).textContent = randomNumber;
+    lottoNumbers.push(randomNumber);
+  }
+
+  btnPlay.textContent = 'play again';
 }
