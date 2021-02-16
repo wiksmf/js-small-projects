@@ -53,6 +53,7 @@ body {
 
   align-self: flex-start;
   height: 51rem;
+  width: 10rem;
   margin-left: 5rem;
 }
 
@@ -83,8 +84,13 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.guessed {
+  font-weight: 900;
+  background-image: radial-gradient(#a4e0fbbe, #0400ff);
+}
+
 .btn {
-  margin-top: 3rem;
+  margin: 3rem 1rem 0;
   padding: 1.2rem 6rem;
   font-family: inherit;
   font-size: inherit;
@@ -103,4 +109,9 @@ body {
 
 .btn:active {
   transform: translateY(0.2rem);
+}
+
+.btn:disabled {
+  transform: scale(1);
+  cursor: default;
 }
