@@ -1,41 +1,56 @@
-body {
-  background-color: #e40475;
-  color: #e3f6f5;
-  font-family: 'Black Ops One', cursive;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Black Ops One', cursive;
+  text-align: center;
+  background-color: #e40475;
+  color: #e3f6f5;
 }
 
 h1 {
+  font-size: 4.5rem;
   font-weight: bold;
-  letter-spacing: .5rem;
-  text-shadow: 5px 5px #272343;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.5rem 0.5rem #272343;
 }
 
 p.clock {
-  font-size: 8rem;
-  text-shadow: 5px 5px #272343;
+  margin: 3rem auto;
+  font-size: 10rem;
+  text-shadow: 0.5rem 0.5rem #272343;
 }
 
 button {
+  box-shadow: inset 0rem 0rem 1rem #272343;
   background-color: transparent;
-  border: 2px solid #bae8e8;
-  border-radius: 50px;
-  margin: 5px 20px;
-  padding: 20px;
+  border: 0.2rem solid #bae8e8;
+  border-radius: 1rem;
+  margin: 0.5rem 2rem;
+  padding: 2rem;
   color: #bae8e8;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 button:focus,
 button:hover {
   background-color: #bae8e8;
   color: #272343;
-  outline: 2px dotted #bae8e8;
+  outline: 0.2rem dotted #bae8e8;
 }

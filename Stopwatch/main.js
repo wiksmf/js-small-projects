@@ -1,17 +1,12 @@
-// Reference to display the clock
+'use strict';
+
 const displayParagraph = document.querySelector('.clock');
+const startBtn = document.querySelector('.startBtn');
+const stopBtn = document.querySelector('.stopBtn');
+const resetBtn = document.querySelector('.resetBtn');
 
-// References to the buttons
-let startBtn = document.querySelector('.startBtn');
-let stopBtn = document.querySelector('.stopBtn');
-let resetBtn = document.querySelector('.resetBtn');
-
-// Variable to track the number of seconds
 let secondCount = 0;
-
-// Variable to store the interval when it is active
 let stopWatch;
-
 
 // Start the count when the start button is pressed
 startBtn.addEventListener('click', () => {
@@ -19,22 +14,18 @@ startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
 });
 
-
 // Stop the count when the stop button is pressed
 stopBtn.addEventListener('click', stopCount);
-
 
 // Reset the counter back to zero and update the display
 // when the reset button is pressed
 resetBtn.addEventListener('click', () => {
-  stopCount();
   secondCount = 0;
+  stopCount();
   displayCount();
 });
 
-
-// Function to calculate the current hours, minutes and seconds, 
-// and display the count
+// Calculate the current hours, minutes and seconds, and display the count
 function displayCount() {
   // Calculate current hours, minutes, and seconds
   let hours = Math.floor(secondCount / 3600);
@@ -42,15 +33,14 @@ function displayCount() {
   let seconds = Math.floor(secondCount % 60);
 
   // Display a leading zero if the values are less than ten
-  let displayHours = (hours < 10) ? `0${hours}` : hours;
-  let displayMinutes = (minutes < 10) ? `0${minutes}` : minutes;
-  let displaySeconds = (seconds < 10) ? `0${seconds}` : seconds;
-
-  displayParagraph.textContent = `${displayHours}:${displayMinutes}:${displaySeconds}`;
+  displayParagraph.textContent = `
+    ${hours < 10 ? `0${hours}` : hours}:
+    ${minutes < 10 ? `0${minutes}` : minutes}:
+    ${seconds < 10 ? `0${seconds}` : seconds}
+  `;
 
   secondCount++;
 }
-
 
 // Function to stop the count
 function stopCount() {
