@@ -9,10 +9,10 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
   height: 100vh;
   background-color: #252525;
   color: #00f7ff;

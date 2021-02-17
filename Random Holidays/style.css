@@ -8,10 +8,10 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
   height: 100vh;
 
   font-family: 'Kanit', sans-serif;
@@ -99,7 +99,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: #ffffff48;
-  backdrop-filter: blur(.2rem);
+  backdrop-filter: blur(0.2rem);
   z-index: 0;
 }
 
@@ -108,7 +108,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
- 
+
   height: 50rem;
   width: 65rem;
   padding: 5rem;

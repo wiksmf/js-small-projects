@@ -28,11 +28,11 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
   height: 100vh;
-  box-sizing: border-box;
   position: relative;
 
   font-family: 'Baloo Da 2', cursive;

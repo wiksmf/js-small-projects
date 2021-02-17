@@ -9,6 +9,7 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
@@ -21,7 +22,6 @@ body {
   font-family: 'Monoton', cursive;
   text-align: center;
   background-color: #ff00ff;
-  box-sizing: border-box;
 }
 
 /* BODY */

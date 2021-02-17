@@ -4,10 +4,10 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -17,7 +17,6 @@ body {
   font-size: 1.2rem;
   color: #fff;
   text-align: center;
-
 }
 .heading-primary {
   margin-top: 4rem;
@@ -44,12 +43,12 @@ body {
 
 .player p {
   display: inline-block;
-  border: .5rem solid;
+  border: 0.5rem solid;
   border-radius: 2rem;
   margin: 2rem;
   padding: 1rem 2rem;
   text-transform: uppercase;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 .player .player-1 {

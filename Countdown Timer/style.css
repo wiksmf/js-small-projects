@@ -9,15 +9,16 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
   height: 100vh;
 
   font-family: 'Ubuntu', sans-serif;
   font-size: 3rem;
-  background: url(images/old-wall.png), linear-gradient(#14274e, #394867, #2d6187, #394867, #14274e);
+  background: url(images/old-wall.png),
+    linear-gradient(#14274e, #394867, #2d6187, #394867, #14274e);
   color: #fff;
   text-align: center;
 }
@@ -37,7 +38,7 @@ body {
 }
 
 .heading-primary {
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
 }
 
 .form {
@@ -53,12 +54,12 @@ body {
   font-family: inherit;
   font-weight: 900;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .date-input {
   font-size: 2rem;
-  letter-spacing: .6rem;
+  letter-spacing: 0.6rem;
   padding: 1.5rem;
   margin-right: 3rem;
   color: #fff;
@@ -83,8 +84,8 @@ body {
   outline: 0.4rem dotted #1eff00;
 }
 
-.btn:active{
-  transform: translateY(.2rem);
+.btn:active {
+  transform: translateY(0.2rem);
 }
 
 .btn:disabled {
@@ -118,8 +119,6 @@ body {
   font-size: 3.5rem;
   font-weight: 900;
   color: #ff0000;
-  text-shadow: -2px 2px 0 #000,
-    2px 2px 0 #000,
-    2px -2px 0 #000,
+  text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000,
     -2px -2px 0 #000;
 }

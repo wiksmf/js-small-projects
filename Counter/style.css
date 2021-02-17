@@ -9,10 +9,10 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
-  box-sizing: border-box;
   height: 100vh;
 
   font-family: 'Fredericka the Great', cursive;
