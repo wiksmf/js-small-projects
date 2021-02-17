@@ -14,7 +14,8 @@ html {
 body {
   height: 100vh;
   padding: 10rem;
-  background-image: radial-gradient(#417ef1 60%, #0d60fa 100%);
+  background-color: #0077ffad;
+  background-image: url(images/carbon-fibre-v2.png);
   font-family: 'Poppins', sans-serif;
   letter-spacing: 0.4rem;
 }
@@ -31,6 +32,7 @@ main {
 }
 
 .form {
+  position: relative;
   margin: 3rem auto;
 }
 
@@ -42,37 +44,57 @@ main {
 
 .heading-secondary {
   font-size: 2.5rem;
+  color: #fff;
 }
 
 .tasks--number {
   font-size: 3rem;
-  color: #ffffff;
+  color: #fff;
 }
 
 .form__input,
 .btn {
   font-family: inherit;
   font-size: 2.2rem;
-  border: 0.3rem solid #000;
+  border: none;
+  padding: 1rem 1.5rem;
   cursor: pointer;
+  outline: none;
   transition: all 0.2s;
 }
 
-input {
-  width: 60rem;
-  padding: 1rem 1.5rem;
+.form__input {
+  width: 65rem;
+  border-radius: 10rem;
+  box-shadow: 0 0 1rem #000;
 }
 
 .btn {
-  padding: 0.6rem 0.8rem;
+  border: 0.2rem solid #000;
 }
 
 .btn--add {
-  background-color: #00ff00b7;
+  position: absolute;
+  top: -0.2rem;
+  right: 0;
+  color: #fff;
+  background-color: #0084ffe3;
+  border-radius: 10rem;
 }
 
 .btn--delete {
-  background-color: #ff0000b7;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #ffffff;
+  font-weight: 900;
+  border-radius: 100%;
+  padding: 0.4rem 1.4rem;
+}
+
+.btn:focus,
+.btn:hover {
+  transform: scale(1.1);
 }
 
 ul {
@@ -80,7 +102,31 @@ ul {
 }
 
 li {
-  list-style-type: square;
-  font-size: 2.2rem;
+  position: relative;
+  padding: 0.7rem 1.8rem;
+  list-style-type: '⭕';
+  font-size: 2rem;
   margin-bottom: 1rem;
+  background-color: #ffffffb4;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+ul li:hover {
+  color: #000;
+  background: #00fff2;
+}
+
+.checked {
+  color: #fff;
+  background: #0114bdb7;
+  text-decoration: line-through;
+}
+
+.checked::before {
+  content: '😊';
+  position: absolute;
+  top: 0.7rem;
+  left: -3.2rem;
+  font-size: 2rem;
 }
