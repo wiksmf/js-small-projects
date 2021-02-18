@@ -6,7 +6,6 @@ const sideC = document.querySelector('.c');
 const btnCheck = document.querySelector('button');
 const result = document.querySelector('.result');
 
-const modalWrapper = document.querySelector('.modal-wrapper');
 const btnOpenModal = document.querySelectorAll('.open-modal');
 const btnCloseModal = document.querySelectorAll('.close-modal');
 
@@ -31,9 +30,9 @@ btnCheck.addEventListener('click', e => {
 function checkTriangle(a, b, c) {
   if (a < b + c && b < a + c && c < a + b) {
     return (
-      ((a === b && b === c) && 'an equilateral') ||
+      (a === b && b === c && 'an equilateral') ||
       ((a === b || b === c || a === c) && 'an isosceles') ||
-      ((a !== b && b !== c && a !== c) && 'a scalene')
+      (a !== b && b !== c && a !== c && 'a scalene')
     );
   } else {
     return 'not a';

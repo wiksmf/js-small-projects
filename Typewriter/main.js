@@ -1,3 +1,5 @@
+'use strict';
+
 const spanText = document.querySelector('.text__field');
 const updateText = document.querySelector('.input__field');
 const cursor = document.querySelector('.cursor');

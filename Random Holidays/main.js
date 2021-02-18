@@ -40,19 +40,18 @@ function renderModal(data) {
             <span class="days">${days}</span> days until next ${data[i].holiday}</p>
         </div>
         <span class="attribution">Image by
-          <a class="attribution__link" href="${data[i].attribution.link}">${ data[i].attribution.author}</a> 
+          <a class="attribution__link" href="${data[i].attribution.link}">${data[i].attribution.author}</a> 
           from <a class="attribution__link" href="${data[i].attribution.page}">Pixabay</a>
         </span>
         <button class="btn btn-ok close-modal">great 😊</button>
       </div>`,
     );
-    
+
     document.querySelector(
       `#modal-${i}`,
     ).style.backgroundImage = `url(images/img-${i}.jpg)`;
   }
 }
-
 
 // Calc days left until next holiday
 function calcTimeLeft(data) {
@@ -61,10 +60,10 @@ function calcTimeLeft(data) {
     new Date().getFullYear(),
     new Date().getMonth(),
     new Date().getDate(),
-    );
-  
+  );
+
   days = Math.round((holiday - today) / (1000 * 60 * 60 * 24));
-  if (days <= 0)  days += 365;
+  if (days <= 0) days += 365;
 }
 
 // Handling modals
@@ -76,7 +75,7 @@ document.addEventListener('click', clickEvent => {
     overlay.classList.add('overlay');
     currentlyOpenModals[modalId] = modal;
   }
-})
+});
 
 document.addEventListener('click', clickEvent => {
   if (clickEvent.target.classList.contains('close-modal')) {
@@ -84,7 +83,7 @@ document.addEventListener('click', clickEvent => {
     const modalToClose = clickEvent.target.closest('.modal');
     closeModal(modalToClose.id);
   }
-})
+});
 
 document.addEventListener('keydown', keyEvent => {
   overlay.classList.remove('overlay');

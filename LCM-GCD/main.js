@@ -5,7 +5,6 @@ const checkbox = document.querySelector('.switch-input');
 const btnCalc = document.querySelector('.btn-calc');
 const result = document.querySelector('.result');
 
-const modalWrapper = document.querySelector('.modal-wrapper');
 const btnOpenModal = document.querySelectorAll('.open-modal');
 const btnCloseModal = document.querySelectorAll('.close-modal');
 
