@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Monoton&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #011f3f;
+  color: #ffffff;
+  text-align: center;
+}
+
+.heading-primary {
+  font-family: 'Monoton', cursive;
+  font-size: 5rem;
+}
+
+.paragraph {
+  font-family: 'Bungee', cursive;
+  font-size: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  margin: 2.5rem;
+  height: 20rem;
+  width: 20rem;
+  border: 1rem solid #ffffff;
+  border-radius: 20%;
+  opacity: 1;
+}
+
+.btn--red {
+  background-color: red;
+}
+
+.btn--green {
+  background-color: green;
+}
+
+.btn--blue {
+  background-color: blue;
+}
+
+.btn--yellow {
+  background-color: yellow;
+}
