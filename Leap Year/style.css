@@ -67,7 +67,7 @@ body {
 .form__input:hover,
 .btn:focus,
 .btn:hover {
-  outline: 0.2rem dotted #d8a8ff;
+  outline: 0.2rem dotted #b25df7;
 }
 
 .btn:active {
@@ -127,12 +127,12 @@ body {
 
 .btn-close {
   position: absolute;
-  top: 2.2rem;
-  right: 2.7rem;
+  top: 2rem;
+  right: 2.6rem;
 
-  padding: 1rem;
-  line-height: 2.5rem;
-  font-size: 5rem;
+  padding: 0.6rem 1.4rem 0.5rem 1.7rem;
+  font-size: 3rem;
+  font-weight: 900;
   box-shadow: none;
   background-color: transparent;
 }

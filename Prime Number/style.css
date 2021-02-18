@@ -115,15 +115,13 @@ main {
 
 .btn-close {
   position: absolute;
-  top: 3.2rem;
-  right: 3.6rem;
+  top: 2rem;
+  right: 2.7rem;
 
   margin: 0;
-  padding: 0;
-  height: 1rem;
-  line-height: 1rem;
-  font-size: 5rem;
-  font-weight: 500;
+  padding: 0 1.3rem 0.8rem 1.5rem;
+  font-size: 3.5rem;
+  font-weight: 900;
   color: #ff4646;
   box-shadow: none;
   background-color: transparent;

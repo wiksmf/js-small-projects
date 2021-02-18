@@ -68,7 +68,7 @@ body {
 .input__word:hover,
 .btn:focus,
 .btn:hover {
-  outline: 2px dotted #cffffe;
+  outline: 2px dotted #ff0000;
 }
 
 .btn:active {
@@ -103,7 +103,7 @@ body {
   transform: translate(-50%, -50%);
 
   width: 80rem;
-  height: 40rem;
+  height: 36rem;
   padding: 9rem 4rem 12rem;
   font-size: 2rem;
   border-radius: 1rem;
@@ -124,12 +124,12 @@ body {
 
 .btn-close {
   position: absolute;
-  top: 2.2rem;
-  right: 2.7rem;
+  top: 2rem;
+  right: 2.6rem;
 
-  padding: 1rem;
-  line-height: 2.5rem;
-  font-size: 5rem;
+  padding: 0 1.3rem 0.4rem 1.5rem;
+  font-size: 4rem;
+  font-weight: 900;
   box-shadow: none;
   background-color: transparent;
 }

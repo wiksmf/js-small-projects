@@ -76,7 +76,7 @@ main {
 .form__input:hover,
 .btn:focus,
 .btn:hover {
-  outline: 0.2rem dotted #ecb0e9;
+  outline: 0.2rem dotted #ff00f2;
 }
 
 .btn:active {
@@ -115,10 +115,6 @@ main {
   color: #092532;
 }
 
-.definition-2 {
-  margin-top: 1.5rem;
-}
-
 .examples {
   margin: 2rem 0 1rem;
 }
@@ -131,14 +127,13 @@ main {
 
 .btn-close {
   position: absolute;
-  top: 3.2rem;
-  right: 3.6rem;
+  top: 1.6rem;
+  right: 2.7rem;
 
   margin: 0;
-  padding: 0;
-  line-height: 0;
-  font-size: 5rem;
-  font-weight: 500;
+  padding: 0 1.3rem 0.8rem 1.5rem;
+  font-size: 3.5rem;
+  font-weight: 900;
   box-shadow: none;
   background-color: transparent;
 }

@@ -31,11 +31,6 @@ body {
   margin-bottom: 4rem;
 }
 
-.open-modal {
-  cursor: pointer;
-  color: #ffff00;
-}
-
 /* FORM STYLE */
 .input__word,
 .input__possible-anagrams,
@@ -106,6 +101,11 @@ body {
   display: none;
 }
 
+.open-modal {
+  cursor: pointer;
+  color: #ffff00;
+}
+
 .modal {
   position: absolute;
   top: 50%;
@@ -134,12 +134,12 @@ body {
 
 .btn-close {
   position: absolute;
-  top: 2.2rem;
+  top: 2rem;
   right: 2.7rem;
 
-  padding: 1rem;
-  line-height: 2.5rem;
-  font-size: 5rem;
+  padding: 0 1.3rem 0.6rem 1.6rem;
+  font-size: 3.5rem;
+  font-weight: 900;
   box-shadow: none;
   background-color: transparent;
 }

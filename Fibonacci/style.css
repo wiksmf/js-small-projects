@@ -129,15 +129,12 @@ main {
 
 .btn-close {
   position: absolute;
-  top: 3.2rem;
-  right: 3.6rem;
+  top: 2rem;
+  right: 2.6rem;
 
-  margin: 0;
-  padding: 0;
-  height: 1rem;
-  line-height: 1rem;
-  font-size: 5rem;
-  font-weight: 500;
+  padding: 0 1.3rem 0.6rem 1.4rem;
+  font-size: 3rem;
+  font-weight: 900;
   box-shadow: none;
   background-color: transparent;
 }
