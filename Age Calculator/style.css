@@ -151,10 +151,10 @@ button:hover {
 
 @keyframes moveRightLeft {
   0% {
-    transform: translateX(-5rem);
+    transform: translateX(-3rem);
   }
 
   100% {
-    transform: translateX(5rem);
+    transform: translateX(3rem);
   }
 }
