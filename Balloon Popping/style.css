@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Oi&family=PT+Sans:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+
+  font-family: 'PT Sans', sans-serif;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0rem 0rem 0.5rem #000;
+  background-color: #65779b;
+  background-image: url('images/twinkle-twinkle.png');
+}
+
+main {
+  position: relative;
+  padding: 5rem;
+}
+
+.heading-primary {
+  margin-bottom: 1.5rem;
+  font-family: 'Oi', cursive;
+  font-size: 3rem;
+}
+
+.paragraph {
+  font-size: 1.8rem;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 1.5rem auto;
+  width: 90rem;
+  font-size: 2rem;
+}
+
+.lives-display {
+  color: #ff0000;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: inherit;
+  font-size: 1.8rem;
+  letter-spacing: 0.4rem;
+  color: #fff;
+  background-color: #000;
+  box-shadow: 0 0 1rem #000;
+  border: none;
+  border-radius: 5rem;
+  padding: 2rem 4rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s;
+}
+
+.btn:focus,
+.btn:hover {
+  background-color: #109fe7;
+}
+
+.btn:active {
+  box-shadow: 0 0 2rem #000;
+}
+
+.balloon-container {
+  cursor: crosshair;
+  border: 0.2rem solid #000;
+  background-image: url(images/dark-brick-wall.png);
+}
