@@ -19,13 +19,51 @@ body {
   text-align: center;
   color: #fff;
   text-shadow: 0rem 0rem 0.5rem #000;
-  background-color: #65779b;
+  background-color: #000000c4;
   background-image: url('images/twinkle-twinkle.png');
 }
 
 main {
   position: relative;
   padding: 5rem;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 1.5rem auto;
+  padding: 0.5rem 2rem;
+  width: 70rem;
+  font-size: 2rem;
+  background-color: #ffffff8f;
+}
+
+.balloon-container {
+  cursor: crosshair;
+  border: 0.2rem solid #000;
+  background-image: url(images/dark-brick-wall.png),
+    linear-gradient(#030b53, #0084ff, #7faee4);
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 30rem;
+  width: 50rem;
+  font-size: 5rem;
+  background-color: #ff0000;
+  border: 0.2rem solid #000;
+  box-shadow: 0 0 1rem #000;
 }
 
 .heading-primary {
@@ -38,26 +76,7 @@ main {
   font-size: 1.8rem;
 }
 
-.info-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin: 1.5rem auto;
-  width: 90rem;
-  font-size: 2rem;
-}
-
-.lives-display {
-  color: #ff0000;
-}
-
 .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
   font-family: inherit;
   font-size: 1.8rem;
   letter-spacing: 0.4rem;
@@ -74,15 +93,24 @@ main {
 
 .btn:focus,
 .btn:hover {
-  background-color: #109fe7;
+  background-color: #0011af;
 }
 
 .btn:active {
   box-shadow: 0 0 2rem #000;
 }
 
-.balloon-container {
-  cursor: crosshair;
-  border: 0.2rem solid #000;
-  background-image: url(images/dark-brick-wall.png);
+.btn--play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn--restart {
+  margin-top: 4rem;
+}
+
+.hidden {
+  display: none;
 }

@@ -14,13 +14,18 @@
     <h1 class="heading-primary">Balloon Popping</h1>
     <p class="paragraph">Pop all balloons before they reach the top</p>
     <div class="info-container">
+      <div class="lives">Lives: <span class="lives-display"></span></div>
       <div class="score">score: <span class="score-display">0</span></div>
-      <div class="lives">Lives: <span class="lives-display">❤❤❤❤❤</span></div>
     </div>
-    
-    <button class="btn btn--play">play</button>
 
+    <button class="btn btn--play">play</button>
+    
     <canvas class="balloon-container"></canvas>
+    
+    <div class="game-over hidden">
+      <p>😭 GAME OVER 😭</p>
+      <button class="btn btn--restart">restart</button>
+    </div>
   </main>
 </body>
 
