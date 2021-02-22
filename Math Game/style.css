@@ -132,6 +132,10 @@ body {
   background-image: linear-gradient(#ec5858, #f1f390, #ec5858);
 }
 
-.hidden {
+.display-none {
   display: none;
+}
+
+.visibility-hidden {
+  visibility: hidden;
 }
