@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+
+<body class="display-flex">
+  <main>
+    <h1 class="heading-primary">Math Game</h1>
+    <p class="heading-secondary">click on the correct answer</p>
+
+    <div class="info-game display-flex">
+      <p>Score: <span class="score-label">0</span></p>
+      <p><span class="timer-label">03:00</span></p>
+    </div>
+
+    <section class="section-game display-flex">
+      <div class="game-box display-flex">
+        <div class="operand operand--1">10</div>
+        <div class="operator">x</div>
+        <div class="operand operand--2">10</div>
+      </div>
+      <div class="game-box display-flex">
+        <div class="result result--0">50</div>
+        <div class="result result--1">20</div>
+        <div class="result result--2">100</div>
+        <div class="result result--3">90</div>
+      </div>
+    </section>
+    <button class="btn btn--play">start</button>
+  </main>
+
+  <div class="game-over hidden">
+    <p class="paragraph">GAME OVER</p>
+    <p class="paragraph">your score is <span class="score-label">0</span></p>
+    <button class="btn btn--restart">⭯</button>
+  </div>
+
+</body>
+
+</html>
