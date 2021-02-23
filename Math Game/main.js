@@ -9,45 +9,50 @@ const firstOperand = document.querySelector('.operand--1');
 const secondOperand = document.querySelector('.operand--2');
 const operator = document.querySelector('.operator');
 
-const results = document.querySelectorAll('.result');
+const choices = document.querySelectorAll('.choice');
 
-const labelScore = document.querySelectorAll('.score-label');
-const labelTimer = document.querySelector('.timer-label');
+const labelScore = document.querySelectorAll('.label-score');
+const labelTimer = document.querySelector('.label-timer');
 
 const operatorTypes = ['+', '-', 'x'];
-let result,
-  score = 0;
+let result = 0,
+  score = 0,
+  playing = false;
 
 // Event handlers
-btnPlay.addEventListener('click', init);
-btnRestart.addEventListener('click', () => {
-  score = 0;
-  labelScore.forEach(label => (label.textContent = score));
+btnPlay.addEventListener('click', startGame);
+btnRestart.addEventListener('click', resetGame);
 
-  init();
-});
-
-// Check each answer and continue the game
-results.forEach(result =>
-  result.addEventListener('click', () => {
-    if (result.classList.contains('correct')) {
+// Check user's answer
+choices.forEach(choice =>
+  choice.addEventListener('click', () => {
+    if (choice.classList.contains('correct') && playing) {
       score++;
       labelScore.forEach(label => (label.textContent = score));
     }
-
-    result.classList.remove('correct');
     playGame();
   }),
 );
 
-// Start the game on user's click
+// Start the game
+function startGame() {
+  btnPlay.classList.add('visibility-hidden');
+  playing = true;
+  startTimer();
+  playGame();
+}
+
+// Play the game
 function playGame() {
   const firstNumber = randomNumber(10) + 1;
   const secondNumber = randomNumber(10) + 1;
   const randomOperator = operatorTypes[randomNumber(operatorTypes.length)];
 
-  getAnswer(firstNumber, secondNumber, randomOperator);
-  updateUI(firstNumber, secondNumber, randomOperator);
+  if (playing) {
+    choices.forEach(choice => choice.classList.remove('correct'));
+    getAnswer(firstNumber, secondNumber, randomOperator);
+    updateUI(firstNumber, secondNumber, randomOperator);
+  }
 }
 
 // Get the correct answer
@@ -75,22 +80,22 @@ function updateUI(firstNumber, secondNumber, randomOperator) {
   secondOperand.textContent = secondNumber;
   operator.textContent = randomOperator;
 
-  document.querySelector(`.result--${correctPosition}`).textContent = result;
+  document.querySelector(`.choice--${correctPosition}`).textContent = result;
   document
-    .querySelector(`.result--${correctPosition}`)
+    .querySelector(`.choice--${correctPosition}`)
     .classList.add('correct');
 
-  results.forEach(result => {
-    if (!result.classList.contains('correct')) {
+  choices.forEach(choice => {
+    if (!choice.classList.contains('correct')) {
       const wrongAnswer = randomNumber(100);
-      if (wrongAnswer !== result) result.textContent = wrongAnswer;
+      if (wrongAnswer !== result) choice.textContent = wrongAnswer;
     }
   });
 }
 
 // Start the timer
 function startTimer() {
-  let time = 10;
+  let time = 90;
 
   function count() {
     const min = String(Math.trunc(time / 60)).padStart(2, 0);
@@ -111,21 +116,24 @@ function startTimer() {
   const timer = setInterval(count, 1000);
 }
 
-// Display game over
+// Display game over modal
 function gameOver() {
   displayGameOver.classList.remove('display-none');
+  playing = false;
+}
+
+// Reset the game
+function resetGame() {
+  score = 0;
+
+  displayGameOver.classList.add('display-none');
+  btnPlay.classList.remove('visibility-hidden');
+
+  labelScore.forEach(label => (label.textContent = score));
+  labelTimer.textContent = `01:30`;
 }
 
 // Get random number
 function randomNumber(numb) {
   return Math.floor(Math.random() * numb);
-}
-
-// Initialize the game
-function init() {
-  btnPlay.classList.add('visibility-hidden');
-  displayGameOver.classList.add('display-none');
-
-  startTimer();
-  playGame();
 }

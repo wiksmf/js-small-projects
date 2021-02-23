@@ -61,7 +61,7 @@ body {
 }
 
 .operand,
-.result {
+.choice {
   font-size: 5rem;
   background-color: #fff;
   box-shadow: 0 0 0.4rem #000;
@@ -84,7 +84,7 @@ body {
   color: #0f3057;
 }
 
-.result {
+.choice {
   margin: 0 0.7rem;
   cursor: pointer;
 }
@@ -112,8 +112,8 @@ body {
   background-color: transparent;
 }
 
-.result:focus,
-.result:hover,
+.choice:focus,
+.choice:hover,
 .btn:focus,
 .btn:hover {
   color: #eac2fc;
