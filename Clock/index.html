@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+
+<body class="display-flex">
+  <main>
+    <button class="btn btn__clock-digital selected">Digital clock</button>
+    <button class="btn btn__clock-analog">Analog clock</button>
+
+    <div class="show__clock display-flex">
+      <div class="show__clock-item show__clock-digital"></div>
+      <div class="show__clock-item show__clock-analog hidden">
+        <div class="analog-clock">
+          <div class="hand hand-hour"></div>
+          <div class="hand hand-minutes"></div>
+          <div class="hand hand-seconds"></div>
+        </div>
+        <div class="block"></div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
