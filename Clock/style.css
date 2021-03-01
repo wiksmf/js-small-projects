@@ -43,11 +43,6 @@ body {
   transition: all 0.2s;
 }
 
-.btn:focus,
-.btn:hover {
-  transform: scale(1.1);
-}
-
 .selected {
   background-color: #0044ffa4;
 }
@@ -76,62 +71,55 @@ body {
   filter: drop-shadow(0 0 0.8rem #000000);
 }
 
-.analog-clock {
-  position: relative;
+.analog-clock,
+.block {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.analog-clock {
+  position: relative;
   width: 30rem;
   height: 30rem;
   background-color: transparent;
 }
 
-.hand {
-  position: absolute;
-  transform-origin: 100%;
-  transform: rotate(90deg);
-  border-radius: 30%;
-}
-
-.hand-hour {
-  top: 50%;
-  left: 15%;
-  width: 35%;
-  height: 0.9rem;
-  background-color: #794c74;
-  box-shadow: 0 0 0.2rem #fff;
-  z-index: 0;
-}
-
-.hand-minutes {
-  top: 50%;
-  left: 5%;
-  width: 45%;
-  height: 0.7rem;
-  background-color: #394867;
-  box-shadow: 0 0 0.4rem #fff;
-  z-index: -1;
-}
-
-.hand-seconds {
-  top: 50%;
-  left: 5%;
-  width: 45%;
-  height: 0.5rem;
-  background-color: #fff;
-  box-shadow: 0 0 0.4rem #fff;
-  z-index: 1;
-}
-
 .block {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
   width: 3rem;
   height: 3rem;
   background-color: #ffffff;
   border-radius: 100%;
   filter: drop-shadow(0 0 0.8rem #000000);
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 45%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0.3rem #fff;
+}
+
+.hand-hour {
+  left: 15%;
+  width: 35%;
+  height: 0.9rem;
+  background-color: #794c74;
+  z-index: 0;
+}
+
+.hand-minutes {
+  height: 0.7rem;
+  background-color: #394867;
+  z-index: -1;
+}
+
+.hand-seconds {
+  height: 0.5rem;
+  background-color: #fff;
+  z-index: 1;
 }

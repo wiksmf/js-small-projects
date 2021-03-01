@@ -35,9 +35,11 @@ function updateDisplay() {
 function showDigitalClock() {
   const [hour, minutes, seconds] = getTime();
 
-  displayDigitalClock.textContent = `${hour < 10 ? `${hour}` : hour}:${
-    minutes < 10 ? `0${minutes}` : minutes
-  }:${seconds < 10 ? `0${seconds}` : seconds}`;
+  displayDigitalClock.textContent = `
+    ${hour < 10 ? `0${hour}` : hour} :
+    ${minutes < 10 ? `0${minutes}` : minutes} : 
+    ${seconds < 10 ? `0${seconds}` : seconds}
+  `;
 
   setInterval(showDigitalClock, 1000);
 }
