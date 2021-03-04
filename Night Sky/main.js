@@ -1,3 +1,5 @@
+'use strict';
+
 // Sky class
 class Sky {
   constructor(canvas) {
