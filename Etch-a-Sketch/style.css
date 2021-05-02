@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Sigmar One', cursive;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0.2rem 0.2rem 0.1rem #000;
+  background-image: url(images/bright-squares.png),
+    linear-gradient(
+      to left bottom,
+      rgba(121, 128, 23, 0.7),
+      rgba(153, 20, 20, 0.7),
+      rgba(104, 18, 90, 0.7),
+      rgba(0, 17, 255, 0.7),
+      rgba(0, 0, 0, 0.7)
+    );
+}
+
+.main {
+  flex-direction: column;
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.options {
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.btn-clear {
+  border: none;
+  border-radius: 25rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 0.3rem #000;
+  letter-spacing: 0.2rem;
+  font-family: inherit;
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.grid-size {
+  -webkit-appearance: none;
+  margin-left: 2rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  box-shadow: 0 0 0.3rem #000;
+  outline: none;
+}
+
+.grid-size::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #00ffb3;
+  box-shadow: 0 0 0.3rem #000;
+  cursor: pointer;
+}
+
+.grid-size::-moz-range-thumb {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #00ffb3;
+  box-shadow: 0 0 0.3rem #000;
+  cursor: pointer;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+
+  height: 50rem;
+  width: 50rem;
+  border: 0.5rem solid #000;
+}
+
+.grid-cell {
+  background-color: #fff;
+  border: 0.1rem solid #2c2c2c;
+}

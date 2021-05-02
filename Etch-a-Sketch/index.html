@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-a-Sketch</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+
+<body class="display-flex">
+  <main class="main display-flex">
+    <h1 class="heading-primary">Etch-a-Sketch</h1>
+
+    <div class="options display-flex">
+      <div class="display-flex">
+        <label for="grid-size">Grid Size</label>
+        <input type="range" min="1" max="100" value="16" id="grid-size" class="grid-size">  
+      </div>
+      <button class="btn btn-clear">Clear 🧼</button>
+    </div>
+    
+    <div class="grid-container"></div>
+  </main>
+</body>
+
+</html>
