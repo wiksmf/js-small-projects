@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body class="display-flex">
+  <h1 class="heading-primary">TIC TAC TOE</h1>
+
+  <main class="main">
+    <section class="game-intro display-flex">
+      <div class="game-mode display-flex">
+        <div class="game-mode--1 display-flex">
+          <div class="">
+            <span class="avatar">🤠</span>
+            <h2>player</h2>
+          </div>
+          <p>vs</p>
+          <div class="">
+            <span class="avatar">👾</span>
+            <h2>computer</h2>
+          </div>
+        </div>
+        <div class="game-mode--2 display-flex">
+          <div>
+            <span class="avatar">🤩</span>
+            <h2>player</h2>
+          </div>
+          <p>vs</p>
+          <div>
+            <span class="avatar">🤔</span>
+            <h2>player</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-mark hidden">
+        <div class="game-mark--1 hidden">
+          <div class="">
+            <h2>🤠 player, choose your mark:</h2>
+            <div>
+              <button class="btn btn-x">X</button>
+              <button class="btn btn-o">O</button>
+            </div>
+          </div>
+        </div>
+        <div class="game-mark--2 hidden">
+          <div class="game-mark-player--1">
+            <h2>🤩 player 1, choose your mark:</h2>
+            <div>
+              <button class="btn btn-x">X</button>
+              <button class="btn btn-o">O</button>
+            </div>
+          </div>
+          <div class="game-mark-player--2">
+            <h2>🤔 player 2, choose your mark:</h2>
+            <div>
+              <button class="btn btn-x">X</button>
+              <button class="btn btn-o">O</button>
+            </div>
+          </div>
+        </div>
+        <button class="btn hidden">play</button>
+      </div>
+    </section>
+
+    <section class="game-play hidden">
+      <div class="game-turn display-flex">
+        <h2 class="game-turn--1 game-turn--active">🤠 player</h2>
+        <h2 class="game-turn--2">👾 computer</h2>
+      </div>
+
+      <div class="game-container">
+        <div class="cell display-flex">X</div>
+        <div class="cell display-flex">O</div>
+        <div class="cell display-flex">X</div>
+        <div class="cell display-flex">X</div>
+        <div class="cell display-flex">X</div>
+        <div class="cell display-flex">O</div>
+        <div class="cell display-flex">X</div>
+        <div class="cell display-flex">O</div>
+        <div class="cell display-flex">0</div>
+      </div>
+
+      <div class="display-flex">
+        <button class="btn btn-restart">restart</button>
+        <button class="btn btn-home">new game</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="game-modal hidden">
+    <h3 class="heading-tertiary game-winner">🤠 player has won! 🎉</h3>
+    <button class="btn btn-restart">play again</button>
+    <button class="btn btn-home">new game</button>
+  </div>
+</body>
+
+</html>

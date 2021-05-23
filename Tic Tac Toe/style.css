@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Reggae One', cursive;
+  font-size: 2rem;
+  color: #111a33;
+  position: relative;
+}
+
+.main {
+  height: 80vh;
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading-primary {
+  text-shadow: 0.2rem 0.2rem 0.2rem #808080;
+}
+
+.heading-tertiary {
+  margin-bottom: 3rem;
+}
+
+.game-intro,
+.game-play {
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.game-mode {
+  flex-direction: column;
+  width: 60rem;
+  padding: 1rem 2.5rem;
+  text-align: center;
+}
+
+.game-mode--1,
+.game-mode--2 {
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1rem 2.5rem;
+  border: 0.1rem solid #808080;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.game-mode--1:hover,
+.game-mode--1:focus,
+.game-mode--2:hover,
+.game-mode--2:focus {
+  transform: scale(1.1);
+  box-shadow: 0 0 0.5rem 0.2rem #adacac;
+}
+
+.avatar {
+  font-size: 3rem;
+}
+
+.game-mark {
+  width: 70rem;
+  padding: 1rem 2.5rem;
+  text-align: center;
+}
+
+.game-mark--1,
+.game-mark--2 {
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1rem 2.5rem;
+  border: 0.1rem solid #808080;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.game-mark-player--1,
+.game-mark-player--2 {
+  margin: 2rem auto;
+}
+
+.game-turn {
+  margin: 2rem auto;
+  font-size: 1.3rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.game-turn--1,
+.game-turn--2 {
+  width: 100%;
+  padding: 1rem;
+  background-color: #fff;
+  border: 0.1rem solid #808080;
+}
+.game-turn--active {
+  transform: scale(1.05);
+  box-shadow: 0 0 0.5rem 0.2rem #adacac;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cell {
+  height: 12rem;
+  width: 12rem;
+  font-size: 3rem;
+  border: 0.1rem solid #808080;
+  cursor: pointer;
+}
+
+.cell:hover,
+.cell:focus {
+  transform: scale(0.95);
+  box-shadow: 0 0 0.5rem 0.2rem #adacac;
+}
+
+.game-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4rem 6rem;
+  background-color: #fff;
+  border: 0.1rem solid #808080;
+  box-shadow: 0 0 0.5rem 0.2rem #adacac;
+  text-align: center;
+}
+
+.btn {
+  margin: 3rem auto;
+  padding: 1rem 3rem;
+  border: 0.1rem solid #808080;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 3rem;
+  transition: all 0.2s;
+}
+
+.btn-restart,
+.btn-home {
+  font-size: 2rem;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+  box-shadow: 0 0 0.5rem 0.2rem #adacac;
+}
+
+.hidden {
+  display: none;
+}
