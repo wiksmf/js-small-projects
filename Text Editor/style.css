@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-size: 2rem;
+  background-image: url('img/binding-dark.png');
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* MAIN */
+.toolbar {
+  background-color: #e7e3e9;
+  border: 0.1rem solid #000;
+  border-bottom: none;
+  padding: 2rem;
+}
+.btn {
+  display: inline;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #606268;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem 1.4rem;
+}
+
+.btn:focus,
+.btn:hover {
+  outline: 0.3rem solid #ffffff;
+}
+
+.editor {
+  max-width: 120rem;
+  max-height: 50rem;
+  border: 0.1rem solid #000;
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+}
+
+/* STYLES */
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
