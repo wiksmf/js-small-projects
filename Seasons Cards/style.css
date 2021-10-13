@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Rubik+Beastly&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Arima Madurai', cursive;
+  font-size: 1.8rem;
+  background-color: #ffffff;
+  background-image: url(img/asfalt-dark.png);
+}
+
+.heading-primary {
+  font-family: 'Rubik Beastly', cursive;
+  font-size: 5rem;
+  padding-left: 4rem;
+  letter-spacing: 2rem;
+  background-image: linear-gradient(to right, #ff00aa, #00ff9d, #001aff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.card {
+  flex: 0.5;
+  margin: 1rem;
+  height: 70vh;
+  position: relative;
+  border-radius: 2.5rem;
+  box-shadow: 0 0 0.5rem #4e4e4dbe;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: flex 0.9s ease-in-out;
+}
+
+.card-1 {
+  background-image: url(img/bird-g772d72bcb_1920.jpg);
+}
+
+.card-2 {
+  background-image: url(img/beach-g4a8da00f3_1280.jpg);
+}
+
+.card-3 {
+  background-image: url(img/forest-g58b1b21cd_1920.jpg);
+}
+
+.card-4 {
+  background-image: url(img/ama-dablam-gc59e44b8a_1920.jpg);
+}
+
+.card.active {
+  flex: 8;
+}
+
+.text {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background-color: #cac38298;
+  border-radius: 2.5rem;
+  padding: 2rem;
+  opacity: 0;
+}
+
+.heading {
+  letter-spacing: 0.2rem;
+}
+
+.credits {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+.credits a {
+  color: #0b135d;
+  text-decoration: none;
+  transition: all 0.1s;
+}
+
+.credits a:focus,
+.credits a:hover {
+  color: #3701e9;
+  font-weight: bold;
+}
+
+.card.active .text {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.5s;
+}
