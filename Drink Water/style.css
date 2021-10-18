@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;900&display=swap');
+
+:root {
+  --text-color: #fff;
+  --background-color: #062b8a;
+  --border-color: #091975;
+  --fill-color: #6ab3f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--background-color);
+  background-image: url(img/diamond-eyes.png);
+  color: var(--text-color);
+}
+
+.heading-primary {
+  margin: 5rem 0 1.6rem;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.heading-secondary {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.remained {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  transition: 0.3s ease;
+}
+
+.remained #liters {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.remained small {
+  font-size: 1.2rem;
+}
+
+.percentage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fill-color);
+  font-size: 3rem;
+  font-weight: 900;
+  transition: 0.3s ease;
+}
+
+.text {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.cup {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+  background-color: var(--text-color);
+  color: var(--border-color);
+  border: 0.3rem solid var(--border-color);
+  border-radius: 0 0 4rem 4rem;
+  height: 30rem;
+  width: 15rem;
+  overflow: hidden;
+}
+
+.cups {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50rem;
+}
+
+.cup.cup-small {
+  align-items: center;
+  justify-content: center;
+  height: 9rem;
+  width: 5rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cup.cup-small.full {
+  background-color: var(--fill-color);
+  color: var(--text-color);
+}
