@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 5rem;
+  background-color: #f27d79;
+  background-image: url(img/green-gobbler.png);
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+}
+
+.add {
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  background-color: #4300fd81;
+  box-shadow: 0 0 0.1rem 0.4rem rgba(0, 0, 0, 0.1);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 1rem 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.add:active {
+  transform: scale(0.98);
+}
+
+.note {
+  margin: 3rem 4rem;
+  height: 400px;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+}
+
+.note .tools {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  background-color: #4300fd81;
+}
+
+.note .tools button {
+  margin-right: 0.9rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.note textarea {
+  height: 400px;
+  width: 100%;
+  padding: 2rem;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.7rem;
+  border: none;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
