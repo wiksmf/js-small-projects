@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+:root {
+  --primary-bg-color: #edfac1;
+  --secondary-bg-color: #4b2d3b;
+  --tertiary-bg-color: #411a2b81;
+  --primary-text-color: #fff;
+  --secondary-text-color: #edfac1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--primary-bg-color);
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
+  background-color: var(--secondary-bg-color);
+}
+
+.search {
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  color: var(--primary-text-color);
+  border: 0.1rem solid var(--primary-bg-color);
+  border-radius: 5rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.search::placeholder {
+  color: var(--primary-bg-color);
+}
+
+.search:focus {
+  outline: none;
+  background-color: var(--secondary-bg-color);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.movie {
+  position: relative;
+  margin: 1rem;
+  width: 30rem;
+  height: 50rem;
+  background-color: var(--secondary-bg-color);
+  box-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  color: var(--primary-text-color);
+  letter-spacing: 0.5px;
+}
+
+.movie-info span {
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  background-color: var(--tertiary-bg-color);
+}
+
+.movie-info span.green {
+  color: #00ff00;
+}
+
+.movie-info span.orange {
+  color: #ff8800;
+}
+
+.movie-info span.red {
+  color: #ff0000;
+}
+
+.overview {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-text-color);
+  padding: 2rem;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.4s ease-in;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+.movie-info h1,
+.overview h1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.overview p {
+  margin-top: 1.3rem;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
