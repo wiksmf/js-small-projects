@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Fira Code', monospace;
+  font-size: 2rem;
+  color: #ffffff;
+  background-color: #252523;
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+/* MAIN */
+.heading-primary {
+  margin: 4rem 0;
+}
+
+textarea {
+  width: 90vw;
+  min-width: 40vw;
+  max-width: 90vw;
+  height: 40vh;
+  min-height: 5vh;
+  max-height: 40vh;
+  padding: 1rem;
+  box-shadow: 0 0 0.5rem #4a4747;
+}
+
+.keyboard {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  width: 90vw;
+  transform: translateX(-50%);
+  padding: 1.5rem 0;
+  background: #2d2d32;
+  box-shadow: 0 0 0.3rem #22212180;
+  user-select: none;
+  text-align: center;
+}
+
+.keyboard__key {
+  position: relative;
+  height: 4rem;
+  width: 10rem;
+  max-width: 10rem;
+  margin: 0.3rem;
+  border: none;
+  background: #00000033;
+  box-shadow: 0 0 0.3rem #67656580;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.keyboard__key:active {
+  background: #ffffff3d;
+}
+
+.keyboard__key--upperCase {
+  text-transform: uppercase;
+}
+
+.keyboard__key--capsLock::after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: #2d2d32;
+  box-shadow: 0 0 0.3rem #22212180;
+}
+
+.keyboard__key--capsLock-active::after {
+  background: #fff;
+}
+
+.keyboard__key--wide {
+  width: 50rem;
+  max-width: 50rem;
+}
