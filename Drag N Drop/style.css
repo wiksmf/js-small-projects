@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000112;
+  background-image: url('images/fake-brick.png');
+}
+
+main {
+  flex-direction: column;
+}
+
+.heading-primary {
+  margin-bottom: 3rem;
+  color: #fff;
+  text-shadow: 0 0 0.15rem #fefefe;
+  font-size: 3rem;
+}
+
+.empty {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  border: solid 5px black;
+  background-color: #fff;
+  box-shadow: 0 0 0.4rem #34343480;
+}
+
+.fill {
+  height: 200px;
+  width: 200px;
+  background-image: url('https://source.unsplash.com/random/200x200');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.hold {
+  border: solid 5px #ccc;
+}
+
+.hovered {
+  background-color: #333;
+  border-color: #fff;
+  border-style: dashed;
+}
