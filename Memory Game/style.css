@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 2.42em;
+  background-color: #00cc47;
+  background-image: linear-gradient(#67df21, #2f983b);
+  color: rgba(255, 255, 255, 0.904);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  justify-content: space-between;
+}
+
+.game-info {
+  margin-right: 5rem;
+  width: 50rem;
+  height: 30rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.238);
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.game-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 70rem;
+  height: 70rem;
+}
+
+img {
+  width: 15rem;
+  max-width: 15rem;
+  height: 15rem;
+  max-height: 15rem;
+  object-fit: cover;
+  background-color: #fff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.paragraph {
+  margin: 2rem 0;
+  font-size: 3rem;
+}
+
+.paragraph-information {
+  height: 4rem;
+}
+
+.btn {
+  border: none;
+  padding: 1rem 0.5rem;
+  margin: 2rem 0;
+  font-family: inherit;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* IMAGES ATTRIBUTION */
+.attribution {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 0.5rem;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
+}
+
+a {
+  font-size: 1.2rem;
+  color: #163167;
+}

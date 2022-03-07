@@ -1,0 +1,34 @@
+[
+  {
+    "name": "bee",
+    "img": "images/bee.png"
+  },
+  {
+    "name": "bunny",
+    "img": "images/bunny.png"
+  },
+  {
+    "name": "cats",
+    "img": "images/cats.png"
+  },
+  {
+    "name": "cows",
+    "img": "images/cows.png"
+  },
+  {
+    "name": "dogs",
+    "img": "images/dogs.png"
+  },
+  {
+    "name": "llamas",
+    "img": "images/llamas.png"
+  },
+  {
+    "name": "sheep",
+    "img": "images/sheep.png"
+  },
+  {
+    "name": "whale",
+    "img": "images/whale.png"
+  }
+]
