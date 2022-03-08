@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memory Game</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="main.js"></script>
-</head>
+  <body class="display-flex">
+    <main class="display-flex">
+      <div class="game-info">
+        <h1 class="heading-primary">Memory Game</h1>
+        <p class="paragraph">Score:<span id="score">0</span></p>
+        <p class="paragraph-information"></p>
+        <button class="btn" disabled>Play again</button>
+      </div>
 
-<body class="display-flex">
-  <main class="display-flex">
-    <div class="game-info">
-      <h1 class="heading-primary">Memory Game</h1>
-      <p class="paragraph">Score:<span id="score">0</span></p>
-      <p class="paragraph-information"></p>
-      <button class="btn" disabled>Play again</button>
-    </div>
-
-    <div class="game-section"></div>
+      <div class="game-section"></div>
+    </main>
 
     <p class="attribution">
-      Images from 
+      Images from
       <a
-        href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=276014">
-        Pixabay</a>
+        href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=276014"
+      >
+        Pixabay</a
+      >
     </p>
-</body>
-
+  </body>
 </html>
