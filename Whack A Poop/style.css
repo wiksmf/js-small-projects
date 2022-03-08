@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 2.42em;
+  background-image: url(images/fake-brick.png);
+  background-color: #cc8100;
+  background-image: url('https://www.transparenttextures.com/patterns/fake-brick.png');
+  color: rgba(241, 234, 230, 0.666);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+.display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin-top: 5rem;
+}
+
+.heading-primary {
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.game-info {
+  align-self: flex-start;
+  margin-right: 5rem;
+  width: 40rem;
+  padding: 2rem;
+  background-color: rgba(241, 234, 230, 0.122);
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.game-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 80rem;
+  height: 50rem;
+}
+
+.circle {
+  width: 15rem;
+  max-width: 15rem;
+  height: 15rem;
+  max-height: 15rem;
+  object-fit: cover;
+  background-color: #ffffff63;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  border-radius: 100%;
+}
+
+.paragraph {
+  margin: 2rem 0;
+  font-size: 3rem;
+}
+
+.paragraph-information {
+  height: 5rem;
+  margin: 2rem 0;
+}
+
+.poop {
+  object-fit: contain;
+  background-image: url('images/poop.png');
+  background-color: rgba(241, 173, 83, 0.517);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  cursor: pointer;
+}
+
+.btn {
+  border: none;
+  padding: 1rem 0.5rem;
+  margin: 2rem 0;
+  font-family: inherit;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* IMAGES ATTRIBUTION */
+.attribution {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 0.5rem;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  font-size: 1.3rem;
+}
+
+a {
+  font-size: 1.4rem;
+  color: #671616;
+}
