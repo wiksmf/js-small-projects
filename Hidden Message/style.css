@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: linear-gradient(90deg, #efff5f, #e2588d);
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-size: 4rem;
+  letter-spacing: 0.4rem;
+}
+
+.message {
+  position: relative;
+  height: 50px;
+}
+
+.message .joke {
+  background-color: rgba(255, 255, 255, 0.558);
+  font-size: 20px;
+  padding: 15px;
+  height: 0;
+  width: 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-align: right;
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 60px;
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.message.active .joke {
+  height: 130px;
+  width: 550px;
+}
+
+.message.active .btn {
+  transform: translateX(0px);
+}
